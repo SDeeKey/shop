@@ -1,0 +1,46 @@
+* {
+    border: 1px solid #000;
+}
+
+:root {
+    --Accent1: #fda3c4;
+    --Accent2: #F40000;
+    --MainBlack: #1F1F1F;
+    --Secondary: #FFE6EF;
+    --White: #ffffff;
+    --Grey: #909090;
+}
+
+body {
+    font-family: "Montserrat", sant-serif;
+}
+
+.container {
+    max-height: 103px;
+    margin: 0;
+    padding: 0;
+}
+
+.container__categories {
+    height: 658px;
+    max-height: 658px;
+    margin: 0;
+    padding: 0;
+}
+
+.container__novelties {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container__NewCollection {
+    /*border: 1px solid #f00;*/
+    /*height: 731px;*/
+    /*max-height: 731px;*/
+    margin: 0;
+    padding: 0;
+
+}
