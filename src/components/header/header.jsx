@@ -4,37 +4,28 @@ import phoneItem from './../../img/icon/phone-item.svg'
 import searchItem from './../../img/icon/search-item.svg'
 import heartItem from './../../img/icon/heart-item.svg'
 import bagItem from './../../img/icon/shopping-bag-item.svg'
-import './header.css'
+import './header.scss'
 
-function Header () {
+function Header() {
     return <header className='header'>
         <div className='container'>
-            <div className='header__row'>
-                <div className='contacts__nav'>
-                        <img src={locationItem} alt='locationItem'></img>
-                        <ul>
-                            <li><a href='#!'>Киев, Нижний вал, 37</a></li>
-                        </ul>
-                        <img src={phoneItem} alt='phoneItem'></img>
-                        <ul>
-                            <li><a href='#!'>+38 063 843 34 71</a></li>
-                        </ul>
-                </div>    
-                 <div className='header__logo'>
-                    <img src={logoImg} alt='logo'></img>
-                </div>
-                <div className='searchItems'>
-                    <img className='searchIcon' src={searchItem} alt='searchItem'></img>
-                    <ul>
-                        <li><a href='#!'>Поиск</a></li>
-                    </ul>
-                    <div className='heartAndBag'>
-                        <img src={heartItem} alt='heartItem'></img>
+            <div className='header_row'>
+                <div className="firstLine">
+                    <div className='contacts_nav'>
+                        <img className='locationItem' src={locationItem} alt='locationItem'></img>
+                        <a href='#!'>Киев, Нижний вал, 37</a>
+                        <img className='phoneItem' src={phoneItem} alt='phoneItem'></img>
+                        <a href='#!'>+38 063 843 34 71</a>
+                    </div>
+                    <img className='header_logo' src={logoImg} alt='logo'></img>
+                    <div className='searchItems'>
+                        <img className='searchIcon' src={searchItem} alt='searchItem'></img>
+                        <a href='#!'>Поиск</a>
+                        <img className='heartItem' src={heartItem} alt='heartItem'></img>
                         <img className='bagItem' src={bagItem} alt='bagItem'></img>
                     </div>
                 </div>
-                
-                <nav className='header__nav'>
+                <nav className='header_nav'>
                     <ul>
                         <li><a href='#!'>НОВИНКИ</a></li>
                         <li><a href='#!'>ПЛАТЬЯ</a></li>

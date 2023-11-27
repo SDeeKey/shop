@@ -8,8 +8,8 @@ function App() {
         <div className="App">
             <Header/>
             <Categories/>
-            <Novelties/>
-            <NewCollection/>
+            {/*<Novelties/>*/}
+            {/*<NewCollection/>*/}
         </div>
     );
 }

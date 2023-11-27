@@ -1,0 +1,100 @@
+.novelties {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .container__novelties {
+
+    .titleBlock {
+      padding-left: 180px;
+      display: flex;
+      align-self: flex-start;
+      flex-direction: column;
+
+      .first_novelties {
+        display: flex;
+        /*align-self: flex-start;*/
+        color: var(--Accent1);
+        font-family: Neucha;
+        font-size: 54px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .underTitle {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .second_novelties {
+          display: inline-flex;
+          flex-direction: row;
+          color: var(--MainBlack);
+          font-family: Montserrat;
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+
+        .curved_line {
+          display: inline-flex;
+          flex-direction: row;
+          width: 65px;
+          height: 15px;
+        }
+      }
+
+      .underTitle :last-child {
+        margin-left: 17px;
+      }
+    }
+
+    /* для карточек*/
+    .novelties_card {
+      display: inline-flex;
+      justify-content: space-between;
+      сolumn-gap: 10px;
+      padding-bottom: 27px;
+    }
+
+    /* Кнопка "Смотреть" */
+    .button {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      justify-content: center;
+      width: 180px;
+      height: 50px;
+
+      img {
+        width: 180px;
+        height: 50px;
+        z-index: -1;
+      }
+
+      p {
+        display: flex;
+        align-self: center;
+        position: absolute;
+        color: var(--White);
+        font-family: Neucha;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+

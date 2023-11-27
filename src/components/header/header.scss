@@ -1,0 +1,111 @@
+.header {
+  .container {
+    .header_row {
+      display: flex;
+      flex-direction: column;
+      //border: 1px solid #fbfb;
+      height: 103px;
+      width: 1440px;
+      //justify-content: center;
+
+      .firstLine {
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+
+        .contacts_nav {
+          display: flex;
+          width: 355px;
+          height: 24px;
+          margin-top: 21px;
+          align-items: center;
+
+          .locationItem {
+            margin-right: 10px;
+          }
+
+          .phoneItem {
+            margin: 0 10px;
+          }
+
+          a {
+            color: var(--Accent1);
+            font-family: Montserrat;
+            font-weight: 700;
+            font-style: italic;
+            font-size: 12px;
+          }
+        }
+
+        .header_logo {
+          display: flex;
+          width: 160px;
+          height: 40px;
+          margin: 10px 215px 0 135px;
+        }
+
+        .searchItems {
+          display: flex;
+          width: 276px;
+          height: 24px;
+          margin-top: 18px;
+          flex-direction: row;
+
+          font-size: 12px;
+          font-family: Montserrat;
+          font-weight: 700;
+          justify-items: center;
+          align-items: center;
+
+          .searchIcon {
+            margin-right: 16px;
+          }
+
+          a {
+            color: var(--MainBlack);
+          }
+
+          .heartItem {
+            display: flex;
+            margin-left: 114px;
+            margin-right: 33px;
+          }
+        }
+      }
+
+      .header_nav {
+        align-self: center;
+        flex-direction: row;
+        display: flex;
+        width: 1143px;
+        height: 11px;
+        margin-top: 26px;
+        align-items: center;
+
+        ul {
+          display: flex;
+          gap: 74px;
+          flex-shrink: 0;
+        }
+
+        a {
+          color: var(--MainBlack);
+          font-family: Montserrat;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+      }
+
+      .line {
+        margin-top: 15px;
+        border-bottom: 1px solid var(--Accent1);
+      }
+    }
+  }
+}
+
+
+

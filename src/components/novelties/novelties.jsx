@@ -5,7 +5,7 @@ import Sweatshirt from './../../img/clothes/Sweatshirt.png'
 import sheer_dress from './../../img/clothes/sheer_dress.png'
 import bomber_jacket from './../../img/clothes/bomber_jacket.png'
 import T_shirt_dress from './../../img/clothes/T-shirt_dress.png'
-import './novelties.css';
+import './novelties.scss';
 
 function Novelties() {
     return <section className='novelties'>
@@ -31,7 +31,6 @@ function Novelties() {
                 <img src={brush_effect_t_shirt} alt="brush_effect_t_shirt"/>
                 <p>Смотреть</p>
             </div>
-
         </div>
     </section>
 }
