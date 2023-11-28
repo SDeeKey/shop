@@ -1,13 +1,11 @@
-import './NewCollection.css'
+import './NewCollection.scss'
 import Banner from './../../img/randimg/Banner.svg'
 
 function NewCollection() {
     return (
         <section className='NewCollection'>
             <div className='container__NewCollection'>
-                <div className='NewCollection_content'>
-                    <img src={Banner} alt="Banner"/>
-                </div>
+                <img className='NewCollection_content' src={Banner} alt="Banner"/>
             </div>
         </section>
     )

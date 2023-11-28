@@ -16,8 +16,7 @@ body {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
+    height: 103px;
     max-height: 103px;
     margin: 0;
     padding: 0;
@@ -38,10 +37,15 @@ body {
 }
 
 .container__NewCollection {
-    /*border: 1px solid #f00;*/
-    /*height: 731px;*/
-    /*max-height: 731px;*/
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
+}
 
+.container_location {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }

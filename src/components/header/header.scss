@@ -1,12 +1,11 @@
 .header {
+
   .container {
+    display: flex;
+    justify-content: center;
+
+
     .header_row {
-      display: flex;
-      flex-direction: column;
-      //border: 1px solid #fbfb;
-      height: 103px;
-      width: 1440px;
-      //justify-content: center;
 
       .firstLine {
         justify-content: center;
@@ -74,8 +73,8 @@
       }
 
       .header_nav {
-        align-self: center;
         flex-direction: row;
+        justify-content: center;
         display: flex;
         width: 1143px;
         height: 11px;
@@ -85,7 +84,6 @@
         ul {
           display: flex;
           gap: 74px;
-          flex-shrink: 0;
         }
 
         a {

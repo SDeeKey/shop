@@ -1,81 +1,76 @@
 .categories {
-  border: 2px solid #f00;
   margin: 15px 0 60px;
-  background-color: #ccc;
 
   .container__categories {
-    display: grid;
-    grid-template-columns: 100%;
-    flex-direction: row;
-    //gap: 10px;
-    //gap: 10px 20px; /* row-gap column gap */
-    //row-gap: 10px;
-    //column-gap: 20px;
+    display: flex;
+    justify-content: center;
 
     .categories_content {
+      //border: 3px solid #F40000;
       display: flex;
-      //flex-direction: row;
-      //justify-content: space-around;
-      //gap: 50px;
-      //flex-flow: column wrap;
+      width: 1141px;
+      flex-direction: row;
+      row-gap: 15px;
+      column-gap: 15px;
+      flex-wrap: wrap;
+
 
       .img_T_Shirt {
         display: flex;
-        //justify-content: center;
         width: 563px;
         height: 346px;
 
         p {
-          display: relative;
-          position: absolute;
-          left: calc(50% - 260px);
-          transform: translateX(50%);
-          margin-top: 276px;
-          color: var(--White);
-          text-align: center;
-          font-family: Neucha;
-          font-size: 25px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: normal;
           z-index: 1;
+          position: absolute;
+          margin-left: 82px;
+          margin-top: 280px;
+          width: 76px;
+          height: 22px;
+          color: var(--White);
+          font-family: Neucha;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
         }
 
         .brush_t_shirt {
-          display: relative;
+          width: 206px;
+          height: 52px;
           position: absolute;
           margin-left: 22px;
-          margin-top: 266px;
+          margin-top: 267px;
         }
       }
 
       .img_Dresses {
         display: flex;
-        margin-left: 15px;
         width: 273px;
         height: 296px;
 
         p {
-          display: relative;
-          position: absolute;
-          margin-left: 60px;
-          margin-top: 178px;
-          color: var(--White);
-          text-align: center;
-          font-family: Neucha;
-          font-size: 25px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: normal;
           z-index: 1;
-          transform: rotate(-2deg);
+          position: absolute;
+          margin-left: 69px;
+          margin-top: 186px;
+          height: 22px;
+          width: fit-content;
+          color: var(--White);
+          font-family: Neucha;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+
         }
 
         .brush_dress {
-          display: flex;
+          width: 163px;
+          height: 55px;
           position: absolute;
-          margin-left: 14px;
-          margin-top: 170px;
+          margin-left: 16px;
+          margin-top: 175px;
         }
       }
 
@@ -83,63 +78,61 @@
         display: flex;
         width: 273px;
         height: 296px;
-        margin-left: 15px;
 
 
         p {
-          display: relative;
-          position: absolute;
-          margin-left: 120px;
-          margin-top: 234px;
-          color: #fff;
-          text-align: center;
-          font-family: Neucha;
-          font-size: 25px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: normal;
           z-index: 1;
+          position: absolute;
+          margin-left: 129px;
+          margin-top: 236px;
+          height: 22px;
+          width: fit-content;
+          color: var(--White);
+          font-family: Neucha;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
         }
 
         .brush_suit {
-          display: relative;
+          width: 184px;
+          height: 53px;
           position: absolute;
-          margin-left: 78px;
-          margin-top: 226px;
+          margin-left: 77px;
+          margin-top: 225px;
         }
       }
 
       .img_Bottom {
         display: flex;
-        //flex-direction: row;
         width: 274px;
         height: 297px;
-        //position: absolute;
-        margin-top: 15px;
-        //top: calc(346px);
-        //left: calc(50% - 563px);
 
         p {
-          display: relative;
-          position: absolute;
-          margin-left: 185px;
-          margin-top: 186px;
-          color: var(--White);
-          text-align: center;
-          font-family: Neucha;
-          font-size: 25px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: normal;
           z-index: 1;
+          position: absolute;
+          margin-left: 194px;
+          margin-top: 200px;
+          height: 22px;
+          width: fit-content;
+          color: var(--White);
+          font-family: Neucha;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
           transform: rotate(-50deg);
         }
 
         .brush_bottom {
-          display: relative;
+          width: 104px;
+          height: 53px;
           position: absolute;
-          margin-left: 157px;
-          margin-top: 156px;
+          margin-left: 160px;
+          margin-top: 187px;
+          transform: rotate(-50deg);
+
         }
       }
 
@@ -147,64 +140,61 @@
         display: flex;
         width: 274px;
         height: 297px;
-        //position: absolute;
-        margin-top: 15px;
-        //top: calc(346px);
-        //left: calc(50% - 274px);
 
         p {
-          display: relative;
-          position: absolute;
-          margin-left: 160px;
-          margin-top: 25px;
-          color: var(--White);
-          text-align: center;
-          font-family: Neucha;
-          font-size: 25px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: normal;
           z-index: 1;
+          position: absolute;
+          margin-left: 170px;
+          margin-top: 31px;
+          height: 22px;
+          width: fit-content;
+          color: var(--White);
+          font-family: Neucha;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
         }
 
         .brush_outerwear {
-          display: relative;
+          width: 134px;
+          height: 60px;
           position: absolute;
           margin-left: 122px;
-          margin-top: 17px;
+          margin-top: 16px;
         }
       }
 
       .img_Hoodie {
         display: flex;
-        width: 563px;
+        width: 561px;
         height: 345px;
-        //position: absolute;
-        //margin-top: 15px;
-        //top: calc(296px);
-        //left: calc(50% + 15px);
+        margin-top: -50px;
 
         p {
-          display: relative;
-          position: absolute;
-          margin-left: 94px;
-          margin-top: 238px;
-          color: var(--White);
-          text-align: center;
-          font-family: Neucha;
-          font-size: 25px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: normal;
           z-index: 1;
+          position: absolute;
+          margin-left: 98px;
+          margin-top: 245px;
+          height: 22px;
+          width: fit-content;
+          color: var(--White);
+          font-family: Neucha;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
           transform: rotate(36deg);
         }
 
         .brush_hoodie {
-          display: relative;
+          width: 133px;
+          height: 54px;
           position: absolute;
-          margin-left: 53px;
-          margin-top: 204px;
+          margin-left: 50px;
+          margin-top: 235px;
+          transform: rotate(37deg);
+
         }
       }
     }
