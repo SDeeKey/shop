@@ -9,144 +9,211 @@
     display: flex;
     border: 3px solid #F40000;
     width: 1042px;
+    //height: 1000px  ;
 
     .content_location {
       display: flex;
+      flex-direction: column;
+      //margin-left: -200px;
+      //justify-content: center;
+      //align-content: center;
+      //align-items: center;
       //position: relative;
 
-      .booriva {
+      .firstLine {
         display: flex;
-        width: 550px;
-        height: 643px;
-
-      }
-
-      .BOORIVA_STORE {
-        //border: 3px solid #F40000;
-        position: absolute;
-        display: flex;
-        width: 176px;
-        height: 118px;
-        margin-left: 125px;
-        margin-top: 109px;
-
-
-        color: var(--MainBlack);
-        text-align: right;
-        font-family: Neucha;
-        font-size: 54px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-transform: uppercase;
-      }
-
-      .address {
-        //border: 3px solid #F40000;
-        width: 220px;
-        height: 60px;
-
-        display: flex;
-        //justify-content: end;
-        align-self: flex-end;
-        margin-right: 17px;
-
-
-        color: var(--MainBlack);
-        font-family: Montserrat;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px;
-
-      }
-
-      .info {
-        display: flex;
-        //border: 3px solid #F40000;
-
-        width: 230px;
-        height: 120px;
-        margin-top: 363px;
-        margin-left: 15px;
-        word-break: break-word;
-
-        color: var(--MainBlack);
-
-        font-family: Montserrat;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px;
-      }
-
-      .Line_S {
-        //border: 3px solid #F40000;
-        width: 22px;
-        height: 41px;
-        display: flex;
-        position: absolute;
-        margin-left: 760px;
-        transform: rotate(-148deg);
-      }
-
-      .Line {
-        //border: 3px solid #F40000;
-        width: 22px;
-        height: 41px;
-        display: flex;
-        position: absolute;
-        margin-left: 790px;
-        margin-top: 81px;
-      }
-
-      .Heart_location {
-        //border: 3px solid #F40000;
-        width: 60px;
-        height: 70px;
-        display: flex;
-        position: absolute;
-        margin-left: 844px;
-        margin-top: 17px;
-      }
-
-      .Wavy_line {
-        //border: 3px solid #F40000;
-        width: 115px;
-        height: 27px;
-        display: flex;
-        position: absolute;
-        margin-left: 753px;
-        margin-top: 164px;
-      }
-
-
-      .Arrow_1 {
-        //border: 3px solid #F40000;
-        width: 25px;
-        height: 23px;
-        display: flex;
-        //flex-direction: column;
-        //justify-content: flex-end;
-        align-content: flex-end;
-        //position: absolute;
-        //margin-left: 753px;
-        //margin-top: 164px;
-        transform: rotate(131deg);
-      }
-
-      .Arrow_2 {
-        //border: 3px solid #F40000;
-        width: 25px;
-        height: 23px;
-        display: flex;
+        position: relative;
         flex-direction: row;
-        //justify-content: flex-end;
-        align-content: flex-end;
-        //position: absolute;
-        //margin-left: 753px;
-        //margin-top: 164px;
-        transform: rotate(131deg);
+        //justify-content: right;
+        //flex-direction: row;
+        //border: 3px solid #000;
+
+        .booriva {
+          display: flex;
+          width: 560px;
+          height: 643px;
+        }
+
+        .BOORIVA_STORE {
+          //border: 3px solid #F40000;
+          position: absolute;
+          display: flex;
+          width: 176px;
+          height: 118px;
+          margin-left: 125px;
+          margin-top: 109px;
+
+
+          color: var(--MainBlack);
+          text-align: right;
+          font-family: Neucha;
+          font-size: 54px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+
+        .address {
+          //border: 3px solid #F40000;
+          width: 220px;
+          height: 60px;
+
+          display: flex;
+          //justify-content: end;
+          align-self: flex-end;
+          margin-right: 17px;
+
+
+          color: var(--MainBlack);
+          font-family: Montserrat;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+
+        }
+
+        .info {
+          display: flex;
+          //border: 3px solid #F40000;
+
+          width: 230px;
+          height: 120px;
+          margin-top: 363px;
+          margin-left: 15px;
+          word-break: break-word;
+
+          color: var(--MainBlack);
+
+          font-family: Montserrat;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+        }
+
+        .Line_S {
+          //border: 3px solid #F40000;
+          width: 22px;
+          height: 41px;
+          //display: flex;
+          //justify-content: right;
+          right: 245px;
+          position: absolute;
+          //margin-right: 245px;
+          transform: rotate(-148deg);
+        }
+
+        .Line {
+          //border: 3px solid #F40000;
+          width: 17px;
+          height: 27px;
+          display: flex;
+          position: absolute;
+          right: 223px;
+          top: 81px;
+        }
+
+        .Heart_location_1 {
+          //border: 3px solid #F40000;
+          width: 60px;
+          height: 70px;
+          display: flex;
+          position: absolute;
+          right: 130px;
+          top: 20px;
+        }
+
+        .Wavy_line {
+          //border: 3px solid #F40000;
+          width: 115px;
+          height: 27px;
+          display: flex;
+          position: absolute;
+          right: 170px;
+          top: 167px;
+        }
+
+        .Arc_1{
+          width: 34px;
+          height: 17px;
+          //right: 98px;
+          position: absolute;
+          right: 97px;
+          top: 123px;
+        }
+
+        .Arc_2{
+          z-index: 1;
+          width: 34px;
+          height: 17px;
+          position: absolute;
+          left: 256px;
+          top: 607px;
+        }
+      }
+
+      .secondLine {
+        border: 3px solid #000;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+
+        .Arrow_1 {
+          //border: 3px solid #F40000;
+          width: 25px;
+          height: 23px;
+          position: absolute;
+          top: 7px;
+          left: 272px;
+          transform: rotate(131deg);
+        }
+
+        .Arrow_2 {
+          //border: 3px solid #F40000;
+          width: 25px;
+          height: 23px;
+          display: flex;
+          position: absolute;
+          left: 283px;
+          top: 15px;
+          transform: rotate(131deg);
+        }
+
+        .Heart_location_2 {
+          //border: 3px solid #F40000;
+          width: 60px;
+          height: 70px;
+          display: flex;
+          position: absolute;
+          left: 187px;
+          top: 51px;
+        }
+
+        .Brush_effect_t_shirt{
+          width: 240px;
+          height: 50px;
+          display: flex;
+          margin-top: 47px;
+        }
+        .text_btn{
+          z-index: 1;
+          display: flex;
+          position: absolute;
+          top: 62px;
+
+          color: var(--White);
+
+          text-align: center;
+          font-family: Neucha;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-transform: uppercase;
+        }
       }
     }
   }
