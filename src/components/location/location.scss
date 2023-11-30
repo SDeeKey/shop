@@ -1,32 +1,23 @@
 .Location {
   display: flex;
   margin-bottom: 60px;
-  border: 3px solid #000;
   justify-content: center;
 
 
   .container_location {
     display: flex;
-    border: 3px solid #F40000;
     width: 1042px;
-    //height: 1000px  ;
+    height: 773px;
 
     .content_location {
       display: flex;
       flex-direction: column;
-      //margin-left: -200px;
-      //justify-content: center;
-      //align-content: center;
-      //align-items: center;
-      //position: relative;
+
 
       .firstLine {
         display: flex;
         position: relative;
         flex-direction: row;
-        //justify-content: right;
-        //flex-direction: row;
-        //border: 3px solid #000;
 
         .booriva {
           display: flex;
@@ -35,7 +26,6 @@
         }
 
         .BOORIVA_STORE {
-          //border: 3px solid #F40000;
           position: absolute;
           display: flex;
           width: 176px;
@@ -55,12 +45,10 @@
         }
 
         .address {
-          //border: 3px solid #F40000;
           width: 220px;
           height: 60px;
 
           display: flex;
-          //justify-content: end;
           align-self: flex-end;
           margin-right: 17px;
 
@@ -76,7 +64,6 @@
 
         .info {
           display: flex;
-          //border: 3px solid #F40000;
 
           width: 230px;
           height: 120px;
@@ -94,19 +81,14 @@
         }
 
         .Line_S {
-          //border: 3px solid #F40000;
           width: 22px;
           height: 41px;
-          //display: flex;
-          //justify-content: right;
           right: 245px;
           position: absolute;
-          //margin-right: 245px;
           transform: rotate(-148deg);
         }
 
         .Line {
-          //border: 3px solid #F40000;
           width: 17px;
           height: 27px;
           display: flex;
@@ -116,7 +98,6 @@
         }
 
         .Heart_location_1 {
-          //border: 3px solid #F40000;
           width: 60px;
           height: 70px;
           display: flex;
@@ -126,7 +107,6 @@
         }
 
         .Wavy_line {
-          //border: 3px solid #F40000;
           width: 115px;
           height: 27px;
           display: flex;
@@ -135,7 +115,7 @@
           top: 167px;
         }
 
-        .Arc_1{
+        .Arc_1 {
           width: 34px;
           height: 17px;
           //right: 98px;
@@ -144,7 +124,7 @@
           top: 123px;
         }
 
-        .Arc_2{
+        .Arc_2 {
           z-index: 1;
           width: 34px;
           height: 17px;
@@ -155,14 +135,13 @@
       }
 
       .secondLine {
-        border: 3px solid #000;
         display: flex;
+        height: 126px;
         position: relative;
         flex-direction: column;
         align-items: center;
 
         .Arrow_1 {
-          //border: 3px solid #F40000;
           width: 25px;
           height: 23px;
           position: absolute;
@@ -172,7 +151,6 @@
         }
 
         .Arrow_2 {
-          //border: 3px solid #F40000;
           width: 25px;
           height: 23px;
           display: flex;
@@ -183,7 +161,6 @@
         }
 
         .Heart_location_2 {
-          //border: 3px solid #F40000;
           width: 60px;
           height: 70px;
           display: flex;
@@ -192,13 +169,14 @@
           top: 51px;
         }
 
-        .Brush_effect_t_shirt{
+        .Brush_effect_t_shirt {
           width: 240px;
           height: 50px;
           display: flex;
           margin-top: 47px;
         }
-        .text_btn{
+
+        .text_btn {
           z-index: 1;
           display: flex;
           position: absolute;
@@ -213,6 +191,13 @@
           font-weight: 400;
           line-height: normal;
           text-transform: uppercase;
+        }
+
+        .map {
+          display: flex;
+          position: absolute;
+          right: 59px;
+          top: -130px;
         }
       }
     }

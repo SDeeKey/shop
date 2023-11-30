@@ -8,6 +8,8 @@ import Arrow from './../../img/lines/arrow.svg'
 import Arc from './../../img/lines/arc.svg'
 import Brush_effect_t_shirt from './../../img/clothes/brush_effect_t_shirt.svg'
 
+import GoogleMapLocation from "../GoogleMap/GoogleMap.jsx";
+
 
 function Location() {
     return (
@@ -35,8 +37,10 @@ function Location() {
                         <img className='Heart_location_2' src={Heart_location} alt="Heart_location"/>
                         <img className='Brush_effect_t_shirt' src={Brush_effect_t_shirt} alt="Brush_effect_t_shirt"/>
                         <p className='text_btn'>проложить маршрут</p>
+                        <div className="map">
+                            <GoogleMapLocation/>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </section>

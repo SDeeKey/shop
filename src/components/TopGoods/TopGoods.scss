@@ -1,0 +1,136 @@
+//.TopGoods {
+//  display: flex;
+//  flex-direction: column;
+//  align-items: center;
+//  padding-bottom: 60px;
+//
+//  .container_TopGoods {
+//    .content_TopGoods {
+//
+//      @keyframes ticker {
+//        0% {
+//          transform: translateX(40%);
+//        }
+//        100% {
+//          transform: translateX(-100%);
+//        }
+//      }
+//
+//      .ticker-wrap {
+//        //border: 3px solid #f00;
+//        background-color: var(--Accent1);
+//        height: 80px;
+//        width: 100%;
+//        overflow: hidden;
+//        position: relative;
+//
+//        color: var(--Accent2);
+//        font-family: Montserrat;
+//        font-size: 25px;
+//        font-style: normal;
+//        font-weight: 600;
+//        line-height: normal;
+//        text-transform: uppercase;
+//
+//        .ticker-move {
+//          margin-top: 20px;
+//          display: inline-block;
+//          white-space: nowrap;
+//          padding-left: 50%; /* Отступ для начальной задержки перед повторением */
+//          animation: ticker 50s linear infinite;
+//
+//          .ticker-item {
+//            display: inline-block;
+//            //padding-right: 130px; /* Разрыв между повторениями слова */
+//          }
+//
+//          .ticker-item::after {
+//            content: ' '; /* Добавляем пустой элемент */
+//            width: 130px; /* Устанавливаем отступ в 130px */
+//            display: inline-block; /* Делаем пустой элемент инлайновым */
+//          }
+//
+//          .ticker-space {
+//            width: 130px; /* Устанавливаем отступ в 130px */
+//            display: inline-block;
+//          }
+//        }
+//
+//        .line_1 {
+//          border: 1px solid var(--Accent2);
+//          position: relative;
+//          top: 10%;
+//          z-index: 5;
+//        }
+//
+//        .line_2 {
+//          border: 1px solid var(--Accent2);
+//          position: relative;
+//          top: 85%;
+//        }
+//      }
+//    }
+//  }
+//}
+
+.TopGoods {
+  .container_TopGoods {
+    .content_TopGoods {
+      @keyframes ticker {
+        0% {
+          transform: translateX(40%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      display: flex;
+      justify-content: center;
+
+      .ticker-wrap {
+        background-color: var(--Accent1);
+        height: 80px;
+        width: 2000px;
+        overflow: hidden;
+        position: relative;
+        color: var(--Accent2);
+        font-family: Montserrat;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+
+        .ticker-move {
+          display: inline-block;
+          white-space: nowrap;
+          margin-top: 20px;
+
+          .ticker-item {
+            display: inline-block;
+
+            .ticker-space {
+              width: 130px; // Отступ в 130px между словосочетаниями
+              display: inline-block;
+            }
+          }
+        }
+      }
+
+      .line_1, .line_2 {
+        border: 1px solid var(--Accent2);
+        position: relative;
+      }
+
+      .line_1 {
+        top: 10%;
+        z-index: 5;
+      }
+
+      .line_2 {
+        top: 85%;
+      }
+    }
+  }
+}

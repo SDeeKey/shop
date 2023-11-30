@@ -2,7 +2,8 @@ import Header from './components/header/header.jsx';
 import Categories from './components/categories/categories.jsx';
 import Novelties from './components/novelties/novelties.jsx';
 import NewCollection from "./components/NewCollection/NewCollection.jsx";
-import Location from "./components/location/location";
+import Location from "./components/location/location.jsx";
+import TopGoods from "./components/TopGoods/TopGoods";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <Novelties/>
             <NewCollection/>
             <Location/>
+            <TopGoods/>
         </div>
     );
 }
