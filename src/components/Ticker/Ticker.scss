@@ -1,0 +1,56 @@
+.ticker-container {
+  max-width: 1920px; // Ограничиваем максимальную ширину контейнера
+  margin: 0 auto; // Центрируем контейнер на странице
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%; // Ширина контейнера будет 100% до максимальных 1920px
+  height: 80px; // Высота контейнера
+  background-color: var(--Accent1); // Используйте вашу переменную или конкретный цвет
+  display: flex; // Используем flexbox для выравнивания
+  align-items: center; // Выравниваем текст по центру по вертикали
+  position: relative; // Для позиционирования линий
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    left: 10px; // Отступ слева
+    right: 10px; // Отступ справа
+    height: 1px;
+    background-color: var(--Accent2);
+    z-index: 8;
+  }
+
+  &::before {
+    top: 10px; // Верхняя линия
+  }
+
+  &::after {
+    bottom: 10px; // Нижняя линия
+  }
+
+  .ticker-text {
+    display: inline-block;
+    animation: ticker 10s linear infinite;
+    color: var(--Accent2);
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    &::after {
+      content: ''; // Пустой контент
+      display: inline-block;
+      width: 130px; // Фиксированная ширина для создания отступа
+    }
+  }
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

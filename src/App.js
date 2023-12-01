@@ -3,7 +3,8 @@ import Categories from './components/categories/categories.jsx';
 import Novelties from './components/novelties/novelties.jsx';
 import NewCollection from "./components/NewCollection/NewCollection.jsx";
 import Location from "./components/location/location.jsx";
-import TopGoods from "./components/TopGoods/TopGoods";
+import Ticker from "./components/Ticker/Ticker.jsx";
+import TopGoods from "./components/TopGoods/TopGoods.jsx";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
             <Novelties/>
             <NewCollection/>
             <Location/>
+            <Ticker/>
             <TopGoods/>
         </div>
     );
