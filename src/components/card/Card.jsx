@@ -13,7 +13,9 @@ const Card = (props) => {
         <div className={styles.Card}>
             <a href="#!" className={styles.card_link}></a>
             {/* Картинка в карточке */}
-            <img className={styles.card_img} src={props.img} alt="img"/>
+            {/*<div className="img">*/}
+                <img className={styles.card_img} src={props.img} alt="img"/>
+            {/*</div>*/}
             {/* Линия под картинкой */}
             <div className={styles.underline}></div>
             {/* Сердечко в углу */}

@@ -62,6 +62,7 @@
 
     /* Кнопка "Смотреть" */
     .button {
+      user-select: none;
       display: flex;
       flex-direction: column;
       align-self: center;

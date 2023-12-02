@@ -1,5 +1,10 @@
+//*{
+//  border: 1px solid #000;
+//}
+
 /* Вся карточка */
 .Card {
+  border: 1px solid #000;
   user-select: none;
   display: flex;
   position: relative;
@@ -8,13 +13,17 @@
   align-self: flex-start;
   width: 360px;
   height: 530px;
-  margin: 5px;
+  //margin: 0 5px 5px 5px;
+  //padding-left: 5px;
 
   .card_img {
+    border: 1px solid #f00;
     z-index: 2;
-    width: 350px;
-    height: 434px;
-    margin: 0 5px 5px 5px;
+    //width: 350px;
+    //height: 434px;
+    width: 98%;
+    height: 98%;
+    margin: 0 5px 0 5px ;
   }
 
   .card_img:hover {
@@ -45,19 +54,37 @@
 
   /* Контейнер для всего описания */
   .card_body {
-    position: relative;
-    height: 91px;
-    width: 360px;
+    //border: 1px solid #000;
+    //position: relative;
+    ////height: 91px;
+    ////width: 360px; //all safe
+    //width: 100%;
+    //height: 100%;
+    //bottom: 0;
+
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    //position: relative;
+    ////height: 91px;
+    ////width: 360px; //all safe
+    width: 100%;
+    height: 100%;
     bottom: 0;
   }
 
   /* Контейнер для сердечка */
   .heart_icon {
-    //border: 10px solid #F40000;
-    display: inline-block;
+    z-index: 100; // delete
+    justify-content: flex-end;
+    //border: 1px solid #F40000;
+    //display: inline-block;
+    display: flex;
     position: absolute;
     width: 26px;
     height: 24px;
+    //width: 10%; // delete
+    //height: 5%; //delete
     right: 20px;
     top: 20px;
   }
@@ -65,86 +92,140 @@
   /* Подчеркивание картинки */
   .underline {
     border: 1px solid #fda3c4;
-    bottom: 0;
-    left: 20px;
-    width: 320px;
+    //top: 0;
+    margin-bottom: 1%;
+    width: 90%;
   }
 
   /* Контейнер для текста описания */
-  .card_text {
-    top: 30px;
-    left: 20px;
-    max-width: 195px;
-    width: 212px;
-    height: 36px;
-    position: relative;
-  }
+  //.card_text {
+  //  //border: 5px solid #f00;
+  //  //z-index: 999;
+  //
+  //  top: 30px;
+  //  left: 20px;
+  //  max-width: 195px;
+  //  width: 212px;
+  //  height: 36px;
+  //  position: relative;
+  //}
 
   /* Сам текст в описании */
   .card_title {
-    max-width: 212px;
-    margin-left: 21px;
-    margin-top: 30px;
-    position: absolute;
-    color: #1f1f1f;
+    //border: 1px solid #f00;
+    //
+    ////max-width: 212px;
+    //max-width: 60%;
+    ////margin-left: 21px;
+    ////margin-top: 30px;
+    //margin: 7.5% 0 0 5%; //all safe
+    //position: absolute;
+    //color: var(--MainBlack);
+    //font-family: Montserrat;
+    ////font-size: 16px;
+    //font-style: normal;
+    //font-weight: 400;
+    //line-height: normal;
+    //text-align: left;
+
+
+
+    border: 1px solid #f00;
+
+    display: flex;
+    //max-width: 212px;
+    max-width: 60%;
+    //max-height: 50%;
+    //margin-left: 21px;
+    //margin-top: 30px;
+    margin: 7.5% 0 0 5%;
+    //position: absolute;
+    color: var(--MainBlack);
     font-family: Montserrat;
-    font-size: 16px;
+    //font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-align: left;
-
   }
 
   /* Контейнер для цены */
-  .card_icon {
-    left: 50%;
-    transform: translateX(60px);
-    width: 101px;
-    height: 32px;
-    position: relative;
-  }
+  //.card_icon {
+  //  //border: 1px solid #f00;
+  //  left: 50%;
+  //  transform: translateX(60px);
+  //  width: 101px;
+  //  height: 32px;
+  //  position: relative;
+  //}
 
-  .card_icon p {
-    position: absolute;
-    /* display: flex; */
-    /* top: 0px; */
-    right: 0px;
-    color: #fda3c4;
-    font-variant-numeric: lining-nums tabular-nums;
-    font-family: Montserrat;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
+//  .card_icon p
+//  position: absolute;
+//  /* display: flex; */
+//  /* top: 0px; */
+//  right: 0px;
+//  color: #fda3c4;
+//  font-variant-numeric: lining-nums tabular-nums;
+//  font-family: Montserrat;
+//  font-size: 24px;
+//  font-style: normal;
+//  font-weight: 700;
+//  line-height: normal;
+//}
 
-  /* Цена */
-  .card_price {
-    right: 0px;
-    top: 30px;
-    position: absolute;
-    color: #fda3c4;
-    font-variant-numeric: lining-nums tabular-nums;
-    font-family: Montserrat;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
+/* Цена */
+.card_price {
+  //border: 1px solid #f00;
+  //right: 10%;
+  //width: 20%;
+  ////top: 7.5%;
+  //margin-top: 7.5%;
+  ////text-align: end;
+  ////justify-content: end; //all safe
+  ////justify-items: end;
+  //position: absolute;
+  //color: var(--Accent1);
+  //font-variant-numeric: lining-nums tabular-nums;
+  //font-family: Montserrat;
+  ////font-size: 24px;
+  //font-style: normal;
+  //font-weight: 700;
+  //line-height: normal;
 
-  .cerved_heart {
-    position: absolute;
-    z-index: 2;
-    cursor: pointer;
-  }
+//display: flex;
+  border: 1px solid #f00;
+  //margin-right: 10%;
+  width: auto;
+  height: 20%;
+  align-self: flex-start;
+  //top: 7.5%;
+  margin: 7.5% 5% 0 auto;
+  //text-align: end;
+  //justify-content: end;
+  //justify-items: end;
+  //position: absolute;
+  color: var(--Accent1);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-family: Montserrat;
+  //font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 
-  /* Стиль для второго path внутри .cerved_heart */
-  .cerved_heart path:nth-child(2) {
-    fill: #000;
-  }
+.cerved_heart {
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+}
 
-  .cerved_heart.redHeart path {
-    fill: #f00;
-  }
+/* Стиль для второго path внутри .cerved_heart */
+.cerved_heart path:nth-child(2) {
+  fill: #000;
+}
+
+.cerved_heart.redHeart path {
+  fill: #f00;
+}
+
 }
