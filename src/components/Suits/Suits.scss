@@ -1,0 +1,124 @@
+.Suits {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+
+  .container__Suits {
+    display: flex;
+
+    .suits_content {
+
+      .titleBlock {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 14px 150px;
+
+        .first_line {
+          display: flex;
+          color: var(--Accent1);
+          font-family: Neucha;
+          font-size: 54px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        .underTitle {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .second_line {
+            display: inline-flex;
+            flex-direction: row;
+            color: var(--MainBlack);
+            font-family: Montserrat;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+          }
+
+          .curved_line {
+            margin-left: 17px;
+            display: inline-flex;
+            flex-direction: row;
+            width: 65px;
+            height: 15px;
+          }
+        }
+      }
+
+      .cards {
+        position: relative;
+
+        .Price1899_suit_1 {
+          display: flex;
+          position: absolute;
+          left: 29px;
+          top: 100px;
+        }
+
+        .Price899_suit_1 {
+          display: flex;
+          position: absolute;
+          left: 231px;
+          top: 327px;
+        }
+
+        .Price1899_suit_2 {
+          display: flex;
+          position: absolute;
+          left: 385px;
+          top: 260px;
+        }
+
+        .Price899_suit_2 {
+          display: flex;
+          position: absolute;
+          left: 583px;
+          top: 65px;
+        }
+
+        .Price1899_suit_3 {
+          display: flex;
+          position: absolute;
+          left: 756px;
+          top: 132px;
+        }
+
+        .Price899_suit_3 {
+          display: flex;
+          position: absolute;
+          left: 960px;
+          top: 303px;
+        }
+
+        .Price1899_suit_4 {
+          display: flex;
+          position: absolute;
+          left: 1148px;
+          top: 394px;
+
+        }
+
+        .Price899_suit_4 {
+          display: flex;
+          position: absolute;
+          left: 1121px;
+          top: 176px;
+        }
+      }
+
+      /* Кнопка "Смотреть" */
+      .button {
+        align-self: flex-end;
+        margin: 27px auto 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

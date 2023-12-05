@@ -63,3 +63,10 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.container__Suits {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}

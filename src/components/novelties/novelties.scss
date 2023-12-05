@@ -4,16 +4,13 @@
   align-items: center;
 
   .container__novelties {
-
     .titleBlock {
-      padding-left: 180px;
+      margin-left: 150px;
       display: flex;
-      align-self: flex-start;
       flex-direction: column;
 
       .first_novelties {
         display: flex;
-        /*align-self: flex-start;*/
         color: var(--Accent1);
         font-family: Neucha;
         font-size: 54px;
@@ -44,51 +41,27 @@
           flex-direction: row;
           width: 65px;
           height: 15px;
+          margin-left: 17px;
         }
-      }
-
-      .underTitle :last-child {
-        margin-left: 17px;
       }
     }
 
     /* для карточек*/
     .novelties_card {
-      display: inline-flex;
-      justify-content: space-between;
-      сolumn-gap: 10px;
-      padding-bottom: 27px;
+      display: flex;
+      flex-direction: row;
+      padding-top: 27px;
     }
 
     /* Кнопка "Смотреть" */
     .button {
-      user-select: none;
+      align-self: flex-end;
+      margin: 27px auto 0 auto;
       display: flex;
-      flex-direction: column;
-      align-self: center;
+      align-items: center;
       justify-content: center;
-      width: 180px;
-      height: 50px;
-
-      img {
-        width: 180px;
-        height: 50px;
-        z-index: -1;
-      }
-
-      p {
-        display: flex;
-        align-self: center;
-        position: absolute;
-        color: var(--White);
-        font-family: Neucha;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-transform: uppercase;
-      }
     }
+
   }
 }
 

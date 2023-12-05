@@ -1,32 +1,18 @@
 .TopGoods {
-  padding: 15px 0;
+  padding: 15px 0 60px;
+  display: flex;
+  justify-content: center;
 
   .container_TopGoods {
-    display: flex; // Активируем Flexbox
-    justify-content: center; // Центрируем содержимое по горизонтали
-    align-items: flex-start; // Выравниваем элементы по верхнему краю
-    max-width: 1920px; // Ограничиваем максимальную ширину контейнера
-    margin: 0 auto; // Центрируем контейнер
+    display: flex;
+    flex-direction: column;
 
     .content_TopGoods {
-      display: flex; // Активируем Flexbox для внутреннего контента
-      width: 100%; // Занимает всю ширину родительского контейнера
+      display: flex;
+      width: 100%;
 
-      // Колонка для двух вертикально стопленных карточек
+      //Колонка для двух вертикально стопленных карточек
       .vertical-cards {
-        display: flex;
-        flex-direction: column; // Элементы располагаются вертикально
-        gap: 20px; // Пространство между карточками
-        align-items: flex-start; // Выравниваем элементы по левому краю
-        width: 274px;
-        height: 300px;
-
-        .Card {
-          max-width: 370px; // Ширина карточек
-          max-height: 600px;
-          margin-bottom: 20px; // Отступ между карточками
-          // Другие стили карточки, если требуется
-        }
       }
 
       // Баннер, растянутый по вертикали
@@ -36,13 +22,14 @@
         margin: 0 20px; // Отступы с обеих сторон баннера
         // Другие стили баннера, если требуется
       }
+    }
 
-      // Правая карточка товара
-      .RightCard {
-        width: 370px; // Ширина карточки
-        align-self: flex-start; // Выравниваем карточку по верхнему краю, чтобы соответствовать верхней левой карточке
-        // Другие стили карточки, если требуется
-      }
+    .SeeAllred {
+      display: flex;
+      justify-content: center;
+      margin: 27px auto 0 auto;
+      width: 180px;
+      height: 50px;
     }
   }
 }

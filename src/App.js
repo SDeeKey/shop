@@ -5,6 +5,7 @@ import NewCollection from "./components/NewCollection/NewCollection.jsx";
 import Location from "./components/location/location.jsx";
 import Ticker from "./components/Ticker/Ticker.jsx";
 import TopGoods from "./components/TopGoods/TopGoods.jsx";
+import Suits from "./components/Suits/Suits";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
             <Location/>
             <Ticker/>
             <TopGoods/>
+            <Suits/>
         </div>
     );
 }
