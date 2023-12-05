@@ -1,0 +1,114 @@
+.Instagram {
+  display: flex;
+  margin-bottom: 60px;
+  justify-content: center;
+
+  .container_Instagram {
+
+    .content_Instagram {
+      display: flex;
+      position: relative;
+
+      .header_instagram {
+
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: flex-start;
+        margin: 22px auto auto 13.5px;
+
+        .upperText_header {
+
+
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-content: flex-start;
+
+          color: var(--MainBlack);
+          font-family: Neucha;
+          font-size: 54px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+
+        .lowerText_header {
+          display: flex;
+          color: var(--MainBlack);
+          font-family: Montserrat;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+
+
+      .ForInst_1 {
+        display: flex;
+        margin: 0;
+        align-self: flex-end;
+      }
+
+      .ForInst_2 {
+        display: flex;
+        margin: 0 0 0 6px;
+        align-self: flex-end;
+      }
+
+      .ForInst_3 {
+        display: flex;
+        margin: 18px 0 0 6px;
+        align-self: flex-end;
+      }
+
+      .ForInst_4 {
+        display: flex;
+        margin: 18px 0 0 6px;
+        align-self: flex-start;
+      }
+
+      .ForInst_5 {
+        display: flex;
+        margin: 18px 0 0 6px;
+        align-self: flex-start;
+      }
+
+      .footer_instagram {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-end;
+        margin: auto auto 4px 0;
+
+
+        .upperText_footer {
+
+          color: var(--Accent2);
+          font-family: Montserrat;
+          font-size: 42px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+
+        .lowerText_footer {
+          margin-left: 94px;
+          color: var(--MainBlack);
+          font-family: Montserrat;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+    }
+  }
+}
+
+

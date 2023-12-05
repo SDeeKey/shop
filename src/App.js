@@ -6,6 +6,9 @@ import Location from "./components/location/location.jsx";
 import Ticker from "./components/Ticker/Ticker.jsx";
 import TopGoods from "./components/TopGoods/TopGoods.jsx";
 import Suits from "./components/Suits/Suits";
+import Usp from "./components/Usp/Usp";
+import Instagram from "./components/Instagram/Instagram";
+import Footer from "./components/footer/footer";
 
 function App() {
     return (
@@ -18,6 +21,9 @@ function App() {
             <Ticker/>
             <TopGoods/>
             <Suits/>
+            <Usp/>
+            <Instagram/>
+            <Footer/>
         </div>
     );
 }

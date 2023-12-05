@@ -70,3 +70,16 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.container_Usp {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.container_footer {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
