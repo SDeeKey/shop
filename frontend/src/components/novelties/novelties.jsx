@@ -1,10 +1,10 @@
 import Card from '../card/Card.jsx';
-import curved_line from './../../img/lines/curved line.svg'
-import SeeAll from './../../img/btn/SeeAll.png'
-import Sweatshirt from './../../img/clothes/Sweatshirt.png'
-import sheer_dress from './../../img/clothes/sheer_dress.png'
-import bomber_jacket from './../../img/clothes/bomber_jacket.png'
-import T_shirt_dress from './../../img/clothes/T-shirt_dress.png'
+import curved_line from '../../img/lines/curved line.svg'
+import SeeAll from '../../img/btn/SeeAll.png'
+import Sweatshirt from '../../img/clothes/Sweatshirt.png'
+import sheer_dress from '../../img/clothes/sheer_dress.png'
+import bomber_jacket from '../../img/clothes/bomber_jacket.png'
+import T_shirt_dress from '../../img/clothes/T-shirt_dress.png'
 import './novelties.scss';
 
 function Novelties() {

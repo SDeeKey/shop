@@ -1,7 +1,7 @@
 import './Usp.scss'
-import Cat from './../../img/icon/Cat.png'
-import Box from './../../img/icon/wing_box.png'
-import Needle_heart from './../../img/icon/needle_heart.png'
+import Cat from '../../img/icon/Cat.png'
+import Box from '../../img/icon/wing_box.png'
+import Needle_heart from '../../img/icon/needle_heart.png'
 
 
 function Usp() {

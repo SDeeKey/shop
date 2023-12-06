@@ -70,23 +70,23 @@
             margin-right: 33px;
           }
 
-          .bagItem :hover, .bagItem :active{
+          .bagItem :hover, .bagItem :active {
             transform: scale(1.5);
-            
+
           }
-          .shop_cart{
+
+          .shop_cart {
             z-index: 5;
             display: flex;
             position: absolute;
             top: 50px;
             right: 30px;
-            width: 450px;
-            min-height: 300px;
+            width: 518px;
+            min-height: 500px;
             background-color: var(--White);
             border-radius: 25px;
-            //opacity: 50%;
 
-            box-shadow: 4px 5px 15px -7px #656565;
+            box-shadow: 4px 5px 20px -7px #656565;
 
           }
         }

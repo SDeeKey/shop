@@ -1,12 +1,12 @@
 import './location.scss'
-import booriva from './../../img/randimg/booriva_location.png'
-import Line_S from './../../img/lines/line_S.svg'
-import Line from './../../img/lines/Line.svg'
-import Heart_location from './../../img/lines/heart_location.svg'
-import Wavy_line from './../../img/lines/wavy_line.svg'
-import Arrow from './../../img/lines/arrow.svg'
-import Arc from './../../img/lines/arc.svg'
-import Brush_effect_t_shirt from './../../img/clothes/brush_effect_t_shirt.svg'
+import booriva from '../../img/randimg/booriva_location.png'
+import Line_S from '../../img/lines/line_S.svg'
+import Line from '../../img/lines/Line.svg'
+import Heart_location from '../../img/lines/heart_location.svg'
+import Wavy_line from '../../img/lines/wavy_line.svg'
+import Arrow from '../../img/lines/arrow.svg'
+import Arc from '../../img/lines/arc.svg'
+import Brush_effect_t_shirt from '../../img/clothes/brush_effect_t_shirt.svg'
 
 import GoogleMapLocation from "../GoogleMap/GoogleMap.jsx";
 

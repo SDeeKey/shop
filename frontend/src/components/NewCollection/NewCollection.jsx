@@ -1,5 +1,5 @@
 import './NewCollection.scss'
-import Banner from './../../img/randimg/Banner.svg'
+import Banner from '../../img/randimg/Banner.svg'
 
 function NewCollection() {
     return (

@@ -1,12 +1,12 @@
 import './Suits.scss'
 import curved_line from "../../img/lines/curved line.svg";
-import Suit_1 from './../../img/randimg/Suit_1.png'
-import Suit_2 from './../../img/randimg/Suit_2.png'
-import Suit_3 from './../../img/randimg/Suit_3.png'
-import Suit_4 from './../../img/randimg/Suit_4.png'
+import Suit_1 from '../../img/randimg/Suit_1.png'
+import Suit_2 from '../../img/randimg/Suit_2.png'
+import Suit_3 from '../../img/randimg/Suit_3.png'
+import Suit_4 from '../../img/randimg/Suit_4.png'
 import SeeAll from "../../img/btn/SeeAll.png";
-import Price1899 from './../../img/icon/1899.png'
-import Price899 from './../../img/icon/899.png'
+import Price1899 from '../../img/icon/1899.png'
+import Price899 from '../../img/icon/899.png'
 
 
 function Suits() {

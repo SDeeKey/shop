@@ -1,16 +1,16 @@
 import './categories.scss';
-import t_shirt from './../../img/clothes/T_shirt.svg';
-import dress from './../../img/clothes/dress.svg';
-import suit from './../../img/clothes/suit.svg';
-import bottom from './../../img/clothes/bottom.svg';
-import outerwear from './../../img/clothes/outerwear.svg';
-import hoodie from './../../img/clothes/hoodie.svg';
-import brush_t_shirt from './../../img/clothes/brush_effect_t_shirt.svg'
-import brush_dress from './../../img/clothes/brush_effect_dress.svg'
-import brush_suit from './../../img/clothes/brush_effect_suit.svg'
-import brush_bottom from './../../img/clothes/brush_effect_bottom.svg'
-import brush_outerwear from './../../img/clothes/brush_effect_outerwear.svg'
-import brush_hoodie from './../../img/clothes/brush_effect_hoodie.svg'
+import t_shirt from '../../img/clothes/T_shirt.svg';
+import dress from '../../img/clothes/dress.svg';
+import suit from '../../img/clothes/suit.svg';
+import bottom from '../../img/clothes/bottom.svg';
+import outerwear from '../../img/clothes/outerwear.svg';
+import hoodie from '../../img/clothes/hoodie.svg';
+import brush_t_shirt from '../../img/clothes/brush_effect_t_shirt.svg'
+import brush_dress from '../../img/clothes/brush_effect_dress.svg'
+import brush_suit from '../../img/clothes/brush_effect_suit.svg'
+import brush_bottom from '../../img/clothes/brush_effect_bottom.svg'
+import brush_outerwear from '../../img/clothes/brush_effect_outerwear.svg'
+import brush_hoodie from '../../img/clothes/brush_effect_hoodie.svg'
 
 function Categories() {
 

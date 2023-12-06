@@ -16,7 +16,7 @@ L.Icon.Default.mergeOptions({
 });
 
 const customIcon = new L.Icon({
-    iconUrl: require('./../../img/icon/marker.png'), // Замените на URL вашей иконки маркера
+    iconUrl: require('../../img/icon/marker.png'), // Замените на URL вашей иконки маркера
     // iconRetinaUrl: 'marker-icon-2x.png', // Опционально для ретина-дисплеев
     // shadowUrl: 'marker-shadow.png', // Опционально тень для иконки
     iconSize: [30, 30], // Размер иконки

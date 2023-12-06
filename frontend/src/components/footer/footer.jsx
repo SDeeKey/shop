@@ -1,8 +1,8 @@
 import './footer.scss'
-import logo_footer from './../../img/icon/logo_red.png'
-import inst_Icon from './../../img/icon/instagram_Icon 1.svg'
-import facebook_Icon from './../../img/icon/facebook_Icon 1.svg'
-import feedback_img from './../../img/icon/feedback_img.png'
+import logo_footer from '../../img/icon/logo_red.png'
+import inst_Icon from '../../img/icon/instagram_Icon 1.svg'
+import facebook_Icon from '../../img/icon/facebook_Icon 1.svg'
+import feedback_img from '../../img/icon/feedback_img.png'
 
 
 function Footer() {

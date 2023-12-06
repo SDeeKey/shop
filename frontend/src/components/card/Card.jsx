@@ -1,6 +1,6 @@
 import styles from './Card.module.scss';
 import React, {useState, useEffect} from 'react';
-import {ReactComponent as Heart} from './../../img/lines/cerved_heart_red.svg'
+import {ReactComponent as Heart} from '../../img/lines/cerved_heart_red.svg'
 
 const Card = (props) => {
     const [isRedHeart, setIsRedHeart] = useState(false);

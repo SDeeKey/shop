@@ -1,9 +1,9 @@
 import './Instagram.scss'
-import ForInst_1 from './../../img/randimg/ForInst_1.png'
-import ForInst_2 from './../../img/randimg/ForInst_2.png'
-import ForInst_3 from './../../img/randimg/ForInst_3.png'
-import ForInst_4 from './../../img/randimg/ForInst_4.png'
-import ForInst_5 from './../../img/randimg/ForInst_5.png'
+import ForInst_1 from '../../img/randimg/ForInst_1.png'
+import ForInst_2 from '../../img/randimg/ForInst_2.png'
+import ForInst_3 from '../../img/randimg/ForInst_3.png'
+import ForInst_4 from '../../img/randimg/ForInst_4.png'
+import ForInst_5 from '../../img/randimg/ForInst_5.png'
 
 
 function Instagram() {

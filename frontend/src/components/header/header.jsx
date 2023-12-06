@@ -1,11 +1,11 @@
-import logoImg from './../../img/icon/logo.svg'
-import locationItem from './../../img/icon/location-item.svg'
-import phoneItem from './../../img/icon/phone-item.svg'
-import searchItem from './../../img/icon/search-item.svg'
-import heartItem from './../../img/icon/heart-item.svg'
-import bagItem from './../../img/icon/shopping-bag-item.svg'
+import logoImg from '../../img/icon/logo.svg'
+import locationItem from '../../img/icon/location-item.svg'
+import phoneItem from '../../img/icon/phone-item.svg'
+import searchItem from '../../img/icon/search-item.svg'
+import heartItem from '../../img/icon/heart-item.svg'
+import bagItem from '../../img/icon/shopping-bag-item.svg'
 import './header.scss'
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 
 function Header() {
     let [cartOpen, setCartOpen] = useState(false)
@@ -26,7 +26,8 @@ function Header() {
                         <img className='searchIcon' src={searchItem} alt='searchItem'></img>
                         <a href='#!'>Поиск</a>
                         <img className='heartItem' src={heartItem} alt='heartItem'></img>
-                        <img className={`bagItem ${cartOpen && 'active'}`} onClick={() => setCartOpen(cartOpen = !cartOpen)} src={bagItem} alt='bagItem'></img>
+                        <img className={`bagItem ${cartOpen && 'active'}`}
+                             onClick={() => setCartOpen(cartOpen = !cartOpen)} src={bagItem} alt='bagItem'></img>
 
                         {cartOpen && (
                             <div className="shop_cart">

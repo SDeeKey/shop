@@ -1,6 +1,6 @@
 import React from 'react';
 import './TopGoods.scss';
-import Banner from './../../img/randimg/TopGoods_Banner.png';
+import Banner from '../../img/randimg/TopGoods_Banner.png';
 import Card from "../card/Card";
 import bomber_jacket from "../../img/clothes/bomber_jacket.png";
 import T_shirt_dress from "../../img/clothes/T-shirt_dress.png";
