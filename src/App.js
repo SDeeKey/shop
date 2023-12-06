@@ -10,22 +10,38 @@ import Usp from "./components/Usp/Usp";
 import Instagram from "./components/Instagram/Instagram";
 import Footer from "./components/footer/footer";
 
-function App() {
-    return (
-        <div className="App">
-            <Header/>
-            <Categories/>
-            <Novelties/>
-            <NewCollection/>
-            <Location/>
-            <Ticker/>
-            <TopGoods/>
-            <Suits/>
-            <Usp/>
-            <Instagram/>
-            <Footer/>
-        </div>
-    );
+import React from 'react'
+
+class App extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            items: [{
+                id: 1,
+                title: 'Свитшот вставка клетка',
+                img: 'Sweatshirt.png',
+                price: '1099'
+            }
+            ]
+        }
+    }
+    render() {
+        return (
+            <div className="App">
+                <Header/>
+                <Categories/>
+                <Novelties/>
+                <NewCollection/>
+                <Location/>
+                <Ticker/>
+                <TopGoods/>
+                <Suits/>
+                <Usp/>
+                <Instagram/>
+                <Footer/>
+            </div>
+        );
+    }
 }
 
 export default App;

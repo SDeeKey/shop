@@ -5,8 +5,12 @@ import searchItem from './../../img/icon/search-item.svg'
 import heartItem from './../../img/icon/heart-item.svg'
 import bagItem from './../../img/icon/shopping-bag-item.svg'
 import './header.scss'
+import React, { useState } from 'react'
 
 function Header() {
+    let [cartOpen, setCartOpen] = useState(false)
+
+
     return <header className='header'>
         <div className='container'>
             <div className='header_row'>
@@ -22,7 +26,13 @@ function Header() {
                         <img className='searchIcon' src={searchItem} alt='searchItem'></img>
                         <a href='#!'>Поиск</a>
                         <img className='heartItem' src={heartItem} alt='heartItem'></img>
-                        <img className='bagItem' src={bagItem} alt='bagItem'></img>
+                        <img className={`bagItem ${cartOpen && 'active'}`} onClick={() => setCartOpen(cartOpen = !cartOpen)} src={bagItem} alt='bagItem'></img>
+
+                        {cartOpen && (
+                            <div className="shop_cart">
+
+                            </div>
+                        )}
                     </div>
                 </div>
                 <nav className='header_nav'>
