@@ -11,9 +11,12 @@ import Instagram from "./components/Instagram/Instagram";
 import Footer from "./components/footer/footer";
 
 import React, {useState, useEffect} from 'react'
+import BackContext from "./components/novelties/backContext";
+// import Basket from "./components/Basket/Basket";
 
 function App() {
     const [data, setData] = useState(null);
+    const [showBackground, setShowBackground] = useState(false)
     const [items, setItems] = useState([{
         id: 1,
         title: 'Свитшот вставка клетка',
@@ -27,10 +30,13 @@ function App() {
             .then(data => setData(data.message));
     }, []);
 
-
+    console.log("IN APP "+showBackground)
     return (
         <div className="App">
-            <Header/>
+            {/*<Basket/>*/}
+            <BackContext.Provider value={{showBackground,setShowBackground}}>
+                <Header/>
+            </BackContext.Provider>
             <Categories/>
             <Novelties/>
             <NewCollection/>
