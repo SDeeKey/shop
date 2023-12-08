@@ -1,12 +1,19 @@
-import React, {useState} from "react";
-import "./Basket.css";
+import React from 'react';
+import {Modal, Button} from 'react-bootstrap';
+import './Basket.scss'
 
-export default function Basket() {
+function Basket({isOpen, closeModal}) {
     return (
-        <div className="Basket">
-            <div className="popup">
-                <p className='textBasket'>Basket</p>
-            </div>
-        </div>
+        <Modal show={isOpen} onHide={closeModal}>
+            <Modal.Header closeButton>
+                <Modal.Title>Заголовок модального окна</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>Текст внутри модального окна...</Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={closeModal}>Закрыть</Button>
+            </Modal.Footer>
+        </Modal>
     );
 }
+
+export default Basket;

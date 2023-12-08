@@ -5,101 +5,90 @@ import searchItem from '../../img/icon/search-item.svg'
 import heartItem from '../../img/icon/heart-item.svg'
 import bagItem from '../../img/icon/shopping-bag-item.svg'
 import './header.scss'
-import Basket from '../../components/Basket/Basket'
-import React, {useContext, useState} from 'react'
-import BackContext from "../novelties/backContext";
+import React, {useState} from 'react';
+import Basket from './../Basket/Basket'
+import {Link, NavLink, Routes} from "react-router-dom";
+import {useSelector} from "react-redux";
 
-function Header() {
-    // let [cartOpen, setCartOpen] = useState(false)
-    const sH = useContext(BackContext)
-    const [showBasket, setShowBasket] = useState(false)
 
-    const toggleBasket = () => {
-        setShowBasket(prevState => !prevState);
+const Header = () => {
+    // const [isModalOpen, setModalOpen] = useState(false);
+    // const toggleModal = () => setModalOpen(!isModalOpen);
+    const {list} = useSelector(({categories}) => categories)
 
-        // if (showBasket? <Basket/> : <Basket/>
-        // else { }
+    // Состояние для управления вводом в поле поиска
+    const [searchInput, setSearchInput] = useState('');
+
+    // Функция для обновления состояния ввода
+    const handleInputChange = (event) => {
+        setSearchInput(event.target.value);
     };
 
 
-    // $(document).ready(function($) {
-    //     $('.bagItem').click(function() {
-    //         $('.background').fadeIn();
-    //         return false;
-    //     });
-    //
-    //     $('.bagItem').click(function() {
-    //         $(this).parents('.background').fadeOut();
-    //         return false;
-    //     });
-    //
-    //     $(document).keydown(function(e) {
-    //         if (e.keyCode === 27) {
-    //             e.stopPropagation();
-    //             $('.background').fadeOut();
-    //         }
-    //     });
-    //
-    //     $('.background').click(function(e) {
-    //         if ($(e.target).closest('.shop_cart').length == 0) {
-    //             $(this).fadeOut();
-    //         }
-    //     });
-    // });
+    return (
+        <header className='header'>
+            <div className='container'>
+                <div className='header_row'>
+                    <div className="firstLine">
+                        <div className='contacts_nav'>
+                            <img className='locationItem' src={locationItem} alt='locationItem'></img>
+                            <a href='#!'>Киев, Нижний вал, 37</a>
+                            <img className='phoneItem' src={phoneItem} alt='phoneItem'></img>
+                            <a href='#!'>+38 063 843 34 71</a>
+                        </div>
+                        <div className="logo">
+                            <Link to={Routes.HOME}>
+                                <img className='header_logo' src={logoImg} alt='logo'></img>
+                            </Link>
+                        </div>
+                        <div className='searchItems'>
+                            <Link to={Routes.HOME}>
+                                <img className='searchIcon' src={searchItem} alt='searchItem'/>
+                            </Link>
+                            <div className="input">
+                                <input type="Поиск"
+                                       name='search'
+                                       placeholder='Поиск'
+                                       autoComplete='off'
+                                       onChange={handleInputChange}
+                                       value={searchInput}
 
-
-    return <header className='header'>
-        <div className='container'>
-            <div className='header_row'>
-                <div className="firstLine">
-                    <div className='contacts_nav'>
-                        <img className='locationItem' src={locationItem} alt='locationItem'></img>
-                        <a href='#!'>Киев, Нижний вал, 37</a>
-                        <img className='phoneItem' src={phoneItem} alt='phoneItem'></img>
-                        <a href='#!'>+38 063 843 34 71</a>
+                                />
+                            </div>
+                            {/* для выпадающего окна поиска*/}
+                            {/*{false && <div className="box"></div>}*/}
+                            <Link to={Routes.HOME} className='favourites'>
+                                <img className='heartItem' src={heartItem} alt='heartItem'></img>
+                            </Link>
+                            <Link to={Routes.CART} className='cart'>
+                                <img className={`bagItem`}
+                                     style={{cursor: 'pointer'}}
+                                    // onClick={toggleModal}
+                                     src={bagItem}
+                                     alt='bagItem'/>
+                            </Link>
+                            <span className='count'>2</span>
+                        </div>
                     </div>
-                    <img className='header_logo' src={logoImg} alt='logo'></img>
-                    <div className='searchItems'>
-                        <img className='searchIcon' src={searchItem} alt='searchItem'></img>
-                        <a href='#!'>Поиск</a>
-                        <img className='heartItem' src={heartItem} alt='heartItem'></img>
-                        {/*<div className="background"></div>*/}
-                        {/*<img className={`bagItem ${cartOpen && 'active'}`}*/}
-                        {/*     onClick={() => setCartOpen(cartOpen = !cartOpen)} src={bagItem} alt='bagItem'></img>*/}
+                    {/*<Basket isOpen={isModalOpen} closeModal={toggleModal}/>*/}
+                    <nav className='header_nav'>
+                        <ul>
+                            {list.map(({id, name}) => (
+                                <li key={id}>
+                                    <NavLink
+                                        className={({isActive}) =>
+                                            `link ${isActive ? 'active' : ""}`}
+                                        to={`/categories/${id}`}>{name}</NavLink>
+                                </li>
+                            ))}
 
-                        {/*{cartOpen && (*/}
-                        {/*    <div className="shop_cart">*/}
-
-                        {/*    </div>*/}
-                        {/*)}*/}
-                        <img className={`bagItem`}
-                             onClick={e=> {
-                                 toggleBasket();
-                                 sH.setShowBackground(!sH.showBackground)
-                                 console.log((showBasket?"TRUE":"FALSE"))
-                             }}
-                             src={bagItem}
-                             alt='bagItem'>
-                        </img>
-
-                    </div>
+                        </ul>
+                    </nav>
+                    <div className='line'></div>
                 </div>
-                <nav className='header_nav'>
-                    <ul>
-                        <li><a href='#!'>НОВИНКИ</a></li>
-                        <li><a href='#!'>ПЛАТЬЯ</a></li>
-                        <li><a href='#!'>ВЕРХ</a></li>
-                        <li><a href='#!'>НИЗ</a></li>
-                        <li><a href='#!'>КУРТКИ</a></li>
-                        <li><a href='#!'>МЕЛОЧИ</a></li>
-                        <li><a href='#!'>КОСТЮМЫ</a></li>
-                        <li><a href='#!'>#BOORIVAGIRLS</a></li>
-                    </ul>
-                </nav>
-                <div className='line'></div>
             </div>
-        </div>
-    </header>
+        </header>
+    )
 }
 
 export default Header;

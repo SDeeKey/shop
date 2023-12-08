@@ -8,7 +8,7 @@ app.listen(PORT, () => {
     console.log('Server started on port ${PORT}')
 })
 
-app.get('/api', (req, res) => {
+app.get('/api1', (req, res) => {
     res.json({
         message: "Hello from backend express.js"
     })
