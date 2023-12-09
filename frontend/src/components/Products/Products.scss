@@ -1,0 +1,130 @@
+.products {
+  .list {
+    //border: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .product {
+      border: 1px solid #000;
+      user-select: none;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      align-content: flex-start;
+
+      .image {
+        z-index: 2;
+        margin: 0 5px auto 5px;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      .image:hover {
+        animation: opacity 0.2s ease-in-out;
+      }
+
+      @keyframes opacity {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+
+      /* Подчеркивание картинки */
+      .underline {
+        border: 1px solid var(--Accent1);
+        bottom: 0;
+        left: 20px;
+        width: 90%;
+      }
+
+      .heart_icon {
+        z-index: 3;
+        display: inline-flex;
+        position: absolute;
+        width: 26px;
+        height: 24px;
+        right: 20px;
+        top: 20px;
+
+        .cerved_heart {
+          position: absolute;
+          z-index: 2;
+          cursor: pointer;
+        }
+
+        /* Стиль для второго path внутри .cerved_heart */
+        .cerved_heart path:nth-child(2) {
+          fill: #000;
+        }
+
+        .cerved_heart.redHeart path {
+          fill: #f00;
+        }
+      }
+
+      //:nth-child(5n) {
+      //  width: calc(100% / 5);
+      //}
+
+      .wrapper {
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+
+        .title {
+          //border: 1px solid #000;
+
+
+          align-self: flex-start;
+          justify-self: flex-start;
+          margin: 5% 0 0 5%;
+          max-width: 212px;
+          max-height: fit-content;
+          color: var(--MainBlack);
+          font-family: Montserrat;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-align: left;
+        }
+
+        .price {
+          //border: 1px solid #000;
+          justify-self: flex-end;
+          margin: 5% 5% 0 auto;
+          padding-left: 5%;
+          color: var(--Accent1);
+          font-variant-numeric: lining-nums tabular-nums;
+          font-family: Montserrat;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          white-space: nowrap;
+        }
+
+      }
+    }
+  }
+}
+
+@media (max-width: 274px) {
+  .Card .card_body .card_title {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+
+  }
+}

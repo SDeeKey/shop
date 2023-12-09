@@ -1,6 +1,6 @@
 /* Вся карточка */
 .Card {
-  //border: 1px solid #000;
+  border: 1px solid #000;
   user-select: none;
   display: flex;
   position: relative;
@@ -45,7 +45,6 @@
     border: 1px solid var(--Accent1);
     bottom: 0;
     left: 20px;
-    //width: 320px;
     width: 90%;
   }
 

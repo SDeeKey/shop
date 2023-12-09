@@ -1,5 +1,7 @@
 .categories {
   margin: 15px 0 60px;
+  display: flex;
+  justify-content: center;
 
   .container__categories {
     display: flex;

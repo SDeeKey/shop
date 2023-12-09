@@ -77,12 +77,8 @@ const Card = (props) => {
             {/* Контейнер для всего описания */}
             <div className={styles.card_body}>
                 {/* Контейнер для текста описания */}
-                <div className={styles.card_title}>
-                    {props.title}
-                </div>
-                <div className={styles.card_price}>
-                    {props.price} ₴
-                </div>
+                <div className={styles.card_title}>{props.title}</div>
+                <div className={styles.card_price}>{props.price} ₴</div>
             </div>
         </div>
     );
