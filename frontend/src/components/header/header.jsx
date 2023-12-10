@@ -7,8 +7,9 @@ import bagItem from '../../img/icon/shopping-bag-item.svg'
 import './header.scss'
 import React, {useState} from 'react';
 import Basket from './../Basket/Basket'
-import {Link, NavLink, Routes} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {useSelector} from "react-redux";
+import {ROUTES} from "../../utils/routes";
 
 
 const Header = () => {
@@ -37,12 +38,12 @@ const Header = () => {
                             <a href='#!'>+38 063 843 34 71</a>
                         </div>
                         <div className="logo">
-                            <Link to={Routes.HOME}>
+                            <Link to={ROUTES.HOME}>
                                 <img className='header_logo' src={logoImg} alt='logo'></img>
                             </Link>
                         </div>
                         <div className='searchItems'>
-                            <Link to={Routes.HOME}>
+                            <Link to={ROUTES.HOME}>
                                 <img className='searchIcon' src={searchItem} alt='searchItem'/>
                             </Link>
                             <div className="input">
@@ -57,10 +58,10 @@ const Header = () => {
                             </div>
                             {/* для выпадающего окна поиска*/}
                             {/*{false && <div className="box"></div>}*/}
-                            <Link to={Routes.HOME} className='favourites'>
+                            <Link to={ROUTES.HOME} className='favourites'>
                                 <img className='heartItem' src={heartItem} alt='heartItem'></img>
                             </Link>
-                            <Link to={Routes.CART} className='cart'>
+                            <Link to={ROUTES.CART} className='cart'>
                                 <img className={`bagItem`}
                                      style={{cursor: 'pointer'}}
                                     // onClick={toggleModal}

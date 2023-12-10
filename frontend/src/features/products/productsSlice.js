@@ -17,6 +17,20 @@ export const getProducts = createAsyncThunk(
     }
 );
 
+// Создаем async thunk для получения деталей продукта
+export const fetchProductDetails = createAsyncThunk(
+    'products/fetchProductDetails',
+    async (productId, {rejectWithValue}) => {
+        try {
+            const response = await axios.get(`${BASE_URL}/products/${productId}`);
+            return response.data;
+        } catch (error) {
+            return rejectWithValue(error.response.data);
+        }
+    }
+);
+
+
 const productsSlice = createSlice({
     name: "products",
     initialState: {
@@ -115,6 +129,19 @@ const productsSlice = createSlice({
         });
         builder.addCase(getProducts.rejected, (state) => {
             state.isLoading = false;
+        });
+
+        builder.addCase(fetchProductDetails.pending, (state) => {
+            state.isLoading = true;
+            state.error = null; // Сбрасываем ошибку при начале загрузки
+        });
+        builder.addCase(fetchProductDetails.fulfilled, (state, action) => {
+            state.productDetails = action.payload; // Сохраняем полученные детали продукта
+            state.isLoading = false;
+        });
+        builder.addCase(fetchProductDetails.rejected, (state, action) => {
+            state.isLoading = false;
+            state.error = action.payload; // Сохраняем ошибку при возникновении ошибки
         });
     },
 });

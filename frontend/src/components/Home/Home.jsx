@@ -22,7 +22,6 @@ const Home = () => {
             <Suits/>
             <Usp/>
             <Instagram/>
-
         </>
     );
 }

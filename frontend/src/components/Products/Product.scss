@@ -1,0 +1,85 @@
+//.product {
+//  border: 1px solid #000;
+//
+//  .contentProductPage {
+//    display: flex;
+//    max-width: 463px;
+//    max-height: 609px;
+//
+//    .frontImage {
+//      max-width: 100%; /* Максимальная ширина изображения будет равна ширине родителя */
+//      max-height: 100%; /* Максимальная высота изображения будет равна высоте родителя */
+//      object-fit: cover; /* Изображение будет заполнять элемент, сохраняя свои пропорции */
+//    }
+//  }
+//}
+
+
+//{
+//  id: 1,
+//  title: "Cвитшот вставка\n" +
+//                    "клетка",
+//  price: 1099,
+//  images: [
+//                    "https://i.ibb.co/wRs7MV8/Sweatshirt.png",
+//                ],
+//  creationAt: "2023-12-09T04:06:50.000Z",
+//  updatedAt: "2023-12-09T04:06:50.000Z",
+//  category: {
+//    id: 'new',
+//    name: "Новинки",
+//    creationAt: "2023-12-09T04:06:50.000Z",
+//    updatedAt: "2023-12-09T04:06:50.000Z"
+//  }
+//},
+//{
+//  id: 2,
+//  title: "Платье прозрачное\n" +
+//                    "в цветочек черное",
+//  price: 1299,
+//  images: [
+//                    "https://i.ibb.co/HNgqVct/sheer-dress.png",
+//                ],
+//  creationAt: "2023-12-09T04:06:50.000Z",
+//  updatedAt: "2023-12-09T04:06:50.000Z",
+//  category: {
+//    id: 'new',
+//    name: "Новинки",
+//    creationAt: "2023-12-09T04:06:50.000Z",
+//    updatedAt: "2023-12-09T04:06:50.000Z"
+//  }
+//},
+//{
+//  id: 3,
+//  title: "Бомбер Gone Crazy\n" +
+//                    "хаки",
+//  price: 2499,
+//  images: [
+//                    "https://i.ibb.co/VjbZSrZ/bomber-jacket.png",
+//                ],
+//  creationAt: "2023-12-09T04:06:50.000Z",
+//  updatedAt: "2023-12-09T04:06:50.000Z",
+//  category: {
+//    id: 'new',
+//    name: "Новинки",
+//    creationAt: "2023-12-09T04:06:50.000Z",
+//    updatedAt: "2023-12-09T04:06:50.000Z"
+//  }
+//},
+//{
+//  id: 4,
+//  title: "Платье-футболка рыбы\n" +
+//                    "в аквариуме",
+//  price: 899,
+//  images: [
+//                    "https://i.ibb.co/StfVht8/T-shirt-dress.png",
+//                ],
+//  creationAt: "2023-12-09T04:06:50.000Z",
+//  updatedAt: "2023-12-09T04:06:50.000Z",
+//  category: {
+//    id: 'new',
+//    name: "Новинки",
+//    creationAt: "2023-12-09T04:06:50.000Z",
+//    updatedAt: "2023-12-09T04:06:50.000Z"
+//  }
+//},

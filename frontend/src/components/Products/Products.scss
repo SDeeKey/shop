@@ -1,13 +1,11 @@
 .products {
   .list {
-    //border: 1px solid #000;
     display: flex;
     flex-direction: row;
     gap: 20px;
     flex-wrap: wrap;
 
     .product {
-      border: 1px solid #000;
       user-select: none;
       display: flex;
       position: relative;
