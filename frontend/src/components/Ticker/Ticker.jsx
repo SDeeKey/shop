@@ -8,7 +8,7 @@ const Ticker = () => {
     ));
 
     return (
-        <div className="ticker-container">
+        <div className="ticker_container">
             {items}
             
         </div>

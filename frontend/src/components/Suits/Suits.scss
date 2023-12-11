@@ -1,7 +1,8 @@
 .Suits {
+  margin: auto auto 60px auto;
   display: flex;
   justify-content: center;
-  margin-bottom: 60px;
+  width: 100%;
 
   .container__Suits {
     display: flex;
@@ -51,64 +52,112 @@
       }
 
       .cards {
-        position: relative;
-        width: 1440px;
+        display: flex;
+        justify-content: center;
 
-        .Price1899_suit_1 {
+        .Suit_1 {
+          position: relative;
           display: flex;
-          position: absolute;
-          left: 29px;
-          top: 100px;
+          width: 25%;
+          height: auto;
+
+          .Image_Suit_1 {
+            width: 100%;
+            position: relative;
+          }
+
+          .Price1899_suit_1 {
+            display: flex;
+            position: absolute;
+            left: 29px;
+            top: 100px;
+          }
+
+          .Price899_suit_1 {
+            display: flex;
+            position: absolute;
+            left: 231px;
+            top: 327px;
+          }
         }
 
-        .Price899_suit_1 {
+        .Suit_2 {
+          position: relative;
           display: flex;
-          position: absolute;
-          left: 231px;
-          top: 327px;
+          width: 25%;
+          height: auto;
+
+          .Image_Suit_2 {
+            width: 100%;
+            display: flex;
+          }
+
+          .Price1899_suit_2 {
+            display: flex;
+            position: absolute;
+            left: 45px;
+            top: 280px;
+          }
+
+          .Price899_suit_2 {
+            display: flex;
+            position: absolute;
+            left: 243px;
+            top: 85px;
+          }
         }
 
-        .Price1899_suit_2 {
+        .Suit_3 {
+          position: relative;
           display: flex;
-          position: absolute;
-          left: 385px;
-          top: 260px;
+          width: 25%;
+          height: auto;
+
+          .Image_Suit_3 {
+            width: 100%;
+            display: flex;
+          }
+
+          .Price1899_suit_3 {
+            display: flex;
+            position: absolute;
+            left: 56px;
+            top: 152px;
+          }
+
+          .Price899_suit_3 {
+            display: flex;
+            position: absolute;
+            left: 280px;
+            top: 343px;
+          }
         }
 
-        .Price899_suit_2 {
+        .Suit_4 {
+          position: relative;
           display: flex;
-          position: absolute;
-          left: 583px;
-          top: 65px;
-        }
+          width: 25%;
+          height: auto;
 
-        .Price1899_suit_3 {
-          display: flex;
-          position: absolute;
-          left: 756px;
-          top: 132px;
-        }
+          .Image_Suit_4 {
+            width: 100%;
+            display: flex;
+          }
 
-        .Price899_suit_3 {
-          display: flex;
-          position: absolute;
-          left: 960px;
-          top: 303px;
-        }
+          .Price1899_suit_4 {
+            display: flex;
+            position: absolute;
+            left: 68px;
+            top: 394px;
 
-        .Price1899_suit_4 {
-          display: flex;
-          position: absolute;
-          left: 1148px;
-          top: 394px;
+          }
 
-        }
-
-        .Price899_suit_4 {
-          display: flex;
-          position: absolute;
-          left: 1121px;
-          top: 176px;
+          .Price899_suit_4 {
+            display: flex;
+            position: absolute;
+            left: 61px;
+            top: 196px;
+          }
         }
       }
 

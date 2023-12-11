@@ -73,6 +73,7 @@ const productsSlice = createSlice({
 
                 images: [
                     "https://i.ibb.co/VjbZSrZ/bomber-jacket.png",
+
                 ],
                 creationAt: "2023-12-09T04:06:50.000Z",
                 updatedAt: "2023-12-09T04:06:50.000Z",

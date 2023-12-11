@@ -23,7 +23,6 @@ function Novelties() {
             <div className='novelties_card'>
                 {/* Конкретные карточки */}
                 <Products size="large" products={list} amount={4}/>
-
             </div>
             <div className='button'>
                 <img src={SeeAll} alt="SeeAll"/>

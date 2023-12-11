@@ -22,19 +22,26 @@ function Suits() {
                         </div>
                     </div>
                     <div className="cards">
-                        <img className='Suit_1' src={Suit_1} alt="Suit_1"/>
-                        <img className='Price1899_suit_1' src={Price1899} alt="Price1899"/>
-                        <img className='Price899_suit_1' src={Price899} alt="Price899"/>
-                        <img className='Suit_2' src={Suit_2} alt="Suit_2"/>
-                        <img className='Price1899_suit_2' src={Price1899} alt="Price1899"/>
-                        <img className='Price899_suit_2' src={Price899} alt="Price899"/>
-                        <img className='Suit_3' src={Suit_3} alt="Suit_3"/>
-                        <img className='Price1899_suit_3' src={Price1899} alt="Price1899"/>
-                        <img className='Price899_suit_3' src={Price899} alt="Price899"/>
-                        <img className='Suit_4' src={Suit_4} alt="Suit_4"/>
-                        <img className='Price1899_suit_4' src={Price1899} alt="Price1899"/>
-                        <img className='Price899_suit_4' src={Price899} alt="Price899"/>
-
+                        <div className="Suit_1" style={{backgroundImage: Suit_1}}>
+                            <img className='Image_Suit_1' src={Suit_1} alt="Suit_1"/>
+                            <img className='Price1899_suit_1' src={Price1899} alt="Price1899"/>
+                            <img className='Price899_suit_1' src={Price899} alt="Price899"/>
+                        </div>
+                        <div className="Suit_2" style={{backgroundImage: Suit_2}}>
+                            <img className='Image_Suit_2' src={Suit_2} alt="Suit_2"/>
+                            <img className='Price1899_suit_2' src={Price1899} alt="Price1899"/>
+                            <img className='Price899_suit_2' src={Price899} alt="Price899"/>
+                        </div>
+                        <div className="Suit_3" style={{backgroundImage: Suit_3}}>
+                            <img className='Image_Suit_3' src={Suit_3} alt="Suit_3"/>
+                            <img className='Price1899_suit_3' src={Price1899} alt="Price1899"/>
+                            <img className='Price899_suit_3' src={Price899} alt="Price899"/>
+                        </div>
+                        <div className="Suit_4" style={{backgroundImage: Suit_4}}>
+                            <img className='Image_Suit_4' src={Suit_4} alt="Suit_4"/>
+                            <img className='Price1899_suit_4' src={Price1899} alt="Price1899"/>
+                            <img className='Price899_suit_4' src={Price899} alt="Price899"/>
+                        </div>
 
                     </div>
                     <div className='button'>
