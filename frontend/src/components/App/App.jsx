@@ -17,7 +17,6 @@ const App = () => {
     useEffect(() => {
         dispatch(getCategories())
         dispatch(getProducts())
-        // dispatch(fetchProductDetails())
 
     }, [dispatch]);
 

@@ -1,85 +1,164 @@
-//.product {
-//  border: 1px solid #000;
-//
-//  .contentProductPage {
-//    display: flex;
-//    max-width: 463px;
-//    max-height: 609px;
-//
-//    .frontImage {
-//      max-width: 100%; /* Максимальная ширина изображения будет равна ширине родителя */
-//      max-height: 100%; /* Максимальная высота изображения будет равна высоте родителя */
-//      object-fit: cover; /* Изображение будет заполнять элемент, сохраняя свои пропорции */
-//    }
-//  }
-//}
+.product {
+  display: flex;
+  justify-content: center;
 
+  .contentProductPage {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    max-width: 1146px;
+    justify-content: center;
 
-//{
-//  id: 1,
-//  title: "Cвитшот вставка\n" +
-//                    "клетка",
-//  price: 1099,
-//  images: [
-//                    "https://i.ibb.co/wRs7MV8/Sweatshirt.png",
-//                ],
-//  creationAt: "2023-12-09T04:06:50.000Z",
-//  updatedAt: "2023-12-09T04:06:50.000Z",
-//  category: {
-//    id: 'new',
-//    name: "Новинки",
-//    creationAt: "2023-12-09T04:06:50.000Z",
-//    updatedAt: "2023-12-09T04:06:50.000Z"
-//  }
-//},
-//{
-//  id: 2,
-//  title: "Платье прозрачное\n" +
-//                    "в цветочек черное",
-//  price: 1299,
-//  images: [
-//                    "https://i.ibb.co/HNgqVct/sheer-dress.png",
-//                ],
-//  creationAt: "2023-12-09T04:06:50.000Z",
-//  updatedAt: "2023-12-09T04:06:50.000Z",
-//  category: {
-//    id: 'new',
-//    name: "Новинки",
-//    creationAt: "2023-12-09T04:06:50.000Z",
-//    updatedAt: "2023-12-09T04:06:50.000Z"
-//  }
-//},
-//{
-//  id: 3,
-//  title: "Бомбер Gone Crazy\n" +
-//                    "хаки",
-//  price: 2499,
-//  images: [
-//                    "https://i.ibb.co/VjbZSrZ/bomber-jacket.png",
-//                ],
-//  creationAt: "2023-12-09T04:06:50.000Z",
-//  updatedAt: "2023-12-09T04:06:50.000Z",
-//  category: {
-//    id: 'new',
-//    name: "Новинки",
-//    creationAt: "2023-12-09T04:06:50.000Z",
-//    updatedAt: "2023-12-09T04:06:50.000Z"
-//  }
-//},
-//{
-//  id: 4,
-//  title: "Платье-футболка рыбы\n" +
-//                    "в аквариуме",
-//  price: 899,
-//  images: [
-//                    "https://i.ibb.co/StfVht8/T-shirt-dress.png",
-//                ],
-//  creationAt: "2023-12-09T04:06:50.000Z",
-//  updatedAt: "2023-12-09T04:06:50.000Z",
-//  category: {
-//    id: 'new',
-//    name: "Новинки",
-//    creationAt: "2023-12-09T04:06:50.000Z",
-//    updatedAt: "2023-12-09T04:06:50.000Z"
-//  }
-//},
+    .upperBlock {
+      display: flex;
+
+      .imagesLeftBlock {
+        .frontImage {
+          max-width: 463px;
+          max-height: 609px;
+        }
+      }
+
+      .infoRightBlock {
+
+        .title {
+          color: var(--MainBlack);
+
+          font-family: Montserrat;
+          font-size: 36px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+
+        .price {
+          color: var(--Accent1);
+
+          font-variant-numeric: lining-nums tabular-nums;
+          font-family: Montserrat;
+          font-size: 42px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+
+        .sizes {
+
+          color: var(--MainBlack);
+
+          font-family: Montserrat;
+          font-size: 14px;
+          font-style: italic;
+          font-weight: 400;
+          line-height: normal;
+          list-style: none;
+
+          ul {
+            display: flex;
+
+            li {
+              margin-right: 46px;
+              display: flex;
+              border-top: 1px solid var(--MainBlack);
+              border-bottom: 1px solid var(--MainBlack);
+
+              color: var(--MainBlack);
+
+              text-align: center;
+              font-family: Montserrat;
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+          }
+        }
+
+        .addToCart {
+          margin: 20px auto 30px auto;
+
+        }
+
+        .quickOrder {
+          margin: 20px auto 30px 25px;
+        }
+
+        .description {
+          width: 473px;
+          height: 69px;
+          overflow: hidden; /* Обрезаем текст, который не помещается в заданные размеры */
+          //white-space: wrap; /* Запрещаем перенос текста на новую строку */
+          text-overflow: ellipsis;
+
+        }
+
+        .line {
+          width: 473px;
+          margin: 11px auto 12px auto;
+          border-bottom: 2px dotted var(--Accent1);
+        }
+
+        .subInfo {
+          display: flex;
+          flex-direction: row;
+          column-gap: 113px;
+
+          .modelParams {
+            display: flex;
+            flex-direction: column;
+
+            color: var(--MainBlack);
+
+            font-family: Montserrat;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+
+            p {
+              color: var(--MainBlack);
+              font-family: Montserrat;
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+
+            img {
+              width: 163px;
+              height: 124px;
+            }
+          }
+
+          .compound {
+            color: var(--MainBlack);
+            font-family: Montserrat;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+
+            li {
+              color: var(--MainBlack);
+              font-family: Montserrat;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 20px;
+            }
+          }
+        }
+
+        .sizeTable {
+          display: flex;
+          margin: auto;
+
+          width: 217px;
+          height: 44px;
+        }
+      }
+    }
+  }
+}

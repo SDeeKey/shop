@@ -17,19 +17,6 @@ export const getProducts = createAsyncThunk(
     }
 );
 
-// Создаем async thunk для получения деталей продукта
-export const fetchProductDetails = createAsyncThunk(
-    'products/fetchProductDetails',
-    async (productId, {rejectWithValue}) => {
-        try {
-            const response = await axios.get(`${BASE_URL}/products/${productId}`);
-            return response.data;
-        } catch (error) {
-            return rejectWithValue(error.response.data);
-        }
-    }
-);
-
 
 const productsSlice = createSlice({
     name: "products",
@@ -74,6 +61,16 @@ const productsSlice = createSlice({
                 title: "Бомбер Gone Crazy\n" +
                     "хаки",
                 price: 2499,
+                description: "Over size бомбер цвета хаки на резинке с объемными рукавами. Фурнитура " +
+                    "выполнена в серебряном цвете. Акцентными деталями выступают объемные нашитые " +
+                    "карманы и капюшон, который отстёгивается. Один из ключевых элементов этого бомбера" +
+                    " - его универсальность. Благодаря отстёгивающемуся капюшону, он легко адаптируется к" +
+                    " различным стилям и погодным условиям. Особенно выделяются объемные нашитые карманы," +
+                    " которые добавляют практичности и удобства. Бомбер идеально подходит как для повседневного" +
+                    " ношения, так и для более официальных мероприятий, благодаря своему стильному дизайну и" +
+                    " функциональности. Серебряная фурнитура придает изделию особый шик. Этот бомбер -" +
+                    " идеальный выбор для тех, кто ценит комфорт, стиль и универсальность.",
+
                 images: [
                     "https://i.ibb.co/VjbZSrZ/bomber-jacket.png",
                 ],
@@ -109,6 +106,7 @@ const productsSlice = createSlice({
         filtered: [],
         related: [],
         isLoading: false,
+        productDetails: {},
     },
     reducers: {
         filterByPrice: (state, {payload}) => {
@@ -129,19 +127,6 @@ const productsSlice = createSlice({
         });
         builder.addCase(getProducts.rejected, (state) => {
             state.isLoading = false;
-        });
-
-        builder.addCase(fetchProductDetails.pending, (state) => {
-            state.isLoading = true;
-            state.error = null; // Сбрасываем ошибку при начале загрузки
-        });
-        builder.addCase(fetchProductDetails.fulfilled, (state, action) => {
-            state.productDetails = action.payload; // Сохраняем полученные детали продукта
-            state.isLoading = false;
-        });
-        builder.addCase(fetchProductDetails.rejected, (state, action) => {
-            state.isLoading = false;
-            state.error = action.payload; // Сохраняем ошибку при возникновении ошибки
         });
     },
 });

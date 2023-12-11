@@ -1,42 +1,90 @@
-// В файле Product.jsx
-
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useParams} from 'react-router-dom';
-import {fetchProductDetails} from './../../features/products/productsSlice';
+import {getProducts} from './../../features/products/productsSlice';
+import modelParams from './../../img/randimg/modelParams.png'
+import './Product.scss'
+import {addItemToCart} from "../../features/user/userSlice";
+import addToCart from './../../img/btn/AddToCart.svg'
+import quickOrder from './../../img/btn/QuickOrder.svg'
+import sizeTable from './../../img/btn/SizeTable.svg'
+
 
 const Product = () => {
     const {productId} = useParams();
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        dispatch(getProducts());
+    }, [dispatch]);
 
-    // Получаем информацию о продукте из Redux store
     const productDetails = useSelector(state =>
-        state.products.details[productId]
+        state.products.list.find(product => product.id === parseInt(productId))
     );
 
-    useEffect(() => {
-        if (!productDetails) {
-            dispatch(fetchProductDetails(productId));
-        }
-    }, [productId, productDetails, dispatch]);
+    const error = useSelector(state => state.products.error);
 
-    if (!productDetails) {
-        return <div>Loading...</div>;
+    if (error) {
+        return <div>Error: {error.message}</div>;
     }
-    
 
     return (
         <section className="product">
             <div className="contentProductPage">
-                <h1>{productDetails.title}</h1>
-                <img
-                    className='frontImage'
-                    src={productDetails.images[0]}
-                    alt={productDetails.title}
-                    style={{width: '100%', height: 'auto'}} // Прямая установка стилей для изображения
-                />
-                <p>{productDetails.description}</p>
+                <div className="upperBlock">
+                    <div className="imagesLeftBlock">
+                        <img
+                            className='frontImage'
+                            src={productDetails.images[0]}
+                            alt={productDetails.title}
+                        />
+                    </div>
+                    <div className="infoRightBlock">
+                        {productDetails ? (
+                            <>
+                                <h1 className='title'>{productDetails.title}</h1>
+                                <h1 className='price'>{productDetails.price} ₴</h1>
+                                <div className="sizes">
+                                    Выбрать размер:
+                                    <ul>
+                                        <li>XS — S</li>
+                                        <li> S — M</li>
+                                        <li> M — L</li>
+                                        <li> L — XL</li>
+
+                                    </ul>
+                                </div>
+                                <img className='addToCart' src={addToCart} alt="В корзину"/>
+                                <img className='quickOrder' src={quickOrder} alt="Быстрый заказ"/>
+
+                                <div className='description'>
+                                    <p>{productDetails.description}</p>
+                                </div>
+                                <div className="line"></div>
+                                <div className="subInfo">
+                                    <div className="modelParams">
+                                        Параметры модели:
+                                        <p>(На модели XS — S-ка)</p>
+                                        <img src={modelParams} alt="Параметры модели"/>
+                                    </div>
+                                    <div className="compound">
+                                        Состав:
+                                        <ul>
+
+                                            <li>50% вискоза,</li>
+                                            <li>50% полиэстер</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <img className='sizeTable' src={sizeTable} alt="Таблица размеров"/>
+
+                            </>
+                        ) : (
+                            <div>Loading product details...</div>
+                        )}
+                    </div>
+                </div>
             </div>
         </section>
     );
