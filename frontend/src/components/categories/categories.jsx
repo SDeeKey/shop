@@ -5,12 +5,12 @@ import suit from '../../img/clothes/suit.svg';
 import bottom from '../../img/clothes/bottom.svg';
 import outerwear from '../../img/clothes/outerwear.svg';
 import hoodie from '../../img/clothes/hoodie.svg';
-import brush_t_shirt from '../../img/clothes/brush_effect_t_shirt.svg'
-import brush_dress from '../../img/clothes/brush_effect_dress.svg'
-import brush_suit from '../../img/clothes/brush_effect_suit.svg'
-import brush_bottom from '../../img/clothes/brush_effect_bottom.svg'
-import brush_outerwear from '../../img/clothes/brush_effect_outerwear.svg'
-import brush_hoodie from '../../img/clothes/brush_effect_hoodie.svg'
+import T_shirtsBrush from '../../img/clothes/T-shirts(Brush).png'
+import DressBrush from '../../img/clothes/Dresses(Brush).png'
+import SuitBrush from '../../img/clothes/Suits(Brush).png'
+import BottomBrush from '../../img/clothes/Bottom(Brush).png'
+import OuterwearBrush from '../../img/clothes/Top(Brush).png'
+import HoodieBrush from '../../img/clothes/Hoodies(Brush).png'
 
 function Categories() {
 
@@ -18,33 +18,27 @@ function Categories() {
         <div className='container__categories'>
             <div className='categories_content'>
                 <div className='img_T_Shirt'>
-                    <p>Футболки</p>
-                    <img className='brush_t_shirt' src={brush_t_shirt} alt='brush_t_shirt'></img>
+                    <img className='textT_shirt' src={T_shirtsBrush}/>
                     <img src={t_shirt} alt='t_shirt'></img>
                 </div>
                 <div className='img_Dresses'>
-                    <p>Платья</p>
-                    <img className='brush_dress' src={brush_dress} alt='brush_dress'></img>
+                    <img className='textDress' src={DressBrush}/>
                     <img src={dress} alt='dress'></img>
                 </div>
                 <div className='img_Suits'>
-                    <p>Костюмы</p>
-                    <img className='brush_suit' src={brush_suit} alt='brush_suit'></img>
+                    <img className='textSuit' src={SuitBrush}/>
                     <img src={suit} alt='suit'></img>
                 </div>
                 <div className='img_Bottom'>
-                    <p>Низ</p>
-                    <img className='brush_bottom' src={brush_bottom} alt='brush_bottom'></img>
+                    <img className='textBottom' src={BottomBrush}/>
                     <img src={bottom} alt='bottom'></img>
                 </div>
                 <div className='img_Outerwear'>
-                    <p>Верх</p>
-                    <img className='brush_outerwear' src={brush_outerwear} alt='brush_outerwear'></img>
+                    <img className='textOuterwear' src={OuterwearBrush}/>
                     <img src={outerwear} alt='outerwear'></img>
                 </div>
                 <div className='img_Hoodie'>
-                    <p>Худи</p>
-                    <img className='brush_hoodie' src={brush_hoodie} alt='brush_hoodie'></img>
+                    <img className='textHoodie' src={HoodieBrush}/>
                     <img src={hoodie} alt='hoodie'></img>
                 </div>
             </div>

@@ -1,0 +1,47 @@
+.cart-modal {
+  display: none; // По умолчанию скрыт
+  &.show {
+    display: block; // Показывать, когда showModal true
+  }
+
+  .cart-modal-overlay {
+    position: fixed; /* Фиксированное позиционирование относительно вьюпорта */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    z-index: 10; /* z-index должен быть меньше, чем у модального окна, но выше контента */
+  }
+
+  .cart-modal-content {
+    z-index: 11;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%; // или нужная ширина
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    // Другие стили для внутреннего содержимого...
+  }
+
+  .close-cart-modal {
+    // Стили для кнопки закрытия...
+  }
+
+  .cart-items {
+    // Стили для списка товаров...
+  }
+
+  .cart-summary {
+    // Стили для итоговой суммы...
+  }
+
+  .checkout-button {
+    // Стили для кнопки оформления заказа...
+  }
+
+  // Другие стили...
+}

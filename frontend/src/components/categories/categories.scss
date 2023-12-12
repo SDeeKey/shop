@@ -19,27 +19,11 @@
 
       .img_T_Shirt {
         display: flex;
+        //position: relative;
         width: 563px;
         height: 346px;
 
-        p {
-          z-index: 1;
-          position: absolute;
-          margin-left: 82px;
-          margin-top: 280px;
-          width: 76px;
-          height: 22px;
-          color: var(--White);
-          font-family: Neucha;
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-        }
-
-        .brush_t_shirt {
-          width: 206px;
-          height: 52px;
+        .textT_shirt {
           position: absolute;
           margin-left: 22px;
           margin-top: 267px;
@@ -48,28 +32,11 @@
 
       .img_Dresses {
         display: flex;
+        //position: relative;
         width: 273px;
         height: 296px;
 
-        p {
-          z-index: 1;
-          position: absolute;
-          margin-left: 69px;
-          margin-top: 186px;
-          height: 22px;
-          width: fit-content;
-          color: var(--White);
-          font-family: Neucha;
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-
-        }
-
-        .brush_dress {
-          width: 163px;
-          height: 55px;
+        .textDress {
           position: absolute;
           margin-left: 16px;
           margin-top: 175px;
@@ -81,25 +48,7 @@
         width: 273px;
         height: 296px;
 
-
-        p {
-          z-index: 1;
-          position: absolute;
-          margin-left: 129px;
-          margin-top: 236px;
-          height: 22px;
-          width: fit-content;
-          color: var(--White);
-          font-family: Neucha;
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-        }
-
-        .brush_suit {
-          width: 184px;
-          height: 53px;
+        .textSuit {
           position: absolute;
           margin-left: 77px;
           margin-top: 225px;
@@ -108,59 +57,27 @@
 
       .img_Bottom {
         display: flex;
+        //position: relative;
         width: 274px;
         height: 297px;
 
-        p {
-          z-index: 1;
-          position: absolute;
-          margin-left: 194px;
-          margin-top: 200px;
-          height: 22px;
-          width: fit-content;
-          color: var(--White);
-          font-family: Neucha;
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-          transform: rotate(-50deg);
-        }
 
-        .brush_bottom {
-          width: 104px;
-          height: 53px;
+        .textBottom {
           position: absolute;
-          margin-left: 160px;
-          margin-top: 187px;
-          transform: rotate(-50deg);
+          margin-left: 156px;
+          margin-top: 155px;
 
         }
       }
 
       .img_Outerwear {
         display: flex;
+        //position: relative;
         width: 274px;
         height: 297px;
 
-        p {
-          z-index: 1;
-          position: absolute;
-          margin-left: 170px;
-          margin-top: 31px;
-          height: 22px;
-          width: fit-content;
-          color: var(--White);
-          font-family: Neucha;
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-        }
 
-        .brush_outerwear {
-          width: 134px;
-          height: 60px;
+        .textOuterwear {
           position: absolute;
           margin-left: 122px;
           margin-top: 16px;
@@ -169,34 +86,16 @@
 
       .img_Hoodie {
         display: flex;
+        position: relative;
         width: 561px;
         height: 345px;
         margin-top: -50px;
 
-        p {
-          z-index: 1;
-          position: absolute;
-          margin-left: 98px;
-          margin-top: 245px;
-          height: 22px;
-          width: fit-content;
-          color: var(--White);
-          font-family: Neucha;
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-          transform: rotate(36deg);
-        }
 
-        .brush_hoodie {
-          width: 133px;
-          height: 54px;
+        .textHoodie {
           position: absolute;
-          margin-left: 50px;
-          margin-top: 235px;
-          transform: rotate(37deg);
-
+          top: 204px;
+          left: 52px;
         }
       }
     }

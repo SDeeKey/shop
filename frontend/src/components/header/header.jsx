@@ -6,15 +6,21 @@ import heartItem from '../../img/icon/heart-item.svg'
 import bagItem from '../../img/icon/shopping-bag-item.svg'
 import './header.scss'
 import React, {useState} from 'react';
-import Basket from './../Basket/Basket'
+import Basket from '../CartModal/CartModal'
 import {Link, NavLink} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {ROUTES} from "../../utils/routes";
+import CartModal from "../CartModal/CartModal";
 
 
 const Header = () => {
-    // const [isModalOpen, setModalOpen] = useState(false);
-    // const toggleModal = () => setModalOpen(!isModalOpen);
+    //показ корзины
+    const [showModal, setShowModal] = useState(false);
+
+    const toggleModal = () => {
+        setShowModal(!showModal);
+    };
+
     const {list} = useSelector(({categories}) => categories)
 
     // Состояние для управления вводом в поле поиска
@@ -61,17 +67,20 @@ const Header = () => {
                             <Link to={ROUTES.HOME} className='favourites'>
                                 <img className='heartItem' src={heartItem} alt='heartItem'></img>
                             </Link>
-                            <Link to={ROUTES.CART} className='cart'>
+                            <div className='cart'>
                                 <img className={`bagItem`}
                                      style={{cursor: 'pointer'}}
-                                    // onClick={toggleModal}
+                                     onClick={toggleModal}
                                      src={bagItem}
                                      alt='bagItem'/>
-                            </Link>
+                                <CartModal showModal={showModal} toggleModal={toggleModal}/>
+                            </div>
+
+
                             <span className='count'>2</span>
                         </div>
                     </div>
-                    {/*<Basket isOpen={isModalOpen} closeModal={toggleModal}/>*/}
+                    {/*<CartModal isOpen={isModalOpen} closeModal={toggleModal}/>*/}
                     <nav className='header_nav'>
                         <ul>
                             {list.map(({id, name}) => (

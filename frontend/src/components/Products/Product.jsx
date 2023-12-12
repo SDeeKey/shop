@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useParams} from 'react-router-dom';
 import {getProducts} from './../../features/products/productsSlice';
 import modelParams from './../../img/randimg/modelParams.png'
 import './Product.scss'
 import {addItemToCart} from "../../features/user/userSlice";
-import addToCart from './../../img/btn/AddToCart.svg'
+import addToCartImg from './../../img/btn/AddToCart.svg'
 import quickOrder from './../../img/btn/QuickOrder.svg'
 import sizeTable from './../../img/btn/SizeTable.svg'
 import Cat from '../../img/icon/Cat.png'
@@ -15,26 +15,70 @@ import Photo from './../../img/randimg/PhotoFromInstagram.png'
 import curved_line from "../../img/lines/curved line.svg";
 import Products from "./Products";
 import Instagram from "../Instagram/Instagram";
+import SizeTable from "../SizeTable/SizeTable";
 
+const SIZES = ['XS — S', 'S — M', 'M — L', 'L — XL'];
 
 const Product = () => {
     const {productId} = useParams();
     const dispatch = useDispatch();
-    const {list} = useSelector(({products}) => products)
+    const products = useSelector(state => state.products.list);
+    const error = useSelector(state => state.products.error);
+    const [selectedSize, setSelectedSize] = useState(null);
+    const [currentImage, setCurrentImage] = useState();
+    const [showModal, setShowModal] = useState(false);
+
+    const productDetails = products.find(product => product.id === parseInt(productId));
+    const list = useSelector(state => state.products.list);
+
+
+    const handleSelectSize = (size) => {
+        setSelectedSize(size);
+    };
+
+    const handleShow = () => {
+        setShowModal(true);
+    };
+
+    const handleClose = () => {
+        setShowModal(false);
+    };
 
 
     useEffect(() => {
-        dispatch(getProducts());
-    }, [dispatch]);
+        if (!productDetails) {
+            dispatch(getProducts());
+        } else if (productDetails.images && productDetails.images.length > 0) {
+            setCurrentImage(productDetails.images[0]);
+        }
+    }, [dispatch, productId, productDetails]);
 
-    const productDetails = useSelector(state =>
-        state.products.list.find(product => product.id === parseInt(productId))
-    );
+    const handleAddToCart = () => {
+        if (selectedSize && productDetails) {
+            dispatch(addItemToCart({...productDetails, size: selectedSize}));
+        }
+    };
 
-    const error = useSelector(state => state.products.error);
+
+    // useEffect(() => {
+    //     if (!props.length) return;
+    //
+    //     setCurrentImage(props.images[0]);
+    // }, [props.images]);
+
+    // const addToCart = () => {
+    //     dispatch(addItemToCart(item));
+    // };
+
 
     if (error) {
         return <div>Error: {error.message}</div>;
+    }
+
+    if (selectedSize && productDetails) {
+        // Убедитесь, что productDetails содержит все необходимые свойства,
+        // включая id, который нужен для добавления в корзину
+        dispatch(addItemToCart({...productDetails, size: selectedSize}));
     }
 
     return (
@@ -57,14 +101,24 @@ const Product = () => {
                                     <div className="sizes">
                                         Выбрать размер:
                                         <ul>
-                                            <li>XS — S</li>
-                                            <li> S — M</li>
-                                            <li> M — L</li>
-                                            <li> L — XL</li>
-
+                                            {SIZES.map((size) => (
+                                                <li
+                                                    key={size}
+                                                    onClick={() => handleSelectSize(size)}
+                                                    className={selectedSize === size ? 'active' : ''}
+                                                >
+                                                    {size}
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
-                                    <img className='addToCart' src={addToCart} alt="В корзину"/>
+                                    <button className='add' onClick={handleAddToCart} disabled={!selectedSize}>
+                                        <img
+                                            className='addToCart'
+                                            src={addToCartImg}
+                                            alt="В корзину"
+                                        />
+                                    </button>
                                     <img className='quickOrder' src={quickOrder} alt="Быстрый заказ"/>
 
                                     <div className='description'>
@@ -87,9 +141,21 @@ const Product = () => {
 
                                         </ul>
                                     </div>
-                                    <div className="blockSizetable">
-                                        <img className='sizeTable' src={sizeTable} alt="Таблица размеров"/>
-                                    </div>
+                                    <button className="blockSizetable" onClick={handleShow}>
+                                        <img
+                                            className='sizeTable'
+                                            src={sizeTable}
+                                            alt="Таблица размеров"
+                                        />
+                                    </button>
+                                    {showModal && (
+                                        <div className="modal" onClick={handleClose}>
+                                            <div className="modal-content" onClick={e => e.stopPropagation()}>
+                                                <span className="close" onClick={handleClose}>&times;</span>
+                                                <SizeTable/>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
 
 
