@@ -1,5 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+import CheckoutImage from './../../img/btn/Checkout.png'
 import './CartModal.scss'; // Путь к вашему SCSS файлу для стилей
 
 const CartModal = ({showModal, toggleModal}) => {
@@ -11,8 +12,8 @@ const CartModal = ({showModal, toggleModal}) => {
         <div className={`cart-modal ${showModal ? 'show' : 'hide'}`}>
             <div className="cart-modal-overlay" onClick={toggleModal}></div>
             <div className="cart-modal-content">
-                <button className="close-cart-modal" onClick={toggleModal}>&times;</button>
-                <h2>КОРЗИНА</h2>
+                <button className="close-cart-modal" onClick={toggleModal}><p>&times;</p></button>
+                <h2 className='titleCart'>КОРЗИНА</h2>
                 <div className="cart-items">
                     {cartItems.map((item, index) => (
                         <div key={index} className="cart-item">
@@ -23,7 +24,7 @@ const CartModal = ({showModal, toggleModal}) => {
                                 <div className="item-details">
                                     <p className="item-title">{item.title}</p>
                                     <p className="item-size">Размер: {item.size}</p>
-                                    <p className="item-price">{item.price} €</p>
+                                    <p className="item-price">{item.price} ₴</p>
                                 </div>
                             </div>
                             <div className="item-quantity">
@@ -33,8 +34,10 @@ const CartModal = ({showModal, toggleModal}) => {
                     ))}
                 </div>
                 <div className="cart-summary">
-                    <p className="total-price">Сумма заказа: {totalPrice} €</p>
-                    <button className="checkout-button">Посмотреть заказ</button>
+                    <p className="total-price">Сумма заказа: {totalPrice} ₴</p>
+                    <button className="checkout-button">
+                        <img src={CheckoutImage} alt="Оформить заказ"/>
+                    </button>
                 </div>
             </div>
         </div>
