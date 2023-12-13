@@ -55,29 +55,45 @@ const userSlice = createSlice({
     name: "user",
     initialState: {
         currentUser: null,
-        cart: [],
+        cart: JSON.parse(localStorage.getItem('cart')) || [],
         favorites: JSON.parse(localStorage.getItem('favorites')) || [],
         isLoading: false,
         formType: "signup",
         showForm: false,
     },
     reducers: {
-        addItemToCart: (state, {payload}) => {
+        addItemToCart: (state, { payload }) => {
             let newCart = [...state.cart];
-            const found = state.cart.find(({id}) => id === payload.id);
+            const foundIndex = state.cart.findIndex(item => item.id === payload.id);
 
-            if (found) {
-                newCart = newCart.map((item) => {
-                    return item.id === payload.id
-                        ? {...item, quantity: payload.quantity || item.quantity + 1}
-                        : item;
+            const itemQuantity = payload.quantity ?? 1;
+
+            if (foundIndex !== -1) {
+                // Проверяем, содержит ли товар уже данный размер
+                if (!newCart[foundIndex].sizes[payload.size]) {
+                    newCart[foundIndex].sizes[payload.size] = itemQuantity;
+                } else {
+                    newCart[foundIndex].sizes[payload.size] += itemQuantity;
+                }
+            } else {
+                newCart.push({
+                    ...payload,
+                    sizes: { [payload.size]: itemQuantity }
                 });
-            } else newCart.push({...payload, quantity: 1});
+            }
 
             state.cart = newCart;
+            localStorage.setItem('cart', JSON.stringify(newCart));
         },
+
+
+
+
+
         removeItemFromCart: (state, {payload}) => {
-            state.cart = state.cart.filter(({id}) => id !== payload);
+            const newCart = state.cart.filter(({id}) => id !== payload);
+            state.cart = newCart;
+            localStorage.setItem('cart', JSON.stringify(newCart)); // Обновление localStorage
         },
         toggleForm: (state, {payload}) => {
             state.showForm = payload;

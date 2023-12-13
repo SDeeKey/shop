@@ -4,8 +4,19 @@
   justify-content: center;
   //border: 2px solid #000;
 
+
   &.show {
-    display: block; // Показывать, когда showModal true
+    z-index: 10;
+    display: flex; // Используйте flex для выравнивания содержимого
+    align-items: center;
+    justify-content: center;
+
+    position: fixed; // Position it on top of the content
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    //overflow-y: scroll;
   }
 
   .cart-modal-overlay {
@@ -29,6 +40,8 @@
     width: 35%;
     height: 100%;
 
+    overflow-y: scroll;
+
     .close-cart-modal {
       border: 1px solid #000;
       display: flex;
@@ -38,7 +51,13 @@
       width: 45px;
       height: 45px;
       border-radius: 50px;
-      margin: 59px 54px auto auto;
+      margin: 23px 54px auto auto;
+
+      position: absolute; // Абсолютное позиционирование для размещения кнопки закрытия
+      top: 20px;
+      right: 20px;
+      background-color: #fff; // Белый фон для кнопки
+      cursor: pointer; // Курсор в виде руки для интерактивности
       p {
         display: flex;
         font-size: 70px;
@@ -46,11 +65,14 @@
         align-self: center;
         font-weight: 100;
       }
+
+      &:active {
+        transform: scale(0.95); // Уменьшение кнопки при нажатии
+      }
     }
 
     .titleCart {
       display: inline-flex;
-      border: 1px solid #000;
       color: var(--MainBlack);
       font-family: Montserrat;
       font-size: 25px;
@@ -58,28 +80,117 @@
       font-weight: 700;
       line-height: normal;
       text-transform: uppercase;
-      margin: 7px auto auto 172px;
+      margin: 50px auto 40px 165px; // Отступы вокруг заголовка
+    }
+
+    .cart-items {
+
+      .cart-item {
+
+        margin-bottom: 10px;
+
+        .item-info {
+          display: flex;
+          flex-direction: row;
+          width: 370px;
+          height: 180px;
+
+          .item-image {
+            max-width: 155px;
+            max-height: 180px;
+          }
+
+          .item-details {
+
+            .item-title {
+              color: var(--MainBlack);
+              font-family: Montserrat;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              margin: 30px auto auto 10px;
+            }
+
+            .item-sizes {
+              color: var(--MainBlack);
+              font-family: Montserrat;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              margin: 8px auto auto 10px;
+            }
+
+            .item-price {
+              color: var(--Accent1);
+              font-variant-numeric: lining-nums tabular-nums;
+              font-family: Montserrat;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              margin: 30px auto auto 10px;
+
+            }
+          }
+
+          .removeItemFromCart {
+
+            display: flex;
+            width: 25px;
+            margin: 30px 10px auto auto;
+
+            .removeImage {
+
+              width: 12px;
+              height: 12px;
+            }
+          }
+        }
+      }
+    }
+
+    .cart-summary {
+      margin: 40px auto auto 40px;
+
+      .text-OrderSum {
+        display: inline-flex;
+        color: #000;
+        font-family: Montserrat;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .total-price {
+        text-indent: 30px;
+        display: inline-flex;
+        color: #000;
+        text-align: left;
+        font-variant-numeric: lining-nums tabular-nums;
+        font-family: Montserrat;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+
+      .checkout-button {
+        //display: flex;
+        //width: 199px;
+        //height: 50px;
+        width: 100%;
+        border: none;
+        padding: 15px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      .body-modal-open {
+        //overflow: hidden;
+      }
     }
   }
-
-
-
-  .cart-items {
-    // Стили для списка товаров...
-  }
-
-  .cart-summary {
-    color: #000;
-    font-family: Montserrat;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
-  .checkout-button {
-    //margin: 49px auto auto 150px;
-  }
-
-
 }

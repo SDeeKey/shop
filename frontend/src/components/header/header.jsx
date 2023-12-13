@@ -30,6 +30,15 @@ const Header = () => {
     const handleInputChange = (event) => {
         setSearchInput(event.target.value);
     };
+    // Для вывода количества товара на значке корзины
+    const cartItems = useSelector(state => state.user.cart);
+    const itemCount = cartItems.reduce((total, item) => {
+        const sizes = item.sizes;
+        const sizesArray = Object.values(sizes);
+        return total + sizesArray.reduce((sum, count) => sum + count, 0);
+    }, 0);
+
+
 
 
     return (
@@ -77,7 +86,7 @@ const Header = () => {
                             </div>
 
 
-                            <span className='count'>2</span>
+                            <span className='count'>{itemCount}</span>
                         </div>
                     </div>
                     {/*<CartModal isOpen={isModalOpen} closeModal={toggleModal}/>*/}

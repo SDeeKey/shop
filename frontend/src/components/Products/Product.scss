@@ -97,15 +97,35 @@
           }
 
           .add {
+
+            border: none;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+
             .addToCart {
               margin: 20px auto 30px auto;
 
             }
+
+            &:active {
+              transform: scale(0.95); // Уменьшение кнопки при нажатии
+            }
           }
 
-          .quickOrder {
-            margin: 20px auto 30px auto;
+          .quick {
+            border: none;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+            .quickOrder {
+              margin: 20px auto 30px auto;
+            }
+
+            &:active {
+              transform: scale(0.95); // Уменьшение кнопки при нажатии
+            }
           }
+
+
 
           .description {
             width: 473px;
@@ -182,9 +202,17 @@
         }
 
         .blockSizetable {
+          border: none;
+          cursor: pointer;
+          transition: transform 0.1s ease;
+
           .sizeTable {
             width: 217px;
             height: 44px;
+          }
+
+          &:active {
+            transform: scale(0.95); // Уменьшение кнопки при нажатии
           }
         }
 
@@ -200,7 +228,7 @@
           overflow: auto;
           justify-content: center;
           align-items: center;
-          background-color: rgba(0, 0, 0, 0.4);
+          background-color: rgba(0, 0, 0, 0.8);
 
           /* Стили для контента модального окна */
           .modal-content {
