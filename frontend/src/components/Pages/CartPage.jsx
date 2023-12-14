@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import cervedLIne from './../../img/lines/curved line.svg'
+import cervedLIne from './../../img/lines/curved line_pink.svg'
+import './CartPage.scss'
 
 const CartPage = () => {
     // Состояние для отслеживания выбранной радиокнопки
@@ -8,7 +9,9 @@ const CartPage = () => {
     const [checked, setChecked] = useState(true);
 
     const changeCheckBox = (event) => {
-        {setChecked(!checked);}
+        {
+            setChecked(!checked);
+        }
     }
 
 
@@ -27,9 +30,11 @@ const CartPage = () => {
             <div className='contentCartPage'>
                 <div className="firstBlock">
                     <div className="firstBlockLeftSide">
-                        <p>1</p>
-                        <img src={cervedLIne} alt=""/>
-                        <p>Контактные данные</p>
+                        <div className="upper_1">
+                            <p className='firstBlockNumber'>1</p>
+                            <img className='cervedFirstBlock' src={cervedLIne} alt=""/>
+                        </div>
+                        <p className='Contact_info'>Контактные данные</p>
                     </div>
                     <div className="firstBlockRightSide">
                         <input type="text" placeholder='Имя'/>
@@ -40,9 +45,11 @@ const CartPage = () => {
                 </div>
                 <div className="secondBlock">
                     <div className="secondBlockLeftSide">
-                        <p>2</p>
-                        <img src={cervedLIne} alt=""/>
-                        <p>Способ доставки</p>
+                        <div className="upper_2">
+                            <p className='secondBlockNumber'>2</p>
+                            <img className='cervedSecondBlock' src={cervedLIne} alt=""/>
+                        </div>
+                        <p className='Delivery_method'>Способ доставки</p>
                     </div>
                     <div className="secondBlockRightSide">
                         <form>
@@ -55,7 +62,8 @@ const CartPage = () => {
                                         checked={selectedDiliveryMethod === 'option1'}
                                         onChange={handleDiliveryMethod}
                                     />
-                                    Доставка в отделение Новой почты— согласно тарифам НП
+                                    <span className="checkmark"></span>
+                                    Доставка в отделение Новой почты — согласно тарифам НП
                                 </label>
 
                                 <label>
@@ -66,6 +74,7 @@ const CartPage = () => {
                                         checked={selectedDiliveryMethod === 'option2'}
                                         onChange={handleDiliveryMethod}
                                     />
+                                    <span className="checkmark"></span>
                                     Курьерская доставка Новой почты— согласно тарифам НП
                                 </label>
 
@@ -77,6 +86,7 @@ const CartPage = () => {
                                         checked={selectedDiliveryMethod === 'option3'}
                                         onChange={handleDiliveryMethod}
                                     />
+                                    <span className="checkmark"></span>
                                     Международная доставка— согласно тарифам Укрпочта
                                 </label>
 
@@ -88,19 +98,20 @@ const CartPage = () => {
                                         checked={selectedDiliveryMethod === 'option4'}
                                         onChange={handleDiliveryMethod}
                                     />
+                                    <span className="checkmark"></span>
                                     Самовывоз с нашего шоурума — бесплатно
                                 </label>
 
-                                <p>г.Киев, ул. Нижний вал, 37 Ежедневно с 11:00 до 21:00</p>
+                                <p className="address">г.Киев, ул. Нижний вал, 37 Ежедневно с 11:00 до 21:00</p>
 
-                                <input type="text" placeholder='Комментарий к заказу'/>
+                                <input className='input-comment' type="text" placeholder='Комментарий к заказу'/>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div className="thirdBlock">
                     <div className="thirdBlockLeftSide">
-                        <p>3</p>
+                        <p className='thirdBlockNumber'>3</p>
                         <img src={cervedLIne} alt=""/>
                         <p>Способ оплаты</p>
                     </div>
@@ -128,7 +139,7 @@ const CartPage = () => {
                                     Наличкой при получении
                                 </label>
                                 <input type="number" placeholder='Номер карты  boorivasis'/>
-                                <input type="checkbox" checked={checked} onChange={changeCheckBox} />
+                                <input type="checkbox" checked={checked} onChange={changeCheckBox}/>
 
                             </div>
                         </form>

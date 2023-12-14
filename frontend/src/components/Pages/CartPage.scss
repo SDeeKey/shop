@@ -1,0 +1,229 @@
+.cartPage {
+  .contentCartPage {
+    margin-top: 47px;
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: center;
+    .firstBlock {
+
+      display: flex;
+      margin-bottom: 2rem; // Отступ между блоками формы
+      justify-content: center;
+
+      .firstBlockLeftSide {
+        //border: 1px solid #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 230px;
+        margin-right: 1rem; // Отступ между левой и правой частью блока
+        .upper_1 {
+          display: flex;
+          margin: 0 auto 5px 0;
+
+          .firstBlockNumber {
+            font-size: 3rem; // Большой размер шрифта для номера блока
+            color: #FDA3C4; // Розовый цвет номера блока
+            //margin-bottom: 0.5rem; // Отступ между номером блока и изогнутой линией
+          }
+
+          .cervedFirstBlock {
+            margin: 39px auto auto 25px; // Отступ между изогнутой линией и заголовком
+          }
+        }
+
+        .Contact_info {
+          color: #1F1F1F;
+          font-family: Montserrat;
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+      }
+
+      .firstBlockRightSide {
+        display: flex;
+        flex-direction: column;
+        width: 30%; // Занимает оставшееся пространство
+
+        input {
+          border: 1px solid #E6E6E6; // Светло-серая граница для полей ввода
+          border-radius: 5px; // Скругление углов полей ввода
+          padding: 0.75rem; // Внутренний отступ полей ввода
+          margin-bottom: 1rem; // Отступ между полями ввода
+
+          &::placeholder {
+            color: #ccc; // Цвет текста подсказки в полях ввода
+          }
+
+          &:focus {
+            border-color: #FDA3C4; // Розовая граница при фокусе на поле
+            outline: none; // Удаление стандартного контура при фокусе
+          }
+        }
+      }
+    }
+
+    .secondBlock {
+      //border: 1px solid #000;
+      display: flex;
+      margin-bottom: 2rem;
+      justify-content: center;
+
+      .secondBlockLeftSide {
+        //border: 1px solid #000;
+
+        max-width: 230px;
+        flex-direction: column;
+        align-items: center;
+        flex: 0 0 auto;
+        padding-right: 1rem;
+
+        .upper_2 {
+          display: flex;
+          align-items: center;
+
+          .secondBlockNumber {
+            color: #FDA3C4;
+            font-family: Neucha;
+            font-size: 54px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+
+          .cervedSecondBlock {
+            margin: 39px auto auto 23px; // Отступ между изогнутой линией и заголовком
+          }
+        }
+
+        .Delivery_method {
+          font-size: 1.5rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          color: #1F1F1F;
+        }
+      }
+
+      .secondBlockRightSide {
+
+        form {
+
+          .radio {
+            label {
+              display: block;
+              position: relative;
+              padding-left: 35px;
+              margin-bottom: 1rem;
+              cursor: pointer;
+              font-size: 1rem;
+              user-select: none;
+              color: #1F1F1F;
+
+              input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+
+                &:checked ~ .checkmark {
+                  background-color: #FDA3C4;
+
+                  &:after {
+                    display: block;
+                  }
+                }
+              }
+
+              .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 20px;
+                width: 20px;
+                background-color: #FFFFFF;
+                border-radius: 50%;
+                border: 2px solid #E6E6E6;
+
+                &:after {
+                  content: "";
+                  position: absolute;
+                  display: none;
+                  top: 2px;
+                  left: 2px;
+                  width: 12px;
+                  height: 12px;
+                  border-radius: 50%;
+                  background: white;
+                }
+              }
+            }
+
+            .address {
+              max-width: 273px;
+              font-size: 0.9rem;
+              margin-left: 2rem;
+            }
+
+            .input-comment {
+              width: 334px;
+              max-width: 334px;
+              margin-top: 1rem;
+              border: 1px solid #000;
+              border-radius: 5px;
+              padding: 10px 0 57px 24px;
+              word-wrap: break-word;
+              overflow-wrap: break-word;
+              overflow: auto;
+              white-space: normal;
+
+              &::placeholder {
+                color: var(--Accent1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .thirdBlock {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .thirdBlockLeftSide {
+        .thirdBlockNumber {
+          color: #FDA3C4;
+          font-family: Neucha;
+          font-size: 54px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        p {
+          color: #1F1F1F;
+          font-family: Montserrat;
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+      }
+
+      .thirdBlockRightSide {
+      }
+    }
+
+    .cartModalBlock {
+    }
+  }
+}
+
+
+
+
+
+
