@@ -3,7 +3,9 @@
     import CheckoutImage from './../../img/btn/Checkout.svg'
     import './CartModal.scss';
     import { removeItemFromCart } from '../../features/user/userSlice';
+    import {ROUTES} from "../../utils/routes";
     import deleteImage from './../../img/btn/delete.svg'
+    import {Link} from "react-router-dom";
 
     const CartModal = ({showModal, toggleModal}) => {
         const cartItems = useSelector(state => state.user.cart);
@@ -74,9 +76,12 @@
                     <div className="cart-summary">
                         <p className='text-OrderSum'>Сумма заказа:   </p>
                         <p className="total-price"> {totalPrice} ₴</p>
-                        <button className="checkout-button">
-                            <img src={CheckoutImage} alt="Оформить заказ"/>
-                        </button>
+                        <Link to={ROUTES.CART}>
+                            <button className="checkout-button" >
+                                <img src={CheckoutImage} alt="Оформить заказ"/>
+                            </button>
+                        </Link>
+
                     </div>
                 </div>
             </div>
