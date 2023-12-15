@@ -1,0 +1,44 @@
+// FiltersPage.scss
+.filters-page {
+  display: flex;
+  flex-direction: row;
+}
+
+.filters-sidebar {
+  position: relative;
+  width: 240px; // Задайте желаемую ширину боковой панели
+  border-right: 1px solid #ccc; // Линия разделения, если нужно
+  padding: 20px;
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 5px;
+
+      label {
+        font-size: 16px;
+        cursor: pointer;
+
+        input[type="checkbox"] {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  // Добавьте стили для других фильтров здесь
+}
+
+.products-section {
+  flex-grow: 1; // Разрешает продуктам занимать доступное пространство
+  padding: 20px;
+}
+
+// Стили для Instagram, если они у вас есть

@@ -39,8 +39,6 @@ const Header = () => {
     }, 0);
 
 
-
-
     return (
         <header className='header'>
             <div className='container'>
@@ -73,7 +71,7 @@ const Header = () => {
                             </div>
                             {/* для выпадающего окна поиска*/}
                             {/*{false && <div className="box"></div>}*/}
-                            <Link to={ROUTES.HOME} className='favourites'>
+                            <Link to={ROUTES.FAVORITES} className='favourites'>
                                 <img className='heartItem' src={heartItem} alt='heartItem'></img>
                             </Link>
                             <div className='cart'>
@@ -92,15 +90,17 @@ const Header = () => {
                     {/*<CartModal isOpen={isModalOpen} closeModal={toggleModal}/>*/}
                     <nav className='header_nav'>
                         <ul>
+                            {/* Динамически создаем ссылки на категории */}
                             {list.map(({id, name}) => (
                                 <li key={id}>
                                     <NavLink
-                                        className={({isActive}) =>
-                                            `link ${isActive ? 'active' : ""}`}
-                                        to={`/categories/${id}`}>{name}</NavLink>
+                                        className={({isActive}) => `link ${isActive ? 'active' : ""}`}
+                                        to={`/category/${id}`}
+                                    >
+                                        {name}
+                                    </NavLink>
                                 </li>
                             ))}
-
                         </ul>
                     </nav>
                     <div className='line'></div>

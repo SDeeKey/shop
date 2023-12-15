@@ -1,226 +1,558 @@
 .cartPage {
   .contentCartPage {
+    display: flex;
+    flex-direction: row; /* Изменено на row */
+    justify-content: center; /* Распределение пространства между колонками */
+    column-gap: 50px;
     margin-top: 47px;
-    //display: flex;
-    //flex-direction: column;
-    //justify-content: center;
-    .firstBlock {
+    align-items: flex-start; /* Если вы хотите выровнять элементы по верху */
 
+
+    .leftColumn {
       display: flex;
-      margin-bottom: 2rem; // Отступ между блоками формы
-      justify-content: center;
+      flex-direction: column; /* Для выравнивания внутренних блоков в столбец */
 
-      .firstBlockLeftSide {
-        //border: 1px solid #000;
+      .firstBlock {
+        margin: auto auto 2rem 0;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 230px;
-        margin-right: 1rem; // Отступ между левой и правой частью блока
-        .upper_1 {
+        box-sizing: border-box;
+
+        .firstBlockLeftSide {
           display: flex;
-          margin: 0 auto 5px 0;
-
-          .firstBlockNumber {
-            font-size: 3rem; // Большой размер шрифта для номера блока
-            color: #FDA3C4; // Розовый цвет номера блока
-            //margin-bottom: 0.5rem; // Отступ между номером блока и изогнутой линией
-          }
-
-          .cervedFirstBlock {
-            margin: 39px auto auto 25px; // Отступ между изогнутой линией и заголовком
-          }
-        }
-
-        .Contact_info {
-          color: #1F1F1F;
-          font-family: Montserrat;
-          font-size: 25px;
-          font-style: normal;
-          font-weight: 600;
-          line-height: normal;
-          text-transform: uppercase;
-        }
-      }
-
-      .firstBlockRightSide {
-        display: flex;
-        flex-direction: column;
-        width: 30%; // Занимает оставшееся пространство
-
-        input {
-          border: 1px solid #E6E6E6; // Светло-серая граница для полей ввода
-          border-radius: 5px; // Скругление углов полей ввода
-          padding: 0.75rem; // Внутренний отступ полей ввода
-          margin-bottom: 1rem; // Отступ между полями ввода
-
-          &::placeholder {
-            color: #ccc; // Цвет текста подсказки в полях ввода
-          }
-
-          &:focus {
-            border-color: #FDA3C4; // Розовая граница при фокусе на поле
-            outline: none; // Удаление стандартного контура при фокусе
-          }
-        }
-      }
-    }
-
-    .secondBlock {
-      //border: 1px solid #000;
-      display: flex;
-      margin-bottom: 2rem;
-      justify-content: center;
-
-      .secondBlockLeftSide {
-        //border: 1px solid #000;
-
-        max-width: 230px;
-        flex-direction: column;
-        align-items: center;
-        flex: 0 0 auto;
-        padding-right: 1rem;
-
-        .upper_2 {
-          display: flex;
+          flex-direction: column;
           align-items: center;
+          max-width: 230px;
 
-          .secondBlockNumber {
-            color: #FDA3C4;
-            font-family: Neucha;
-            font-size: 54px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
+          .upper_1 {
+            display: flex;
+            margin: 0 auto 5px 0;
+
+            .firstBlockNumber {
+              color: #FDA3C4;
+              font-family: Neucha;
+              font-size: 54px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+
+            .cervedFirstBlock {
+              margin: 39px auto auto 25px;
+            }
           }
 
-          .cervedSecondBlock {
-            margin: 39px auto auto 23px; // Отступ между изогнутой линией и заголовком
+          .Contact_info {
+            color: #1F1F1F;
+            font-family: Montserrat;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
           }
         }
 
-        .Delivery_method {
-          font-size: 1.5rem;
-          font-weight: bold;
-          text-transform: uppercase;
-          color: #1F1F1F;
+        .firstBlockRightSide {
+          display: flex;
+          flex-direction: column;
+          width: 334px; // Занимает оставшееся пространство
+
+          input {
+            border: 1px solid #E6E6E6; // Светло-серая граница для полей ввода
+            border-radius: 5px; // Скругление углов полей ввода
+            padding: 0.75rem; // Внутренний отступ полей ввода
+            margin-bottom: 1rem; // Отступ между полями ввода
+
+            &::placeholder {
+              color: var(--Grey); // Цвет текста подсказки в полях ввода
+            }
+
+            &:focus {
+              border-color: var(--Accent1); // Розовая граница при фокусе на поле
+              outline: none; // Удаление стандартного контура при фокусе
+            }
+          }
         }
       }
 
-      .secondBlockRightSide {
+      .secondBlock {
+        margin: auto auto 2rem 0;
+        display: flex;
+        box-sizing: border-box;
 
-        form {
+        .secondBlockLeftSide {
+          display: flex;
+          flex-direction: column;
+          //align-items: center;
+          max-width: 230px;
 
-          .radio {
-            label {
-              display: block;
-              position: relative;
-              padding-left: 35px;
-              margin-bottom: 1rem;
-              cursor: pointer;
-              font-size: 1rem;
-              user-select: none;
-              color: #1F1F1F;
+          .upper_2 {
+            display: flex;
+            margin: 0 auto 5px 0;
 
-              input[type="radio"] {
-                position: absolute;
-                opacity: 0;
+            .secondBlockNumber {
+              color: var(--Accent1);
+              font-family: Neucha;
+              font-size: 54px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+
+            .cervedSecondBlock {
+              margin: 39px auto auto 23px; // Отступ между изогнутой линией и заголовком
+            }
+          }
+
+          .Delivery_method {
+            color: var(--MainBlack);
+            font-family: Montserrat;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+          }
+        }
+
+        .secondBlockRightSide {
+          display: flex;
+          width: 334px;
+
+          form {
+
+            .radio {
+              label {
+                display: block;
+                position: relative;
+                padding-left: 35px;
+                margin-bottom: 1rem;
                 cursor: pointer;
+                font-size: 1rem;
+                user-select: none;
+                color: var(--MainBlack);
 
-                &:checked ~ .checkmark {
-                  background-color: #FDA3C4;
+                input[type="radio"] {
+                  position: absolute;
+                  opacity: 0;
+                  cursor: pointer;
+
+                  &:checked ~ .checkmark {
+                    background-color: var(--Accent1);
+
+                    &:after {
+                      display: block;
+                    }
+                  }
+                }
+
+                .checkmark {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  height: 20px;
+                  width: 20px;
+                  background-color: #FFFFFF;
+                  border-radius: 50%;
+                  border: 2px solid #E6E6E6;
 
                   &:after {
-                    display: block;
+                    content: "";
+                    position: absolute;
+                    display: none;
+                    top: 2px;
+                    left: 2px;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background: white;
                   }
                 }
               }
 
-              .checkmark {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 20px;
-                width: 20px;
-                background-color: #FFFFFF;
-                border-radius: 50%;
-                border: 2px solid #E6E6E6;
-
-                &:after {
-                  content: "";
-                  position: absolute;
-                  display: none;
-                  top: 2px;
-                  left: 2px;
-                  width: 12px;
-                  height: 12px;
-                  border-radius: 50%;
-                  background: white;
-                }
+              .address {
+                max-width: 273px;
+                font-size: 0.9rem;
+                margin-left: 2rem;
               }
-            }
 
-            .address {
-              max-width: 273px;
-              font-size: 0.9rem;
-              margin-left: 2rem;
-            }
+              .input-comment {
+                width: 334px;
+                max-width: 334px;
+                margin-top: 1rem;
+                border: 1px solid #000;
+                border-radius: 5px;
+                padding: 10px 0 57px 24px;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                overflow: auto;
+                white-space: normal;
 
-            .input-comment {
-              width: 334px;
-              max-width: 334px;
-              margin-top: 1rem;
-              border: 1px solid #000;
-              border-radius: 5px;
-              padding: 10px 0 57px 24px;
-              word-wrap: break-word;
-              overflow-wrap: break-word;
-              overflow: auto;
-              white-space: normal;
-
-              &::placeholder {
-                color: var(--Accent1);
+                &::placeholder {
+                  color: var(--Accent1);
+                }
               }
             }
           }
         }
       }
+
+      .thirdBlock {
+        display: flex;
+        margin: auto auto 2rem auto; // Consistent with the other blocks
+
+        .thirdBlockLeftSide {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          max-width: 230px;
+
+          .upper_3 {
+            //border: 1px solid #000;
+
+            display: flex;
+            margin: 0 auto 5px 0;
+
+            .thirdBlockNumber {
+              color: var(--Accent1);
+              font-family: Neucha;
+              font-size: 54px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+
+            .cervedThirdBlock {
+              margin: 39px auto auto 25px;
+            }
+          }
+
+          .payment_method {
+            color: var(--MainBlack);
+            font-family: Montserrat;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+          }
+        }
+
+        .thirdBlockRightSide {
+          display: flex;
+          flex-direction: column;
+          width: 334px;
+
+          form {
+            .radio {
+              label {
+                display: block;
+                position: relative;
+                padding-left: 35px;
+                margin-bottom: 1rem;
+                cursor: pointer;
+                font-size: 1rem;
+                user-select: none;
+                color: #1F1F1F;
+
+                input {
+                  display: flex;
+                  flex-direction: column;
+                  position: absolute;
+                  opacity: 0;
+                  cursor: pointer;
+
+                  &:checked ~ .checkmark {
+                    background-color: var(--Accent1);
+
+                    &:after {
+                      display: block;
+                    }
+                  }
+                }
+
+                .checkmark {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  height: 20px;
+                  width: 20px;
+                  background-color: #FFFFFF;
+                  border-radius: 50%;
+                  border: 2px solid #E6E6E6;
+
+                  &:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                    top: 2px;
+                    left: 2px;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background: white;
+                  }
+                }
+              }
+
+            }
+          }
+
+          input {
+            border: 1px solid #E6E6E6;
+            border-radius: 5px;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            width: 334px;
+            height: 50px;
+
+            &::placeholder {
+              color: var(--Grey);
+            }
+
+            &:focus {
+              border-color: #FDA3C4;
+              outline: none;
+            }
+          }
+
+          .confirmation-checkbox {
+            display: flex;
+            align-items: center;
+            margin: 68px auto 50px 0;
+
+
+            input[type="checkbox"] {
+              position: absolute;
+              opacity: 0;
+              cursor: pointer;
+            }
+
+            .checkmark {
+              height: 20px;
+              width: 20px;
+              background-color: #FFFFFF;
+              border-radius: 50%;
+              border: 2px solid #E6E6E6;
+            }
+
+            .textLabel {
+              white-space: nowrap;
+              margin-left: 10px;
+
+            }
+
+            /* Когда чекбокс выбран, изменяем стиль .checkmark */
+            input[type="checkbox"]:checked + .checkmark {
+              background-color: var(--Accent1);
+
+
+            }
+
+            /* Стиль для знака "галочка" внутри .checkmark */
+            input[type="checkbox"]:checked + .checkmark:after {
+
+              content: "";
+              display: block;
+              /* Стилизация знака "галочка" */
+            }
+
+          }
+
+          .confirmOrder {
+            &:active {
+              scale: 0.95;
+            }
+          }
+        }
+      }
+
     }
+  }
 
-    .thirdBlock {
-      display: flex;
+  .rightColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .cart-modal-content {
+      display: inline-block;
       flex-direction: column;
-      justify-content: center;
 
-      .thirdBlockLeftSide {
-        .thirdBlockNumber {
-          color: #FDA3C4;
-          font-family: Neucha;
-          font-size: 54px;
+      .titleCart {
+        display: inline-flex;
+        color: var(--MainBlack);
+        font-family: Montserrat;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        margin: auto auto 40px 165px; // Отступы вокруг заголовка
+        text-transform: uppercase;
+      }
+
+      .cart-items-page {
+
+        .cart-item {
+
+          margin-bottom: 10px;
+
+          .item-info {
+            display: flex;
+            flex-direction: row;
+            width: 370px;
+            height: 180px;
+
+            .item-image {
+              max-width: 155px;
+              max-height: 180px;
+            }
+
+            .item-details {
+
+              .item-title {
+                color: var(--MainBlack);
+                font-family: Montserrat;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                margin: 30px auto auto 10px;
+              }
+
+              .item-sizes {
+                color: var(--MainBlack);
+                font-family: Montserrat;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                margin: 8px auto auto 10px;
+              }
+
+              .item-price {
+                color: var(--Accent1);
+                font-variant-numeric: lining-nums tabular-nums;
+                font-family: Montserrat;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                margin: 30px auto auto 10px;
+
+              }
+            }
+
+            .removeItemFromCart {
+
+              display: flex;
+              width: 25px;
+              margin: 30px 10px auto 10px;
+
+              .removeImage {
+
+                width: 12px;
+                height: 12px;
+              }
+            }
+          }
+        }
+      }
+
+      .cart-summary {
+        margin: 40px auto auto 40px;
+
+        .text-OrderSum {
+          display: inline-flex;
+          color: var(--Accent1);
+          font-family: Montserrat;
+          font-size: 16px;
           font-style: normal;
           font-weight: 400;
           line-height: normal;
         }
 
-        p {
-          color: #1F1F1F;
+        .total-price {
+          text-indent: 30px;
+          display: inline-flex;
+          color: var(--Accent1);
+          text-align: right;
+          font-variant-numeric: lining-nums tabular-nums;
           font-family: Montserrat;
-          font-size: 25px;
+          font-size: 16px;
           font-style: normal;
-          font-weight: 600;
+          font-weight: 700;
           line-height: normal;
-          text-transform: uppercase;
         }
       }
 
-      .thirdBlockRightSide {
+      .delivery {
+        margin: 8px auto auto 40px;
+
+        .diliverycost {
+          display: inline-flex;
+          color: var(--Accent1);
+          font-family: Montserrat;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        .free {
+          text-indent: 30px;
+          display: inline-flex;
+          color: var(--Accent1);
+          text-align: right;
+          font-variant-numeric: lining-nums tabular-nums;
+          font-family: Montserrat;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+
+        .body-modal-open {
+          //overflow: hidden;
+        }
+      }
+
+      .toPay {
+        margin: 40px auto auto 40px;
+
+        .toPayText {
+          display: inline-flex;
+          color: var(--MainBlack);
+          font-family: Montserrat;
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        .toPayPrice {
+          text-indent: 30px;
+          display: inline-flex;
+          color: var(--MainBlack);
+          text-align: right;
+          font-variant-numeric: lining-nums tabular-nums;
+          font-family: Montserrat;
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+
+        .body-modal-open {
+          //overflow: hidden;
+        }
       }
     }
-
-    .cartModalBlock {
-    }
   }
+
 }
+
 
 
 

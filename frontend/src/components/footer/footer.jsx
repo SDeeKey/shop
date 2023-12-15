@@ -41,7 +41,7 @@ function Footer() {
                     <img className="feedback_img" src={feedback_img} alt="feedback_img"/>
                     <div className="feedback_text">
                         <p>Нам важно знать,<br/>что ты думаешь про нас! <br/>Просто напиши мне!</p>
-                        <a href="https://vk.com/00sdk" class="text_me">Написать Иванке</a>
+                        <a href="https://vk.com/00sdk" className="text_me">Написать Иванке</a>
                         <div className="line"></div>
                     </div>
                 </div>

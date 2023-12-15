@@ -83,6 +83,48 @@
       margin: 50px auto 40px 165px; // Отступы вокруг заголовка
     }
 
+    .empty-cart {
+      display: flex;
+      flex-direction: column;
+
+      .titleEmptyCart {
+        display: flex;
+        color: var(--MainBlack);
+        font-family: Montserrat;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        justify-content: center;
+        margin: 20% auto 20% auto; // Отступы вокруг заголовка
+      }
+
+      p {
+        color: #000;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .cat {
+        display: flex;
+        justify-content: center;
+        margin: auto auto 10% auto;
+
+      }
+
+      .toShopping {
+        display: flex;
+        //justify-content: center;
+        margin: 20% auto auto auto;
+
+      }
+    }
+
     .cart-items {
 
       .cart-item {

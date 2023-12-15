@@ -126,8 +126,30 @@ const productsSlice = createSlice({
         productDetails: {},
     },
     reducers: {
-        filterByPrice: (state, {payload}) => {
-            state.filtered = state.list.filter(({price}) => price < payload);
+        filterByPrice: (state, action) => {
+            state.filtered = state.list.filter(product => product.price <= action.payload);
+        },
+        filterBySize: (state, action) => {
+            state.filtered = state.list.filter(product => action.payload.includes(product.size));
+        },
+        filterProducts: (state, action) => {
+            let filtered = state.list;
+            const {price, size} = action.payload;
+            if (price) {
+                filtered = filtered.filter(product => product.price <= price);
+            }
+            if (size) {
+                filtered = filtered.filter(product => size.includes(product.size));
+            }
+            state.filtered = filtered;
+        },
+        sortProducts: (state, action) => {
+            if (action.payload === 'priceAscending') {
+                state.filtered.sort((a, b) => a.price - b.price);
+            } else if (action.payload === 'priceDescending') {
+                state.filtered.sort((a, b) => b.price - a.price);
+            }
+            // Добавьте дополнительные условия сортировки по необходимости
         },
         getRelatedProducts: (state, {payload}) => {
             const list = state.list.filter(({category: {id}}) => id === payload);
@@ -148,6 +170,6 @@ const productsSlice = createSlice({
     },
 });
 
-export const {filterByPrice, getRelatedProducts} = productsSlice.actions;
+export const {filterByPrice, filterBySize, filterProducts, sortProducts} = productsSlice.actions;
 
 export default productsSlice.reducer;

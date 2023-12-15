@@ -1,0 +1,68 @@
+.favorites {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .favoritesProducts {
+    display: flex;
+    flex-direction: column;
+
+    .text {
+      width: 1142px;
+      margin: 0 auto;
+      text-align: left;
+
+      .wishList {
+        color: #FDA3C4;
+        font-family: Neucha;
+        font-size: 54px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .secondLine {
+        margin-bottom: 20px;
+
+        p {
+          display: inline-flex;
+          color: #1F1F1F;
+          font-family: Montserrat;
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+
+        img {
+          margin: 5px auto auto 17px;
+        }
+      }
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+  }
+
+  .empty-favorites {
+  }
+
+  .usp {
+    margin-top: 60px;
+  }
+
+  .instagram {
+  }
+
+}
+
+
+
+
