@@ -35,9 +35,14 @@ const Header = () => {
     //Переход на категории
     const dispatch = useDispatch();
 
-    const handleCategoryClick = (categoryId) => {
-        // Вызываем action для установки выбранной категории
-        dispatch(setActiveCategory(categoryId));
+    const handleCategoryClick = (categoryId, categoryName) => {
+        if (categoryName === '#Boorivagirls') {
+            // Переход на специальную страницу для категории #Boorivagirls
+            window.location.href = '/boorivagirls';
+        } else {
+            // Обычная логика для остальных категорий
+            dispatch(setActiveCategory(categoryId));
+        }
     };
 
 
@@ -105,7 +110,7 @@ const Header = () => {
                                     <NavLink
                                         className={({isActive}) => `link ${isActive ? 'active' : ""}`}
                                         to={`/category/${id}`}
-                                        onClick={() => handleCategoryClick(id)} // Добавлен обработчик onClick
+                                        onClick={() => handleCategoryClick(id, name)}
                                     >
                                         {name}
                                     </NavLink>

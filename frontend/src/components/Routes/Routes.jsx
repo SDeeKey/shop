@@ -7,6 +7,7 @@ import CartPage from "../Pages/CartPage";
 import FavoritesPage from "../Pages/FavoritesPage";
 import {ROUTES} from "../../utils/routes";
 import FiltersPage from "../Pages/FiltersPage";
+import BoorivagirlsPage from "../Pages/BoorivagirlsPage";
 
 
 const AppRoutes = () => (
@@ -16,8 +17,7 @@ const AppRoutes = () => (
         <Route path={ROUTES.PRODUCT} element={<ProductPage/>}/>
         <Route path={ROUTES.CART} element={<CartPage/>}/>
         <Route path={ROUTES.FAVORITES} element={<FavoritesPage/>}/>
-        <Route path="/favorites" element={<FavoritesPage/>}/>
-            
+        <Route path={ROUTES.BOORIVARIGLS} element={<BoorivagirlsPage/>}/>
     </Routes>
 );
 

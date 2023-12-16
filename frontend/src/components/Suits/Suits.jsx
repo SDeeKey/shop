@@ -7,6 +7,7 @@ import Suit_4 from '../../img/randimg/Suit_4.png'
 import SeeAll from "../../img/btn/SeeAll.png";
 import Price1899 from '../../img/icon/1899.png'
 import Price899 from '../../img/icon/899.png'
+import {Link} from "react-router-dom";
 
 
 function Suits() {
@@ -44,9 +45,13 @@ function Suits() {
                         </div>
 
                     </div>
+
                     <div className='button'>
-                        <img src={SeeAll} alt="SeeAll"/>
+                        <Link to={`/category/suits`}>
+                            <img className='SeeAll' src={SeeAll} alt="SeeAll"/>
+                        </Link>
                     </div>
+
                 </div>
             </div>
         </section>

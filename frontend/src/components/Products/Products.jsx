@@ -116,7 +116,7 @@ const Products = ({title, style = {}, products = [], amount, size}) => {
                             </div>
                             <div className='wrapper'>
                                 <div className='title'>{product.title}</div>
-                                <div className='price'>{product.price}₴</div>
+                                <div className='price'>{product.price} ₴</div>
                             </div>
                         </Link>
                     );

@@ -46,12 +46,14 @@ const FilterSideBar = () => {
     if (isLoading) {
         return <div>Loading...</div>;
     }
+    // Фильтрация списка категорий, исключая #Boorivagirls
+    const filteredCategories = categories.filter(category => category.name !== '#Boorivagirls');
 
     return (
         <div className="filter-sidebar">
             <h3>КАТЕГОРИИ:</h3>
             <div className="category-section">
-                {categories.map(category => (
+                {filteredCategories.map(category => (
                     <label key={category.id} className="category-item">
                         <input
                             type="radio"

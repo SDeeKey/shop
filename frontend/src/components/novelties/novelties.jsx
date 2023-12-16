@@ -4,6 +4,7 @@ import './novelties.scss';
 import Products from "../Products/Products";
 import React from "react";
 import {useSelector} from "react-redux";
+import {Link} from "react-router-dom";
 
 function Novelties() {
     const {list} = useSelector(({products}) => products)
@@ -24,9 +25,13 @@ function Novelties() {
                 {/* Конкретные карточки */}
                 <Products size="large" products={list} amount={4}/>
             </div>
+
             <div className='button'>
-                <img src={SeeAll} alt="SeeAll"/>
+                <Link to={`/category/new`}>
+                    <img src={SeeAll} alt="SeeAll"/>
+                </Link>
             </div>
+
         </div>
     </section>
 }

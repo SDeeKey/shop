@@ -4,4 +4,6 @@ export const ROUTES = {
     FAVORITES: "/favorites",
     PRODUCT: "/:categoryName/product/:productId",
     CATEGORY: "/:categoryName",
+    BOORIVARIGLS: "/:boorivagirls",
+
 };

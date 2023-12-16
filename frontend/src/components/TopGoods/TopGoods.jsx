@@ -4,6 +4,7 @@ import Banner from '../../img/randimg/TopGoods_Banner.png';
 import SeeAllred from "../../img/btn/SeeAllred.png";
 import Products from "../Products/Products";
 import {useSelector} from "react-redux";
+import {Link} from "react-router-dom";
 
 
 function TopGoods() {
@@ -20,7 +21,11 @@ function TopGoods() {
                     <img className='Banner' src={Banner} alt="Banner"/>
                     <Products size="large" products={list} amount={1}/>
                 </div>
-                <img className='SeeAllred' src={SeeAllred} alt="SeeAllred"/>
+                <div className="button">
+                    <Link to={`/category/new`}>
+                        <img className='SeeAllred' src={SeeAllred} alt="SeeAllred"/>
+                    </Link>
+                </div>
             </div>
         </section>
     );
