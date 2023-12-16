@@ -67,7 +67,10 @@
             ul {
               display: flex;
 
+
               li {
+
+
                 margin-right: 46px;
                 margin-top: 10px;
                 display: flex;
@@ -82,8 +85,11 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
+
+
               }
             }
+
 
             li.active {
               color: var(--Accent1);
@@ -92,6 +98,16 @@
             li:hover {
               cursor: pointer;
             }
+          }
+
+          .sizes li.unavailable-size {
+            //color: var(--Accent2);
+          }
+
+          .sizes li.clicked-unavailable {
+            color: var(--Accent2);
+            border-color: var(--Accent2);
+            //color: white; /* или другой цвет текста, если нужен */
           }
 
           .add {
@@ -127,9 +143,15 @@
 
           .description {
             width: 473px;
-            //height: 69px;
             overflow: hidden;
 
+            .read-more-btn {
+              color: black;
+            }
+
+            .read-more-btn:hover {
+              color: var(--Accent1);
+            }
           }
 
           .line {

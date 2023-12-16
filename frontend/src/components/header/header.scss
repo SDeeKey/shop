@@ -67,7 +67,6 @@
           }
 
           .input {
-            //border: 1px solid #000;
 
             padding-left: 15px;
 
@@ -81,26 +80,72 @@
               text-transform: capitalize;
             }
 
+            .search-dropdown {
+              position: absolute;
+              right: 150px;
+              top: 50px;
+              width: 30%; /* Ширина соответствует ширине поля поиска */
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для выпадающего списка */
+              border-radius: 15px;
+              background-color: #ffffff; /* Белый фон списка */
+              z-index: 10; /* Убедитесь, что z-index достаточно высок, чтобы быть над другими элементами */
+              max-height: 300px; /* Максимальная высота списка */
+              overflow-y: auto; /* Прокрутка для списка, если элементов слишком много */
+              padding-right: 10px; /* Добавляем отступ справа, чтобы освободить пространство для полосы прокрутки */
+            }
+
+            /* Показываем полосу прокрутки только когда необходимо */
+            .search-dropdown:hover {
+              overflow: auto; /* Показываем область прокрутки при наведении курсора */
+            }
+
+
+            .search-item {
+              display: block;
+              padding: 10px;
+              border-bottom: 1px solid #eeeeee; /* Граница между элементами списка */
+              text-decoration: none; /* Убрать подчеркивание текста ссылок */
+            }
+
+            .search-item:last-child {
+              border-bottom: none; /* Убрать границу у последнего элемента */
+            }
+
+            .search-item:hover {
+              background-color: #f8f8f8; /* Цвет фона при наведении */
+            }
+
+            .search-link {
+              display: flex;
+              align-items: center;
+              color: var(--MainBlack); /* Цвет текста элементов списка */
+            }
+
+            .search-image {
+              width: 50px; /* Установите желаемый размер изображения */
+              height: 50px;
+              margin-right: 10px;
+              object-fit: contain; /* Для сохранения пропорций изображения */
+            }
+
+            .search-title {
+              margin-right: 10px;
+              flex-grow: 1; /* Текст занимает всё доступное пространство */
+            }
+
+            .search-price {
+              color: var(--Accent1); /* Цвет цены */
+              font-weight: bold; /* Жирное начертание для цены */
+              white-space: nowrap;
+            }
+
+            /* Общие стили для всех браузеров */
+            ::-webkit-scrollbar {
+              width: 8px; /* Ширина вертикальной полосы прокрутки в браузерах, использующих движок WebKit (например, Chrome, Safari) */
+            }
+
           }
 
-          .box {
-            border: 1px solid #000;
-
-            z-index: 9;
-            //top: 120%;
-            position: absolute;
-            width: 14.5%;
-            left: 65.5%;
-            top: 5%;
-            max-height: 300px;
-            overflow-y: auto;
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            row-gap: 8px;
-            background: #BA01E3FF;
-            border-radius: 8px;
-          }
 
           .favourites {
             .heartItem {

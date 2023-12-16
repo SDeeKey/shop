@@ -30,6 +30,13 @@ const sizes = {
 };
 
 const MapView = ({size}) => {
+    //Построить маршрут
+    const buildRoute = () => {
+        const destination = "50.468271506989495,30.514615626985847"; // используйте координаты места назначения
+        const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=${destination}`;
+        window.open(routeUrl, '_blank');
+    };
+
     //Размер карты
     const productSize = sizes[size] || sizes.large;
 

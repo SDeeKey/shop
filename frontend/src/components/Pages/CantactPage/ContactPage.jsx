@@ -13,6 +13,14 @@ import Instagram from "../../Instagram/Instagram";
 
 
 const ContactPage = () => {
+
+    // Функция для построения маршрута
+    const buildRoute = () => {
+        const destination = "50.468271506989495,30.514615626985847";
+        const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=${destination}`;
+        window.open(routeUrl, '_blank');
+    };
+
     return (
         <section className='contact'>
             <div className="contentContacts">
@@ -39,10 +47,8 @@ const ContactPage = () => {
                         </div>
                     </div>
 
-                    <div className="button">
-                        {/*<Link to={}>*/}
+                    <div className="button" onClick={buildRoute}>
                         <img className='locationButton' src={locationButton} alt=""/>
-                        {/*</Link>*/}
                     </div>
 
                     <div className="map">

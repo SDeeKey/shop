@@ -1,0 +1,129 @@
+.order-confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+
+
+  .order-confirmation-content {
+    background-color: #fff;
+    padding: 40px;
+    width: 600px;
+    border-radius: 10px;
+    position: relative;
+
+    .confirmation-wrapper {
+      text-align: center;
+
+      .close-confirmation {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 24px;
+        color: #000;
+
+        p {
+          line-height: 1;
+        }
+      }
+
+      .upperLine {
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        h2 {
+          display: flex;
+          justify-content: center;
+
+          color: #FDA3C4;
+          font-family: Neucha;
+          font-size: 54px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        .line_pink {
+          position: absolute;
+          right: 50px;
+          top: 50px;
+        }
+      }
+
+      .order-status {
+        color: #1F1F1F;
+        font-family: Montserrat;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+
+      .order-id {
+        margin-top: 60px;
+        color: #1F1F1F;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+
+        span {
+          color: #000;
+          font-family: Montserrat;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+      }
+
+      .order-message {
+        display: block;
+        text-align: left;
+        margin: 10px auto auto 40px;
+        color: #1F1F1F;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        span {
+          color: var(--Accent2)
+        }
+      }
+
+      .action-button {
+        margin-top: 40px;
+
+        :active {
+          scale: 0.95;
+        }
+      }
+
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

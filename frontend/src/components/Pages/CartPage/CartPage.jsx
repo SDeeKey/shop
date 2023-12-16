@@ -9,14 +9,50 @@ import deleteImage from "../../../img/btn/delete.svg";
 import {Link} from "react-router-dom";
 import {ROUTES} from "../../../utils/routes";
 import CheckoutImage from "../../../img/btn/Checkout.svg";
+import ConfirmedOrder from "../../ConfirmedOrder/ConfirmedOrder";
 
 const CartPage = () => {
     // Состояние для отслеживания выбранной радиокнопки
     const [selectedDiliveryMethod, setSelectedDiliveryMethod] = useState('option4');
     const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('option2');
     const [checked, setChecked] = useState(true);
-
     const cartItems = useSelector(state => state.user.cart);
+
+    // Состояния для контроля видимости модального окна подтверждения заказа
+    const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
+
+
+    //для проверки заполнения полей
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+
+    const [isPopupVisible, setIsPopupVisible] = useState(false);
+    const [popupMessage, setPopupMessage] = useState('');
+
+    // Обновлённая функция валидации
+    const validateFields = () => {
+        console.log('Проверка полей:', {name, surname, phone, email});
+
+        if (name === '' || surname === '' || phone === '' || email === '') {
+            setPopupMessage('Пожалуйста, заполните все поля.');
+            setIsPopupVisible(true); // Показываем уведомление
+            return false;
+        }
+        setIsPopupVisible(false); // Скрываем уведомление
+        return true;
+    };
+
+    // Обновлённый обработчик подтверждения заказа
+    const handleConfirmOrder = () => {
+        if (validateFields()) {
+            setIsOrderConfirmed(true); // Открываем модальное окно подтверждения заказа
+        }
+    };
+    const handleInputChange = (e, setter) => {
+        setter(e.target.value);
+    };
 
     const changeCheckBox = (event) => {
         {
@@ -63,10 +99,12 @@ const CartPage = () => {
                             <p className='Contact_info'>Контактные данные</p>
                         </div>
                         <div className="firstBlockRightSide">
-                            <input type="text" placeholder='Имя'/>
-                            <input type="text" placeholder='Фамилия'/>
-                            <input type="tel" placeholder='+38 (___) ___-__-__ '/>
-                            <input type="text" placeholder='E-mail'/>
+                            <input type="text" placeholder='Имя' onChange={(e) => handleInputChange(e, setName)}/>
+                            <input type="text" placeholder='Фамилия'
+                                   onChange={(e) => handleInputChange(e, setSurname)}/>
+                            <input type="tel" placeholder='+38 (___) ___-__-__ '
+                                   onChange={(e) => handleInputChange(e, setPhone)}/>
+                            <input type="text" placeholder='E-mail' onChange={(e) => handleInputChange(e, setEmail)}/>
                         </div>
                     </div>
                     <div className="secondBlock">
@@ -130,7 +168,7 @@ const CartPage = () => {
 
                                     <p className="address">г.Киев, ул. Нижний вал, 37 Ежедневно с 11:00 до 21:00</p>
 
-                                    <input className='input-comment' type="text" placeholder='Комментарий к заказу'/>
+                                    <textarea className='input-comment' placeholder='Комментарий к заказу'/>
                                 </div>
                             </form>
                         </div>
@@ -169,7 +207,8 @@ const CartPage = () => {
                                         Наличкой при получении
                                     </label>
                                 </div>
-                                <input type="number" placeholder='Номер карты boorivasis'/>
+                                <input type="number" inputMode="numeric" placeholder='Номер карты boorivasis'/>
+
 
                             </form>
                             <div className="confirmation-checkbox">
@@ -184,9 +223,22 @@ const CartPage = () => {
                                 <label className='textLabel' htmlFor="confirmation">Я уверена в заказе, со мной <br/>
                                     можно не связываться</label>
                             </div>
-                            <button className="confirmOrder">
+                            <button className="confirmOrder" onClick={handleConfirmOrder}>
                                 <img src={Confirm} alt="Подтвердить заказ"/>
                             </button>
+
+                            {/* Модальное окно подтверждения заказа */}
+                            <ConfirmedOrder
+                                isConfirmationVisible={isOrderConfirmed}
+                                onToggleConfirmation={() => setIsOrderConfirmed(false)}
+                            />
+
+                            {/* Попап с сообщением об ошибке */}
+                            {isPopupVisible && (
+                                <div className="popup">
+                                    {popupMessage}
+                                </div>
+                            )}
 
                         </div>
                     </div>
@@ -200,7 +252,7 @@ const CartPage = () => {
                                 <div key={index} className="cart-item">
                                     <div className="item-info">
                                         <div className="item-image">
-                                            <img src={item.images} alt={item.title}
+                                            <img className='images' src={item.images} alt={item.title}
                                             />
                                         </div>
                                         <div className="item-details">

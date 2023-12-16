@@ -103,6 +103,10 @@
           position: absolute;
           left: 108px;
           bottom: 16px;
+
+          &:active {
+            scale: 0.95;
+          }
         }
       }
     }

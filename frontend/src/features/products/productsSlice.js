@@ -49,7 +49,7 @@ const productsSlice = createSlice({
                         " образ. Свитшот выполнен из мягкого и приятного на ощупь материала, обеспечивая уют и" +
                         " тепло в холодные дни.",
                     images: [
-                        "https://i.ibb.co/wRs7MV8/Sweatshirt.png",
+                        "https://i.ibb.co/3yVQ36w/Sweatshirt-Photo-Room-png-Photo-Room.png",
                     ],
                     creationAt: "2023-12-09T04:06:50.000Z",
                     updatedAt: "2023-12-09T04:06:50.000Z",
@@ -72,7 +72,7 @@ const productsSlice = createSlice({
                         " делая его подходящим как для вечерних выходов, так и для специальных случаев." +
                         " Легкость и воздушность материала обеспечивают комфорт при ношении.",
                     images: [
-                        "https://i.ibb.co/HNgqVct/sheer-dress.png",
+                        "https://i.ibb.co/jv86hYZ/sheer-dress.png",
                     ],
                     creationAt: "2023-12-09T04:06:50.000Z",
                     updatedAt: "2023-12-09T04:06:50.000Z",
@@ -100,7 +100,7 @@ const productsSlice = createSlice({
                         " идеальный выбор для тех, кто ценит комфорт, стиль и универсальность.",
 
                     images: [
-                        "https://i.ibb.co/VjbZSrZ/bomber-jacket.png",
+                        "https://i.ibb.co/tX626Cc/bomber-jacket.png",
 
                     ],
                     creationAt: "2023-12-09T04:06:50.000Z",
@@ -124,7 +124,7 @@ const productsSlice = createSlice({
                         " добавляя яркости и оригинальности в обыденный гардероб. Платье изготовлено из мягкого," +
                         " дышащего материала, обеспечивая комфорт на весь день.",
                     images: [
-                        "https://i.ibb.co/StfVht8/T-shirt-dress.png",
+                        "https://i.ibb.co/qnC98ft/T-shirt-dress.png",
                     ],
                     creationAt: "2023-12-09T04:06:50.000Z",
                     updatedAt: "2023-12-09T04:06:50.000Z",

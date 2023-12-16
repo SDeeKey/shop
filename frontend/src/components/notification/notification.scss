@@ -1,0 +1,9 @@
+.popup {
+  display: flex;
+  position: fixed;
+  top: 110px;
+  background-color: var(--grey);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}

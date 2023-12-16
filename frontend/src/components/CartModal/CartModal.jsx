@@ -68,7 +68,7 @@ const CartModal = ({showModal, toggleModal}) => {
                             <div key={index} className="cart-item">
                                 <div className="item-info">
                                     <div className="item-image">
-                                        <img src={item.images} alt={item.title}
+                                        <img className='image' src={item.images} alt={item.title}
                                         />
                                     </div>
                                     <div className="item-details">

@@ -5,8 +5,7 @@ import searchItem from '../../img/icon/search-item.svg'
 import heartItem from '../../img/icon/heart-item.svg'
 import bagItem from '../../img/icon/shopping-bag-item.svg'
 import './header.scss'
-import React, {useState} from 'react';
-import Basket from '../CartModal/CartModal'
+import React, {useEffect, useState} from 'react';
 import {Link, NavLink} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {ROUTES} from "../../utils/routes";
@@ -15,7 +14,27 @@ import {setActiveCategory} from "../../features/products/productsSlice";
 
 
 const Header = () => {
-    //показ корзины
+    const products = useSelector(state => state.products.list);
+
+
+    // Состояние для хранения результатов поиска
+    const [searchInput, setSearchInput] = useState(''); // Объявление состояния
+    const [searchResults, setSearchResults] = useState([]);
+
+    // Обновляем результаты поиска каждый раз, когда изменяется ввод поиска
+    useEffect(() => {
+        if (searchInput) {
+            const filteredProducts = products.filter(product =>
+                product.title.toLowerCase().includes(searchInput.toLowerCase())
+            );
+            setSearchResults(filteredProducts);
+        } else {
+            setSearchResults([]);
+        }
+    }, [searchInput]);
+
+
+    //Показ корзины
     const [showModal, setShowModal] = useState(false);
 
     const toggleModal = () => {
@@ -24,8 +43,6 @@ const Header = () => {
 
     const {list} = useSelector(({categories}) => categories)
 
-    // Состояние для управления вводом в поле поиска
-    const [searchInput, setSearchInput] = useState('');
 
     // Функция для обновления состояния ввода
     const handleInputChange = (event) => {
@@ -76,17 +93,36 @@ const Header = () => {
                                 <img className='searchIcon' src={searchItem} alt='searchItem'/>
                             </Link>
                             <div className="input">
-                                <input type="Поиск"
-                                       name='search'
-                                       placeholder='Поиск'
-                                       autoComplete='off'
-                                       onChange={handleInputChange}
-                                       value={searchInput}
-
+                                <input
+                                    type="text"
+                                    name='search'
+                                    placeholder='Поиск'
+                                    autoComplete='off'
+                                    onChange={handleInputChange}
+                                    value={searchInput}
                                 />
+                                {searchInput && searchResults.length > 0 && (
+                                    <div className="search-dropdown">
+                                        <ul>
+                                            {searchResults.map((item) => (
+                                                <li key={item.id} className="search-item">
+                                                    <Link
+                                                        to={`/${item.category.name.replace(/\s+/g, '-').toLowerCase()}/product/${item.id}`}
+                                                        onClick={() => setSearchInput('')}
+                                                        className="search-link"
+                                                    >
+                                                        <img src={item.images[0]} alt={item.title}
+                                                             className="search-image"/>
+                                                        <span className="search-title">{item.title}</span>
+                                                        <span className="search-price">{item.price} ₴</span>
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
                             </div>
                             {/* для выпадающего окна поиска*/}
-                            {/*{false && <div className="box"></div>}*/}
                             <Link to={ROUTES.FAVORITES} className='favourites'>
                                 <img className='heartItem' src={heartItem} alt='heartItem'></img>
                             </Link>

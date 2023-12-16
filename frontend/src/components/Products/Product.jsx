@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import {getProducts} from '../../features/products/productsSlice';
 import {addItemToCart} from '../../features/user/userSlice';
 import modelParams from '../../img/randimg/modelParams.png';
@@ -16,6 +16,8 @@ import curved_line from "../../img/lines/curved line.svg";
 import Products from "./Products";
 import Instagram from "../Instagram/Instagram";
 import SizeTable from "../SizeTable/SizeTable";
+import {ROUTES} from "../../utils/routes";
+import Notification from "../notification/notification";
 
 const SIZES = ['XS — S', 'S — M', 'M — L', 'L — XL'];
 
@@ -28,9 +30,36 @@ const Product = () => {
     const [currentImage, setCurrentImage] = useState();
     const [showModal, setShowModal] = useState(false);
     const list = useSelector(state => state.products.list);
+    const [clickedUnavailableSizes, setClickedUnavailableSizes] = useState(new Set());
+    const [isDescriptionExpanded, setDescriptionExpanded] = useState(false);
+    const [isSizeSelected, setIsSizeSelected] = useState(true);
+    const [isPopupVisible, setIsPopupVisible] = useState(false);
 
+    // Функция для переключения состояния показа текста
+    const toggleDescription = () => {
+        setDescriptionExpanded(!isDescriptionExpanded);
+    };
 
     const productDetails = products.find(product => product.id === parseInt(productId));
+
+    const handleSizeClick = (size) => {
+        if (!isSizeAvailable(size)) {
+            setClickedUnavailableSizes(prev => new Set(prev).add(size));
+            return; // Не выполняем никаких действий, если размер недоступен
+        }
+        // Существующая логика для выбора размера
+        setSelectedSize(size);
+    };
+
+    const isSizeAvailable = (size) => {
+        return productDetails && productDetails.sizes.includes(size);
+    };
+
+    useEffect(() => {
+        setClickedUnavailableSizes(new Set()); // Очищаем выбранные недоступные размеры
+        setSelectedSize(null); // Опционально: также можно сбросить выбранный размер
+    }, [productId]); // Эффект срабатывает при изменении productId
+
 
     useEffect(() => {
         if (!productDetails) {
@@ -49,6 +78,10 @@ const Product = () => {
     const handleClose = () => setShowModal(false);
 
     const handleAddToCart = () => {
+        if (!selectedSize) {
+            setIsPopupVisible(true); // Показываем всплывающее окно
+            return;
+        }
         if (selectedSize && productDetails) {
             // Создаем объект с нужными свойствами для корзины
             const itemWithImage = {
@@ -87,27 +120,42 @@ const Product = () => {
                                             {SIZES.map((size) => (
                                                 <li
                                                     key={size}
-                                                    onClick={() => handleSelectSize(size)}
-                                                    className={selectedSize === size ? 'active' : ''}
+                                                    onClick={() => handleSizeClick(size)}
+                                                    className={`
+                                                        ${selectedSize === size ? 'active' : ''}
+                                                        ${!isSizeAvailable(size) ? 'unavailable-size' : ''}
+                                                        ${clickedUnavailableSizes.has(size) ? 'clicked-unavailable' : ''}
+                                                        `}
                                                 >
                                                     {size}
                                                 </li>
                                             ))}
                                         </ul>
                                     </div>
-                                    <button className='add' onClick={handleAddToCart} disabled={!selectedSize}>
+                                    {isPopupVisible && (
+                                        <Notification
+                                            message="Пожалуйста, выберите размер перед добавлением в корзину."
+                                            onClose={() => setIsPopupVisible(false)}
+                                        />
+                                    )}
+                                    <button className='add' onClick={handleAddToCart}>
                                         <img
                                             className='addToCart'
                                             src={addToCartImg}
                                             alt="В корзину"
                                         />
                                     </button>
-                                    <button className='quick'>
-                                        <img className='quickOrder' src={quickOrder} alt="Быстрый заказ"/>
+                                    <button className='quick' onClick={handleAddToCart}>
+                                        <Link to={ROUTES.CART}>
+                                            <img className='quickOrder' src={quickOrder} alt="Быстрый заказ"/>
+                                        </Link>
                                     </button>
 
                                     <div className='description'>
-                                        <p>{productDetails.description}</p>
+                                        <p>{isDescriptionExpanded ? productDetails.description : productDetails.description.slice(0, 200) + '...'}</p>
+                                        <button onClick={toggleDescription} className="read-more-btn">
+                                            {isDescriptionExpanded ? 'Скрыть' : 'Читать дальше'}
+                                        </button>
                                     </div>
                                     <div className="line"></div>
                                 </div>

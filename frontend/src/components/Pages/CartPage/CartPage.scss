@@ -58,8 +58,10 @@
           width: 334px; // Занимает оставшееся пространство
 
           input {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
             border: 1px solid #E6E6E6; // Светло-серая граница для полей ввода
-            border-radius: 5px; // Скругление углов полей ввода
+            border-radius: 10px; // Скругление углов полей ввода
             padding: 0.75rem; // Внутренний отступ полей ввода
             margin-bottom: 1rem; // Отступ между полями ввода
 
@@ -91,6 +93,7 @@
             margin: 0 auto 5px 0;
 
             .secondBlockNumber {
+
               color: var(--Accent1);
               font-family: Neucha;
               font-size: 54px;
@@ -176,22 +179,22 @@
                 margin-left: 2rem;
               }
 
-              .input-comment {
+              textarea {
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
                 width: 334px;
-                max-width: 334px;
                 margin-top: 1rem;
-                border: 1px solid #000;
-                border-radius: 5px;
+                border-radius: 10px;
                 padding: 10px 0 57px 24px;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-                overflow: auto;
-                white-space: normal;
+                resize: none;
+                outline: none;
+
 
                 &::placeholder {
                   color: var(--Accent1);
                 }
               }
+
+
             }
           }
         }
@@ -199,7 +202,7 @@
 
       .thirdBlock {
         display: flex;
-        margin: auto auto 2rem auto; // Consistent with the other blocks
+        margin: auto auto 2rem auto;
 
         .thirdBlockLeftSide {
           display: flex;
@@ -239,6 +242,7 @@
         }
 
         .thirdBlockRightSide {
+
           display: flex;
           flex-direction: column;
           width: 334px;
@@ -299,12 +303,14 @@
           }
 
           input {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             border: 1px solid #E6E6E6;
-            border-radius: 5px;
+            border-radius: 10px;
             padding: 0.75rem;
             margin-bottom: 1rem;
             width: 334px;
             height: 50px;
+
 
             &::placeholder {
               color: var(--Grey);
@@ -316,10 +322,20 @@
             }
           }
 
+          input[type="number"]::-webkit-inner-spin-button,
+          input[type="number"]::-webkit-outer-spin-button,
+          input[type="number"]::-webkit-inner-spin-button:hover,
+          input[type="number"]::-webkit-outer-spin-button:hover {
+            -webkit-appearance: none;
+            appearance: none;
+            margin: 0;
+            cursor: default;
+          }
+
           .confirmation-checkbox {
             display: flex;
             align-items: center;
-            margin: 68px auto 50px 0;
+            margin: 50px auto 50px 0;
 
 
             input[type="checkbox"] {
@@ -371,16 +387,24 @@
   }
 
   .rightColumn {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
 
+
     .cart-modal-content {
       display: inline-block;
       flex-direction: column;
+      /* Показываем полосу прокрутки только когда необходимо */
+
 
       .titleCart {
-        display: inline-flex;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
         color: var(--MainBlack);
         font-family: Montserrat;
         font-size: 25px;
@@ -388,40 +412,53 @@
         font-weight: 700;
         line-height: normal;
         text-transform: uppercase;
-        margin: auto auto 40px 165px; // Отступы вокруг заголовка
+        margin-bottom: 20px;
         text-transform: uppercase;
       }
 
       .cart-items-page {
 
-        .cart-item {
+        max-height: 790px;
+        overflow-y: auto;
 
-          margin-bottom: 10px;
+
+        .cart-item {
+          position: relative;
+          margin-bottom: 30px;
+
+          :hover {
+            background-color: #e3e2e2; /* Цвет фона при наведении */
+            border-radius: 20px;
+          }
 
           .item-info {
             display: flex;
             flex-direction: row;
-            width: 370px;
+            width: 520px;
             height: 180px;
 
             .item-image {
-              max-width: 155px;
-              max-height: 180px;
+              display: flex;
             }
 
             .item-details {
+              display: flex;
+              flex-direction: column;
 
               .item-title {
+                max-width: 350px;
+                word-wrap: break-word;
                 color: var(--MainBlack);
                 font-family: Montserrat;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 600;
                 line-height: normal;
-                margin: 30px auto auto 10px;
+                margin-top: 10px;
+                margin-left: 10px;
               }
 
-              .item-sizes {
+              .item-size {
                 color: var(--MainBlack);
                 font-family: Montserrat;
                 font-size: 14px;
@@ -432,6 +469,7 @@
               }
 
               .item-price {
+
                 color: var(--Accent1);
                 font-variant-numeric: lining-nums tabular-nums;
                 font-family: Montserrat;
@@ -447,11 +485,12 @@
             .removeItemFromCart {
 
               display: flex;
+              position: absolute;
+              right: 5px;
+              top: 13px;
               width: 25px;
-              margin: 30px 10px auto 10px;
 
               .removeImage {
-
                 width: 12px;
                 height: 12px;
               }
@@ -460,8 +499,14 @@
         }
       }
 
+      /* Общие стили для всех браузеров */
+      ::-webkit-scrollbar {
+        width: 8px; /* Ширина вертикальной полосы прокрутки в браузерах, использующих движок WebKit (например, Chrome, Safari) */
+      }
+
+
       .cart-summary {
-        margin: 40px auto auto 40px;
+        margin: 20px auto auto 40px;
 
         .text-OrderSum {
           display: inline-flex;
@@ -519,7 +564,7 @@
       }
 
       .toPay {
-        margin: 40px auto auto 40px;
+        margin: 20px auto 40px 40px;
 
         .toPayText {
           display: inline-flex;

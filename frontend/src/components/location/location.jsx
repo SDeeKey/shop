@@ -12,6 +12,13 @@ import GoogleMap from "../GoogleMap/GoogleMap.jsx";
 
 
 function Location() {
+    // Функция для построения маршрута
+    const buildRoute = () => {
+        const destination = "50.468271506989495,30.514615626985847";
+        const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=${destination}`;
+        window.open(routeUrl, '_blank');
+    };
+
     return (
         <section className='Location'>
             <div className='container_location'>
@@ -35,7 +42,7 @@ function Location() {
                         <img className='Arrow_1' src={Arrow} alt="Arrow"/>
                         <img className='Arrow_2' src={Arrow} alt="Arrow"/>
                         <img className='Heart_location_2' src={Heart_location} alt="Heart_location"/>
-                        <div className='button'>
+                        <div className='button' onClick={buildRoute}>
                             <img className='locationButton' src={locationButton} alt="locationButton"/>
                         </div>
                         <div className="map">
