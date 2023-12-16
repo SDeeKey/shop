@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {useSelector} from 'react-redux';
 import './FavoritesPage.scss';
-import Usp from "../Usp/Usp";
-import Instagram from "../Instagram/Instagram";
-import Products from '../Products/Products';
-import cerved from './../../img/lines/curved line.svg'
-import EmptyWishlistModal from './../EmptyWishlistModal/EmptyWishlistModal';
+import Usp from "../../Usp/Usp";
+import Instagram from "../../Instagram/Instagram";
+import Products from '../../Products/Products';
+import cerved from '../../../img/lines/curved line.svg'
+import EmptyWishlistModal from '../../EmptyWishlistModal/EmptyWishlistModal';
 
 const FavoritesPage = () => {
     const favorites = useSelector((state) => state.user.favorites);

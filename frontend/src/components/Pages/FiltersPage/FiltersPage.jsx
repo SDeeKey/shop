@@ -1,10 +1,10 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import FilterSideBar from "../FilterSideBar/FilterSideBar";
-import Products from '../Products/Products';
+import FilterSideBar from "../../FilterSideBar/FilterSideBar";
+import Products from '../../Products/Products';
 import './FiltersPage.scss'
-import Instagram from "../Instagram/Instagram";
-import filterBanner from './../../img/randimg/filterBanner.svg'
+import Instagram from "../../Instagram/Instagram";
+import filterBanner from '../../../img/randimg/filterBanner.svg'
 
 const FiltersPage = () => {
     // Получаем отфильтрованный список товаров из Redux-хранилища

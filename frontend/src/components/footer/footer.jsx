@@ -16,10 +16,18 @@ function Footer() {
                 </Link>
                 <div className="info">
                     <span>Инфо</span>
-                    <a>Контакты</a>
-                    <a>Система лояльности</a>
-                    <a>Обмен и возврат</a>
-                    <a>Доставка и оплата</a>
+                    <Link to={ROUTES.CONTACTS}>
+                        <p>Контакты</p>
+                    </Link>
+                    <Link to={ROUTES.LOYALSYSTEM}>
+                        <p>Система лояльности</p>
+                    </Link>
+                    <Link to={ROUTES.REFUND}>
+                        <p>Обмен и возврат</p>
+                    </Link>
+                    <Link to={ROUTES.DELIVERY}>
+                        <p>Доставка и оплата</p>
+                    </Link>
                 </div>
                 <div className="address">
                     <span>НАШ АДРЕС</span>

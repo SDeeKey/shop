@@ -4,6 +4,10 @@ export const ROUTES = {
     FAVORITES: "/favorites",
     PRODUCT: "/:categoryName/product/:productId",
     CATEGORY: "/:categoryName",
-    BOORIVARIGLS: "/:boorivagirls",
+    BOORIVARIGLS: "/boorivagirls",
+    CONTACTS: "/contacts",
+    LOYALSYSTEM: "/loyal",
+    REFUND: "/refund",
+    DELIVERY: "/delivery",
 
 };

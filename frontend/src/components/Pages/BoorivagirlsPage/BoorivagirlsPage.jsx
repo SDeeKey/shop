@@ -1,16 +1,16 @@
 import React from 'react';
-import cerved from './../../img/lines/curved line.svg'
-import boorivaFirstImage from './../../img/randimg/boorivaFirstImage.png'
-import boorivaSecondImage from './../../img/randimg/boorivaSecondImage.png'
-import boorivaThirdImage from './../../img/randimg/boorivaThirdImage.png'
-import boorivaFourthImage from './../../img/randimg/boorivaFourthImage.png'
-import boorivaFifthImage from './../../img/randimg/boorivaFifthImage.png'
-import boorivaSixthImage from './../../img/randimg/boorivaSixthImage.png'
-import boorivaEighthImage from './../../img/randimg/boorivaEighthImage.png'
-import boorivaNinthImage from './../../img/randimg/boorivaNinthImage.png'
+import cerved from '../../../img/lines/curved line.svg'
+import boorivaFirstImage from '../../../img/randimg/boorivaFirstImage.png'
+import boorivaSecondImage from '../../../img/randimg/boorivaSecondImage.png'
+import boorivaThirdImage from '../../../img/randimg/boorivaThirdImage.png'
+import boorivaFourthImage from '../../../img/randimg/boorivaFourthImage.png'
+import boorivaFifthImage from '../../../img/randimg/boorivaFifthImage.png'
+import boorivaSixthImage from '../../../img/randimg/boorivaSixthImage.png'
+import boorivaEighthImage from '../../../img/randimg/boorivaEighthImage.png'
+import boorivaNinthImage from '../../../img/randimg/boorivaNinthImage.png'
 
 
-import instagram from "./../../img/btn/Instagram.svg";
+import instagram from "../../../img/btn/Instagram.svg";
 
 import './BoorivagirlsPage.scss'
 

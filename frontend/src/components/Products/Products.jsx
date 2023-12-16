@@ -35,8 +35,6 @@ const Products = ({title, style = {}, products = [], amount, size}) => {
         }));
     };
 
-//sizes Изменено было sizes.large
-
 
 // Функция для изменения размера шрифта
     const adjustFontSize = () => {

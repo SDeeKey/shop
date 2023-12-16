@@ -1,0 +1,119 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  .contentContacts {
+    display: flex;
+    flex-direction: row;
+    max-width: 1143px;
+    position: relative;
+
+    .mainContent {
+      display: flex;
+      flex-direction: row;
+
+      .leftSideBar {
+        display: flex;
+        flex-direction: column;
+        margin-right: 246px;
+
+        h2 {
+          color: var(--Accent1);
+          font-family: Neucha;
+          font-size: 54px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        .secondLine {
+          display: flex;
+          margin-bottom: 35px;
+
+          p {
+            color: var(--MainBlack);
+            font-family: Montserrat;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+          }
+
+          .cerved {
+            margin-left: 17px;
+          }
+        }
+
+        .address {
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 20px;
+
+          p {
+            margin-left: 18px;
+            white-space: nowrap;
+          }
+        }
+
+        .phone {
+          display: flex;
+          margin-bottom: 20px;
+
+          p {
+            margin-left: 18px;
+          }
+        }
+
+        .mail {
+          display: flex;
+
+          p {
+            margin-left: 18px;
+          }
+        }
+      }
+
+
+      .image {
+        display: flex;
+        margin-top: 30px;
+
+        .BoorivaImage {
+          width: 660px;
+          height: 790px;
+        }
+
+      }
+
+      .map {
+        z-index: 1;
+        position: absolute;
+        width: 563px;
+        height: 380px;
+        left: 96px;
+        top: 335px;
+      }
+
+      .button {
+        .locationButton {
+          position: absolute;
+          left: 108px;
+          bottom: 16px;
+        }
+      }
+    }
+
+
+  }
+
+  .usp {
+
+    margin-top: 60px;
+  }
+}
+
+

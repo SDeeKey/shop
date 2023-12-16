@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
-import cervedLIne from './../../img/lines/curved line_pink.svg'
-import Confirm from './../../img/btn/confirmOrder.svg'
+import cervedLIne from '../../../img/lines/curved line_pink.svg'
+import Confirm from '../../../img/btn/confirmOrder.svg'
 import './CartPage.scss'
-import CartModal from "../CartModal/CartModal";
+import CartModal from "../../CartModal/CartModal";
 import {useDispatch, useSelector} from "react-redux";
-import {removeItemFromCart} from "../../features/user/userSlice";
-import deleteImage from "../../img/btn/delete.svg";
+import {removeItemFromCart} from "../../../features/user/userSlice";
+import deleteImage from "../../../img/btn/delete.svg";
 import {Link} from "react-router-dom";
-import {ROUTES} from "../../utils/routes";
-import CheckoutImage from "../../img/btn/Checkout.svg";
+import {ROUTES} from "../../../utils/routes";
+import CheckoutImage from "../../../img/btn/Checkout.svg";
 
 const CartPage = () => {
     // Состояние для отслеживания выбранной радиокнопки

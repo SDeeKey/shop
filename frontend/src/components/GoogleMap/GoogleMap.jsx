@@ -3,7 +3,6 @@ import React from 'react';
 import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import './GoogleMap.scss';
 // Удалите или комментируйте неиспользуемые импорты
 // import Marker from './../../img/icon/marker.svg'
 
@@ -25,13 +24,22 @@ const customIcon = new L.Icon({
     // shadowSize: [41, 41] // Размер тени
 });
 
-const MapView = () => {
+const sizes = {
+    small: {width: "273px", height: "246px"},
+    large: {width: "563px", height: "380px"},
+};
+
+const MapView = ({size}) => {
+    //Размер карты
+    const productSize = sizes[size] || sizes.large;
+
     const position = [50.468271506989495, 30.514615626985847]; // Широта и долгота
     return (
-        <MapContainer center={position} zoom={20} style={{height: '246px', width: '273px', borderRadius: '24px'}}>
+        <MapContainer center={position} zoom={20}
+                      style={{width: productSize.width, height: productSize.height, borderRadius: '24px'}}>
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+                attribution='&copy;'
             />
             <Marker position={position} icon={customIcon}>
                 {/*<Popup>*/}

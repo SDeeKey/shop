@@ -6,9 +6,9 @@ import Heart_location from '../../img/lines/heart_location.svg'
 import Wavy_line from '../../img/lines/wavy_line.svg'
 import Arrow from '../../img/lines/arrow.svg'
 import Arc from '../../img/lines/arc.svg'
-import Brush_effect_t_shirt from '../../img/clothes/brush_effect_t_shirt.svg'
+import locationButton from '../../img/btn/locationButton.svg'
 
-import GoogleMapLocation from "../GoogleMap/GoogleMap.jsx";
+import GoogleMap from "../GoogleMap/GoogleMap.jsx";
 
 
 function Location() {
@@ -35,10 +35,11 @@ function Location() {
                         <img className='Arrow_1' src={Arrow} alt="Arrow"/>
                         <img className='Arrow_2' src={Arrow} alt="Arrow"/>
                         <img className='Heart_location_2' src={Heart_location} alt="Heart_location"/>
-                        <img className='Brush_effect_t_shirt' src={Brush_effect_t_shirt} alt="Brush_effect_t_shirt"/>
-                        <p className='text_btn'>проложить маршрут</p>
+                        <div className='button'>
+                            <img className='locationButton' src={locationButton} alt="locationButton"/>
+                        </div>
                         <div className="map">
-                            <GoogleMapLocation/>
+                            <GoogleMap size="small"/>
                         </div>
                     </div>
                 </div>

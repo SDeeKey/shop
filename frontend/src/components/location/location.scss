@@ -169,28 +169,17 @@
           top: 51px;
         }
 
-        .Brush_effect_t_shirt {
-          width: 240px;
-          height: 50px;
+        .button {
           display: flex;
+          justify-items: center;
+          align-items: center;
           margin-top: 47px;
-        }
 
-        .text_btn {
-          z-index: 1;
-          display: flex;
-          position: absolute;
-          top: 62px;
-
-          color: var(--White);
-
-          text-align: center;
-          font-family: Neucha;
-          font-size: 14px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-          text-transform: uppercase;
+          .locationButton {
+            &:active {
+              scale: 0.95;
+            }
+          }
         }
 
         .map {
