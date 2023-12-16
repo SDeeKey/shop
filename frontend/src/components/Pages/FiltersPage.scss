@@ -1,44 +1,35 @@
-// FiltersPage.scss
-.filters-page {
+.filters {
   display: flex;
-  flex-direction: row;
-}
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px auto 50px auto;
 
-.filters-sidebar {
-  position: relative;
-  width: 240px; // Задайте желаемую ширину боковой панели
-  border-right: 1px solid #ccc; // Линия разделения, если нужно
-  padding: 20px;
+  .contentFilters {
 
-  h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
+    display: flex;
+    flex-direction: row;
+    max-width: 1142px;
 
-  ul {
-    list-style: none;
-    padding: 0;
+    .sideBar {
+      display: flex;
+      //flex-direction: column;
 
-    li {
-      margin-bottom: 5px;
+    }
 
-      label {
-        font-size: 16px;
-        cursor: pointer;
+    .otherContent {
 
-        input[type="checkbox"] {
-          margin-right: 10px;
-        }
+      .list {
+        //border: 1px solid #000;
+
+        column-gap: 50px;
+        row-gap: 50px;
+        margin: 50px auto 50px 50px;
+        //box-sizing: border-box;
+      }
+
+      .Instagram {
+
       }
     }
   }
-
-  // Добавьте стили для других фильтров здесь
 }
-
-.products-section {
-  flex-grow: 1; // Разрешает продуктам занимать доступное пространство
-  padding: 20px;
-}
-
-// Стили для Instagram, если они у вас есть

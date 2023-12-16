@@ -1,51 +1,91 @@
-.filters-sidebar {
-  width: 240px; // Установите ширину сайдбара по вашему усмотрению
-  padding: 20px; // Добавьте отступы для внутреннего содержимого
-  font-family: 'Arial', sans-serif; // Выберите шрифт, если он отличается от стандартного
+.filter-sidebar {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
 
-  h2 {
-    font-size: 1.2em; // Размер шрифта для заголовков
-    margin-bottom: 10px; // Отступ снизу для заголовков
-    font-weight: bold; // Жирность шрифта для заголовков
+  h3 {
+    color: #1F1F1F;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 50px auto 30px 0;
   }
 
-  .filter-section {
-    margin-bottom: 30px; // Отступы между секциями фильтров
+  .category-section,
+  .price-section,
+  .size-section {
+    //margin-bottom: 20px;
+    white-space: nowrap;
+    color: #1F1F1F;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 
-    label {
-      display: block; // Разместите каждый label на новой строке
-      margin-bottom: 5px; // Отступы между label
-      font-size: 0.9em; // Размер шрифта для label
-      cursor: pointer; // Указатель курсора для интерактивности
+    .category-item,
+    .price-item,
+    .size-item {
+      display: flex;
+      margin-bottom: 10px;
+      position: relative;
+      cursor: pointer;
 
-      input {
-        margin-right: 10px; // Отступ справа от checkbox или radio button
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+
+      input[type="radio"] {
+        opacity: 0;
+        position: absolute;
+        cursor: pointer;
+
+        &:checked + .checkmark {
+          background-color: var(--Accent1);
+        }
+      }
+
+      .checkmark {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        &::after {
+          content: '';
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background: #fff;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: none;
+        }
+      }
+
+      input[type="radio"]:checked + .checkmark:after {
+        display: block;
       }
     }
   }
-
-  // Добавьте стили для раскрытия/сворачивания подкатегорий, если это необходимо
-  // Пример для категорий с возможностью сворачивания/разворачивания:
-  .category-dropdown {
-    // Стили для кнопки раскрытия/сворачивания
-  }
-
-  .category-list {
-    // Стили для списка категорий
-    display: none; // По умолчанию скрыт, показывается при раскрытии
-  }
-
-  // Стилизация для активного состояния или при наведении
-  label:hover,
-  input:checked + label {
-    color: #d10000; // Пример изменения цвета при наведении или выбранном состоянии
-  }
-
-  // Стили для адаптивного дизайна, если необходимо
-  @media (max-width: 768px) {
-    width: 100%; // Сайдбар на полную ширину для мобильных устройств
-    padding: 10px;
-  }
 }
 
-// Подключите этот SCSS файл к вашему проекту, и убедитесь, что компоненты используют соответствующие классы.

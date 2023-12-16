@@ -8,9 +8,10 @@ import './header.scss'
 import React, {useState} from 'react';
 import Basket from '../CartModal/CartModal'
 import {Link, NavLink} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {ROUTES} from "../../utils/routes";
 import CartModal from "../CartModal/CartModal";
+import {setActiveCategory} from "../../features/products/productsSlice";
 
 
 const Header = () => {
@@ -30,6 +31,16 @@ const Header = () => {
     const handleInputChange = (event) => {
         setSearchInput(event.target.value);
     };
+
+    //Переход на категории
+    const dispatch = useDispatch();
+
+    const handleCategoryClick = (categoryId) => {
+        // Вызываем action для установки выбранной категории
+        dispatch(setActiveCategory(categoryId));
+    };
+
+
     // Для вывода количества товара на значке корзины
     const cartItems = useSelector(state => state.user.cart);
     const itemCount = cartItems.reduce((total, item) => {
@@ -87,15 +98,14 @@ const Header = () => {
                             <span className='count'>{itemCount}</span>
                         </div>
                     </div>
-                    {/*<CartModal isOpen={isModalOpen} closeModal={toggleModal}/>*/}
                     <nav className='header_nav'>
                         <ul>
-                            {/* Динамически создаем ссылки на категории */}
                             {list.map(({id, name}) => (
                                 <li key={id}>
                                     <NavLink
                                         className={({isActive}) => `link ${isActive ? 'active' : ""}`}
                                         to={`/category/${id}`}
+                                        onClick={() => handleCategoryClick(id)} // Добавлен обработчик onClick
                                     >
                                         {name}
                                     </NavLink>

@@ -17,6 +17,20 @@ export const getProducts = createAsyncThunk(
     }
 );
 
+const doesSizeMatch = (productSizeRanges, selectedSizeRange) => {
+    // Получаем индексы для выбранных размеров
+    const [selectedMinSize, selectedMaxSize] = selectedSizeRange.split(' — ').map(size => sizeOrder.indexOf(size));
+    // Перебираем каждый диапазон размеров продукта
+    return productSizeRanges.some(productSizeRange => {
+        const [productMinSize, productMaxSize] = productSizeRange.split(' — ').map(size => sizeOrder.indexOf(size));
+        // Проверяем, что выбранный диапазон находится внутри диапазона продукта
+        return selectedMinSize >= productMinSize && selectedMaxSize <= productMaxSize;
+    });
+};
+
+
+const sizeOrder = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+
 
 const productsSlice = createSlice({
     name: "products",
@@ -27,6 +41,7 @@ const productsSlice = createSlice({
                 title: "Cвитшот вставка\n" +
                     "клетка",
                 price: 1099,
+                sizes: ["S — M", "M — L", "L — XL"],
                 description: "Этот уникальный свитшот выделяется своей оригинальной вставкой в клетку." +
                     " Имея классический крой, свитшот обеспечивает комфорт и универсальность." +
                     " Вставка в клетку добавляет нотку элегантности и делает его идеальным как для" +
@@ -50,6 +65,7 @@ const productsSlice = createSlice({
                 title: "Платье прозрачное\n" +
                     "в цветочек черное",
                 price: 1299,
+                sizes: ["XS — S", "M — L", "L — XL"],
                 description: "Это платье - настоящий шедевр для тех, кто любит сочетать романтику и смелость" +
                     " в своем стиле. Оно выполнено из прозрачной ткани с нежным цветочным узором, создавая" +
                     " игривый и загадочный образ. Черный цвет придает ему универсальность и элегантность," +
@@ -72,6 +88,7 @@ const productsSlice = createSlice({
                 title: "Бомбер Gone Crazy\n" +
                     "хаки",
                 price: 2499,
+                sizes: ["XS — S", "S — M", "L — XL"],
                 description: "Over size бомбер цвета хаки на резинке с объемными рукавами. Фурнитура " +
                     "выполнена в серебряном цвете. Акцентными деталями выступают объемные нашитые " +
                     "карманы и капюшон, который отстёгивается. Один из ключевых элементов этого бомбера" +
@@ -100,6 +117,7 @@ const productsSlice = createSlice({
                 title: "Платье-футболка рыбы\n" +
                     "в аквариуме",
                 price: 899,
+                sizes: ["XS — S", "S — M", "M — L"],
                 description: "Это платье сочетает в себе необычность и практичность. Имея простой и удобный" +
                     " крой футболки, оно декорировано ярким и живописным принтом с изображением рыб в аквариуме." +
                     " Цветастый и веселый дизайн делает это платье идеальным выбором для повседневного ношения," +
@@ -123,37 +141,38 @@ const productsSlice = createSlice({
         filtered: [],
         related: [],
         isLoading: false,
+        activeCategory: null,
         productDetails: {},
     },
     reducers: {
+        filterByCategory: (state, action) => {
+            // Фильтрация по категории
+            state.filtered = state.list.filter(product => product.category.id === action.payload.category);
+        },
         filterByPrice: (state, action) => {
-            state.filtered = state.list.filter(product => product.price <= action.payload);
+            // Фильтрация по цене
+            state.filtered = state.list.filter(product => {
+                if (action.payload.price === 'all') {
+                    return true; // Все продукты
+                } else if (action.payload.price === '0-500') {
+                    return product.price <= 500;
+                } else if (action.payload.price === '500-1000') {
+                    return product.price > 500 && product.price <= 1000;
+                } else if (action.payload.price === '1000-1500') {
+                    return product.price > 1000 && product.price <= 1500;
+                } else if (action.payload.price === '1500+') {
+                    return product.price > 1500;
+                }
+            });
         },
         filterBySize: (state, action) => {
-            state.filtered = state.list.filter(product => action.payload.includes(product.size));
+            const selectedSizeRange = action.payload.size; // Например, 'S — M'
+            state.filtered = state.list.filter(product =>
+                doesSizeMatch(product.sizes, selectedSizeRange)
+            );
         },
-        filterProducts: (state, action) => {
-            let filtered = state.list;
-            const {price, size} = action.payload;
-            if (price) {
-                filtered = filtered.filter(product => product.price <= price);
-            }
-            if (size) {
-                filtered = filtered.filter(product => size.includes(product.size));
-            }
-            state.filtered = filtered;
-        },
-        sortProducts: (state, action) => {
-            if (action.payload === 'priceAscending') {
-                state.filtered.sort((a, b) => a.price - b.price);
-            } else if (action.payload === 'priceDescending') {
-                state.filtered.sort((a, b) => b.price - a.price);
-            }
-            // Добавьте дополнительные условия сортировки по необходимости
-        },
-        getRelatedProducts: (state, {payload}) => {
-            const list = state.list.filter(({category: {id}}) => id === payload);
-            state.related = shuffle(list);
+        setActiveCategory: (state, action) => {
+            state.activeCategory = action.payload;
         },
     },
     extraReducers: (builder) => {
@@ -170,6 +189,6 @@ const productsSlice = createSlice({
     },
 });
 
-export const {filterByPrice, filterBySize, filterProducts, sortProducts} = productsSlice.actions;
+export const {setActiveCategory, filterByCategory, filterByPrice, filterBySize, sortProducts} = productsSlice.actions;
 
 export default productsSlice.reducer;

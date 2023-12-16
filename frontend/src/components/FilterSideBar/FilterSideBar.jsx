@@ -1,104 +1,126 @@
-import React, {useState} from 'react';
-import {useDispatch} from 'react-redux';
-import {filterProducts} from '../../features/products/productsSlice';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {getCategories} from '../../features/categories/categoriesSlice';
+
 import './FilterSideBar.scss'
+import {filterByCategory, filterByPrice, filterBySize, setActiveCategory} from "../../features/products/productsSlice";
 
-const FilterSidebar = () => {
+const FilterSideBar = () => {
     const dispatch = useDispatch();
-    const [selectedPrice, setSelectedPrice] = useState('');
-    const [selectedSize, setSelectedSize] = useState('');
-    // Дополнительные состояния для других фильтров по мере необходимости
+    const categories = useSelector(state => state.categories.list);
+    const isLoading = useSelector(state => state.categories.isLoading);
+    const activeCategory = useSelector(state => state.products.activeCategory);
 
-    const handlePriceChange = (e) => {
-        setSelectedPrice(e.target.value);
-        // Добавьте логику фильтрации или сортировки здесь, если это необходимо
-        dispatch(filterProducts({price: e.target.value}));
+    useEffect(() => {
+        // Если есть активная категория, вызываем filterByCategory
+        if (activeCategory) {
+            dispatch(filterByCategory({category: activeCategory}));
+        }
+    }, [dispatch, activeCategory]);
+
+
+    useEffect(() => {
+        if (!categories.length) {
+            dispatch(getCategories());
+        }
+    }, [dispatch, categories.length]);
+
+    const handleCategoryChange = (e) => {
+        const category = e.target.value;
+        // Диспатчим новое значение выбранной категории
+        dispatch(setActiveCategory(category));
+        // И обновляем отфильтрованные продукты
+        dispatch(filterByCategory({category}));
+    };
+
+    const handlePriceChange = (priceRange) => {
+        dispatch(filterByPrice({price: priceRange}));
     };
 
     const handleSizeChange = (e) => {
-        setSelectedSize(e.target.value);
-        // Добавьте логику фильтрации или сортировки здесь, если это необходимо
+        const size = e.target.value;
+        console.log(`Selected size: ${size}`);
+        dispatch(filterBySize({size}));
     };
 
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+
     return (
-        <aside className="filters-sidebar">
-            <div className="filter-section">
-                <h2>КАТЕГОРИИ:</h2>
-                {/* Добавьте чекбоксы или другие элементы для фильтрации по категории */}
+        <div className="filter-sidebar">
+            <h3>КАТЕГОРИИ:</h3>
+            <div className="category-section">
+                {categories.map(category => (
+                    <label key={category.id} className="category-item">
+                        <input
+                            type="radio"
+                            name="category"
+                            value={category.id}
+                            onChange={handleCategoryChange}
+                            checked={activeCategory === category.id}
+                        />
+                        <span className="checkmark"></span>
+                        {category.name}
+                    </label>
+                ))}
             </div>
 
-            <div className="filter-section">
-                <h2>ЦЕНЫ:</h2>
-                <label>
-                    <input
-                        type="radio"
-                        name="price"
-                        value="до 500"
-                        checked={selectedPrice === 'до 500'}
-                        onChange={handlePriceChange}
-                    />
+            <h3>ЦЕНЫ:</h3>
+            <div className="price-section">
+                <label className="category-item">
+                    <input type="radio" name="price" onChange={() => handlePriceChange('all')}/>
+                    <span className="checkmark"></span>
+                    Все цены
+                </label>
+                <label className="category-item">
+                    <input type="radio" name="price" onChange={() => handlePriceChange('0-500')}/>
+                    <span className="checkmark"></span>
                     до 500
                 </label>
-                <label>
-                    <input
-                        type="radio"
-                        name="price"
-                        value="500 — 1000"
-                        checked={selectedPrice === '500 — 1000'}
-                        onChange={handlePriceChange}
-                    />
+                <label className="category-item">
+                    <input type="radio" name="price" onChange={() => handlePriceChange('500-1000')}/>
+                    <span className="checkmark"></span>
                     500 — 1000
                 </label>
-                <label>
-                    <input
-                        type="radio"
-                        name="price"
-                        value="1000 — 1500"
-                        checked={selectedPrice === '1000 — 1500'}
-                        onChange={handlePriceChange}
-                    />
+                <label className="category-item">
+                    <input type="radio" name="price" onChange={() => handlePriceChange('1000-1500')}/>
+                    <span className="checkmark"></span>
                     1000 — 1500
                 </label>
-                <label>
-                    <input
-                        type="radio"
-                        name="price"
-                        value="от 1500"
-                        checked={selectedPrice === 'от 1500'}
-                        onChange={handlePriceChange}
-                    />
+                <label className="category-item">
+                    <input type="radio" name="price" onChange={() => handlePriceChange('1500+')}/>
+                    <span className="checkmark"></span>
                     от 1500
                 </label>
             </div>
 
-            <div className="filter-section">
-                <h2>РАЗМЕР:</h2>
-                <label>
-                    <input
-                        type="radio"
-                        name="size"
-                        value="XS — S"
-                        checked={selectedSize === 'XS — S'}
-                        onChange={handleSizeChange}
-                    />
+            <h3>РАЗМЕР:</h3>
+            <div className="size-section">
+                <label className="category-item">
+                    <input type="radio" name="size" value="XS — S" onChange={handleSizeChange}/>
+                    <span className="checkmark"></span>
                     XS — S
                 </label>
-                <label>
-                    <input
-                        type="radio"
-                        name="size"
-                        value="S — M"
-                        checked={selectedSize === 'S — M'}
-                        onChange={handleSizeChange}
-                    />
+                <label className="category-item">
+                    <input type="radio" name="size" value="S — M" onChange={handleSizeChange}/>
+                    <span className="checkmark"></span>
                     S — M
                 </label>
-                {/* Добавьте дополнительные радиокнопки для других размеров */}
+                <label className="category-item">
+                    <input type="radio" name="size" value="M — L" onChange={handleSizeChange}/>
+                    <span className="checkmark"></span>
+                    M — L
+                </label>
+                <label className="category-item">
+                    <input type="radio" name="size" value="L — XL" onChange={handleSizeChange}/>
+                    <span className="checkmark"></span>
+                    L — XL
+                </label>
             </div>
-
-            {/* Добавьте дополнительные фильтры по мере необходимости */}
-        </aside>
+        </div>
     );
+
 };
 
-export default FilterSidebar;
+export default FilterSideBar;
